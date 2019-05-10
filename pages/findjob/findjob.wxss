@@ -1,0 +1,968 @@
+/* pages/recruit/recruit.wxss */
+ page{
+     height: 100%;
+     background: #F5F5F5;
+ }
+.page{
+    height: 100%;
+    overflow-y:hidden;
+
+}
+.nav{
+    width:100vw;
+    position: fixed;
+    z-index: 99999;
+    display: flex;
+    border-bottom: 1px solid #E5E5E5;
+    background: #fff;
+}
+.nav-son{
+    padding-left:16rpx;
+    display: flex;
+    flex: 1;
+    text-align: center;
+    height: 40px;
+    align-items:center;
+    justify-content:center;
+    font-size: 28rpx;
+    white-space:nowrap;
+    overflow:hidden;
+
+}
+
+.content{
+    display: inline-block;
+    font-size: 30rpx;
+    color: #333333;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.icon{
+    width:19rpx;
+    height: 11rpx;
+    margin-left: 10rpx;
+}
+.temp{
+    position: relative;
+    z-index: 4;
+}
+.temp1{
+    display: none;
+    width: 100%;
+    max-height: 436rpx;
+    overflow-y: scroll;
+    padding: 0 0 0 20rpx;
+    line-height:80rpx;
+    background: #fff;
+}
+.temp2{
+    display: none;
+    width: 100%;
+    max-height: 750rpx;
+    overflow-y: scroll;
+    padding: 0 0 0 20rpx;
+    line-height:100rpx;
+    background: #fff;
+}
+.slidedown{
+    transform:  translateY(0%);
+}
+.temp view{
+    font-size: 28rpx;
+    color: #666;
+}
+.quyu{
+    position: relative;
+    display: none;
+    height: 960rpx;
+    z-index: 5;
+}
+.quyu .qy{
+    overflow-y: scroll;
+    float: left;
+    width: 316rpx;
+    height: 960rpx;
+    line-height: 80rpx;
+    box-sizing: border-box; 
+    font-size: 28rpx;
+    color: #717273;
+}
+.qy view{
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space:nowrap;  
+    padding-left: 15rpx; 
+}
+.quyu-left{
+    background: #FFFFFF;
+}
+.quyu-center{
+    background: #F5F5F5;
+}
+.quyu-right{
+    background: #fff;
+}
+.quyu-right view{
+    border-bottom: 1px solid #c5c5c5;
+}
+.current{
+    background: #F5F5F5;
+    color: #0094FD;
+}
+.current2{
+    color: #0094FD;
+}
+.fullbg{
+    position: fixed;
+    top:0;
+    z-index: 11111111110000;
+    width: 100%;
+    height: 100%;
+    background: rgb(1, 1, 1);
+    transition: all 2s;
+    opacity: 0;
+     display: none;
+}
+.fullopacity{
+    opacity: .3;
+    display: block;
+}
+.nav-son.active .content{
+  color: #0094FD;
+}
+.nav-son.active .icon{
+   
+    border-top:0;
+}
+/* 改后css */
+.comwrap{
+    border-bottom: 1px solid #F5F5F5;
+    padding: 20rpx 22rpx 28rpx 110rpx;
+    background: #fff;
+    margin-bottom:4rpx;
+    position: relative;
+}
+.comlist{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.userimg{
+  width:80rpx;
+  height: 80rpx;
+  position:absolute;
+left:22rpx;
+top:34rpx;
+
+}
+.userimg image{
+  width:100%;
+  height:100%;
+  border-radius: 2%; 
+}
+.comuser{
+  display: flex;
+  flex-wrap:nowrap;
+}
+.userinfo{
+  display:flex;
+  flex-direction: column;
+  margin-left: 18rpx;
+}
+.uname{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #435B90;
+  font-weight: 600;
+}
+.usname{
+  font-size: 24rpx;
+  color: #999999;
+}
+.ctime text{
+  font-size: 32rpx;
+  color: #999999;
+}
+.deslist{
+  width:604rpx;
+  margin-left: 100rpx;
+}
+.comdes{
+  font-size: 30rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.hcomdes{
+  width:604rpx;
+  background: #F5F5F5;
+  font-size: 26rpx;
+  color: #666666;
+  padding: 20rpx 16rpx;
+  box-sizing: border-box;
+  margin-top: 24rpx;
+}
+.hcomdes text{
+  line-height: 40rpx;
+}
+.time{
+  font-size: 28rpx;
+  color:#999
+}
+.lianxi{
+ padding:5rpx 10rpx;
+
+border:1px solid #0094FD;
+color:#0094FD;
+border-radius:10rpx;
+font-size:26rpx;
+text-align:center;
+
+
+}
+.jobdes{
+   
+  font-size:30rpx;
+  margin-left: 18rpx;
+}
+.relimg{
+  margin-top:20rpx;
+}
+.relimg1 image{
+ width:180rpx;
+height:114rpx;
+border-radius:8rpx;
+margin-right:15rpx;
+}
+.relimg2 image{
+width:220rpx;
+height:140rpx;
+border-radius:8rpx;
+margin-right:15rpx;
+}
+.relimg3 image{
+width:220rpx;
+height:140rpx;
+border-radius:8rpx;
+margin-right:15rpx;
+}
+.jobbot{
+  margin-top:10rpx;
+  display: flex;
+  margin-left: 18rpx;
+
+}
+.jobtag{
+ flex:2;
+ text-align: right
+ 
+}
+
+.jtag text{  
+  font-size:26rpx;
+  color: orange;
+   
+}
+
+.jobadr{
+  flex:2;
+  text-align:right;
+
+}
+.jdr{
+  font-size: 20rpx;
+  color: #999;
+  text-align: left;
+  flex:2;
+  
+}
+
+.wh_24{
+  width:22rpx; 
+  height:22rpx; 
+  margin-right:5rpx;
+}
+ 
+
+.jdr image{
+  width:18rpx;
+  height: 22rpx;
+  margin-right:10rpx;
+  margin-bottom: -1rpx
+}
+
+
+@keyframes slidown{
+    from{
+        transform:  translateY(-100%);
+    }
+    to{
+        transform:  translateY(0%);
+    }
+}
+.slidown{
+    display: block;
+    animation: slidown .3s ease-in both;
+    background: #F5F5F5;
+    position: absolute;
+    top:83rpx;
+    z-index: 0;
+}
+@keyframes slidup{
+    from{
+        transform:  translateY(0%);
+    }
+    to{
+        transform:  translateY(-100%);
+    }
+}
+.slidup{
+    animation: slidup .3s ease-in both;
+}
+.disappear{
+    display: none;
+}
+.C_scroll {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  z-index: 0;
+}
+.qytext{
+  width:200rpx;
+  height: 50rpx;
+  
+}
+.favcity{
+  position:absolute;
+right:0;
+left:0;
+font-size:20rpx;
+bottom:0;
+
+}
+.defc{
+  color: #666
+}
+.onc{
+  color: #0094fd
+}
+
+/**自己修改**/
+.nav-sonbox{
+  display:flex;
+  align-items:center;
+}
+.nav-sonB{
+  width:90rpx;
+  height: 56rpx;
+  line-height:78rpx;
+
+  border-left: 1px solid #E5E5E5;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: nowrap;
+  align-items:center;
+}
+.nav-sonB{
+  font-size:26rpx;
+}
+.nav-sonB image{
+  width:40rpx;
+  height:40rpx;
+}
+.f_c{
+  color:#666;
+}
+.add{
+  width:28rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+  margin-right: 5rpx;
+}
+.search{
+  width:40rpx;
+  height: 40rpx;
+  margin-top: 15rpx;
+  margin-bottom: -1rpx
+}
+
+/**招聘信息类**/
+.relist{
+  width:100%;
+  position: absolute;
+  top: 80rpx;
+}
+.mewrap{
+ width:100%;
+ padding: 35rpx 20rpx 52rpx 20rpx;
+ box-sizing: border-box;
+ background: #FFF;
+ margin-bottom: 20rpx;
+ border-bottom: 1px solid #F5F5F5;
+}
+.meboxA{
+  display: flex;
+  flex-direction: columnl;
+  margin-bottom: 5rpx;
+
+}
+.metop{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.m_A{
+  font-size: 34rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.m_B{
+  font-size: 34rpx;
+  color: #0094FD;
+  font-weight: 600;
+}
+.melabel{
+  display: flex;
+  flex-direction: row;
+}
+.melabel text{
+ height: 40rpx;
+ line-height: 40rpx;
+ padding: 0 14rpx;
+ font-size: 24rpx;
+ color: #808080;
+ border: 1px solid #E5E5E5;
+ border-radius: 2px;
+ margin-right: 20rpx;
+}
+.metA{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+.metB{
+  display: flex;
+  justify-content: space-between;
+}
+.meleft{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+  width:400rpx;
+
+}
+.meleft image{
+  width:40rpx;
+  height: 40rpx;
+}
+.meleft text{
+  width:80%;
+  font-size: 30rpx;
+  color: #333333;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+
+}
+.meright{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 10rpx;
+}
+.meright image{
+  width:24rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+  
+}
+.meright text{
+  font-size: 26rpx;
+  color: #999999;
+}
+.meuser{
+  position: relative;
+}
+.userpic{
+  width:60rpx;
+  height: 60rpx;
+  border: 1px solid #EEE;
+  border-radius: 50%;
+}
+.userpic image{
+  width:100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.vrz{
+  width:30rpx;
+  height: 30rpx;
+  position: absolute;
+  bottom: 2rpx;
+  right: 0rpx;
+}
+.vrz image{
+  width:100%;
+  height: 100%;
+}
+.meleft .username{
+  font-size: 26rpx;
+  color: #333333;
+  margin-top: 17rpx;
+  margin-left: 18rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.meright .time{
+  font-size: 28rpx;
+  margin-top: 27rpx;
+}
+
+/** 发布按钮**/
+.czbot{
+  position: fixed;
+
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom:80rpx;
+ 
+
+}
+
+.Release{
+  width:188rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #0094FD;
+  border-radius: 53px;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  box-shadow: 0rpx 1rpx 8rpx #0094FD;
+  background-image:linear-gradient(90deg, #00C9FF 0%, #0098FF 100%);
+
+  
+}
+
+/**找人类**/
+.hunter{
+  background: #FFf;
+}
+.hunA ,.hunB ,.hunC{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction:row;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.hunA {
+  padding-top: 40rpx;
+}
+.hunB{
+  padding:0 20rpx;
+}
+.hunC{
+  padding:5rpx 20rpx 40rpx 20rpx;
+}
+
+.userpicB{
+  width:100rpx;
+  height: 100rpx;
+  position: relative;
+  margin-right: 20rpx;
+}
+.userpicB image{
+  width:100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.usernameB{
+  font-size: 36rpx;
+  color: #333333;
+}
+.rzicon{
+  width:30rpx;
+  height: 30rpx;
+  position: absolute;
+  bottom: 10rpx;
+  right: 0;
+}
+.rzicon image{
+ width:100%;
+ height: 100%;
+
+}
+.renzicon{
+  width:128rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #FF5A49;
+  border-radius: 100px;
+  font-size: 24rpx;
+  color: #FF5A49;
+  margin-top: 8rpx;
+}
+.rolinfo{
+  font-size: 34rpx;
+  color: #333333;
+}
+.label text{
+  border: 1px solid #E5E5E5;
+  border-radius: 2px;
+  font-size: 24rpx;
+  color: #808080;
+  padding:0 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  display: inline-block;
+}
+
+
+.hunright{
+  font-size: 34rpx;
+  color: #0094FD;
+}
+.hcleft{
+  display: flex;
+  flex-flow: wrap;
+}
+.mapicon{
+  width:24rpx;
+  height:26rpx;
+  margin-right:10rpx;
+  vertical-align:middle;
+
+}
+.mapicon image{
+  width:100%;
+  height: 100%;
+}
+.addressC text{
+  font-size: 26rpx;
+  color: #999999;
+}
+.hcright text{
+  font-size: 28rpx;
+  color: #999999;
+}
+
+
+.huntop{
+  display: flex;
+  flex-direction: row;
+}
+.hleft{
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-item{
+  width:auto;
+  align-items: center;
+  margin-right:30rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  /* overflow:hidden; */
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  display: inline-block;
+  position: relative
+}
+.def{
+ border-bottom:5rpx solid #FFF;
+padding:14rpx 15rpx;
+
+}
+.on { 
+border-bottom:5rpx solid #0094FD;
+padding:14rpx 15rpx;
+
+}
+scroll-view { 
+padding-bottom:0rpx;
+
+}
+
+.setwin{
+width:100%;
+height:100vh;
+z-index:111111111100001;
+background:rgba(0,0,0,0.5);
+margin-top:0rpx;
+position:absolute;
+top:0;
+
+
+}
+.authmc{
+   background:rgba(0,0,0,0.2);
+}
+.winbody{
+  width:80%;
+  background:#fff;
+margin:auto auto;
+top:20%;
+position:relative;
+border-radius:10rpx;
+justify-content: center;
+text-align: center
+
+}
+
+.zk{
+  font-size: 32rpx;
+  color:#666;
+  margin:20rpx 0 40rpx;
+}
+.settagbtn{
+  width:100%;
+  height:100rpx;
+  border-top:1px solid #ddd;
+  display: flex;
+  line-height: 100rpx;
+
+}
+.stbtn{
+  width:50%;
+  text-align: center
+}
+.midline{
+  height: 100rpx;
+  background-color: #ddd;
+  width:1px
+}
+.tagtsimg image{
+  width:150rpx;
+  height: 170rpx;
+  margin:60rpx 0 20rpx
+  
+}
+.bl{
+  color: #0094FD
+}
+.ch_t{
+  font-size: 34rpx;
+  text-align: center;
+  margin:20rpx 0;
+  margin-left:20rpx;
+
+}
+.nextbtn{
+  background-image: linear-gradient(90deg, #00C9FF 0%, #0098FF 100%);
+ border-radius:4px;
+width:200rpx;
+height:70rpx;
+line-height:70rpx;
+color:#fff;
+font-size:32rpx;
+
+}
+
+.sharebox{
+width:75%;
+background:#fff;
+margin:auto auto;
+top:70%;
+position:relative;
+border-radius:10rpx;
+justify-content: center;
+text-align: center;
+padding:20px
+
+}
+.share{
+ width:30rpx;
+ height:30rpx;
+ margin-bottom:-4rpx;
+}
+.sharenum{
+  font-size: 28rpx;
+  color:#666;
+  margin:0 0 0 10rpx; 
+  text-align: left
+}
+.smidline{
+  width:1px;
+  height: 180rpx;
+  background:#ddd;
+}
+.wechat{
+  width:120rpx;
+  height: 120rpx
+}
+.haibao{
+  width:120rpx;
+  height: 120rpx
+}
+.hbmuban{
+  width:80%;
+  height:300rpx;
+}
+.addfav{
+  padding:6rpx 20rpx;
+  border:1px solid #0094fd;
+  border-radius: 3px;
+  color: #0094fd
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 授权 */
+.authbody{
+width:70%;
+background:#fff;
+margin:auto auto;
+top:20%;
+position:relative;
+border-radius:10rpx;
+text-align: center;
+padding:80rpx 0;
+}
+.authhead{
+  display: flex;
+  width:100%;
+  justify-content: center;
+  /* margin:40rpx 0 */
+}
+.authhead image{
+  width:240rpx;
+  height:240rpx;
+  background: #ddd
+}
+.authname{
+  width:100%;
+  text-align: center;
+  font-size: 32rpx;
+  margin:40rpx 0
+}
+.azbtn{
+  width:100%;
+  display: flex;
+  justify-content: center;
+}
+
+.azbtn button{
+  width:240rpx;
+  height:80rpx;
+  text-align: center;
+  line-height: 76rpx;
+  border-radius: 6px;
+  background: #49bb28;
+  color:#fff;
+  font-size: 32rpx;
+  border:1px solid rgba(0,0,0,.1)
+}
+
+
+.snav{
+  padding:10rpx;
+  line-height:64rpx;
+}
+.searchbox{
+  width:82%;
+  height:60rpx;
+  border-radius: 6px;
+  border:1px solid #eee;
+  display: flex;
+  line-height: 60rpx;
+  align-items: center
+
+}
+.searchp{
+  padding-left:20rpx
+}
+.sqxbtn{
+  flex:1;
+  color:#0094fd;
+  font-size:34rpx;
+  text-align: center
+}
+.searchtag{
+color:#0094fd;
+font-size:32rpx;
+border-right:1px solid #eee;
+width:120rpx;
+text-align:center;
+height:46rpx;
+line-height:46rpx;
+
+}
+
+.searchtag image{
+ width:20rpx;
+height:10rpx;
+
+}
+.sjobinput{
+  width:80%;
+  height:50rpx;
+  border:1px slid #000;
+  color:#666;
+  font-size: 32rpx
+}
+
+
+
+
+.select_box {
+background-color:#fff;
+padding:0 20rpx;
+width:10%;
+position:absolute;
+top:76rpx;
+overflow:hidden;
+animation:myfirst 0.5s;
+border:1px solid #eee;
+left:15rpx;
+z-index:99999;
+border-radius:4px;
+
+
+}
+ .jobon{
+   color:#0094fd;
+ }
+@keyframes myfirst {
+    from {
+        height: 0rpx;
+    }
+ 
+    to {
+        height: 120rpx;
+    }
+}
+ 
+.select_one {
+    height: 60rpx;
+    line-height: 60rpx;
+}

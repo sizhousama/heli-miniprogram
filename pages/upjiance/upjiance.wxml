@@ -1,0 +1,14 @@
+<view class="jc">
+<view class="wtitle"><text>检测报告上传</text></view>
+<view class="wtimgbox">
+<view class="addwt" bindtap="baogaoUpload" data-key="jiance" data-arr="1" data-siyou="1">
+<image class="addbg" src="/pages/image/opload@3x.png"></image>
+<text>上传</text>
+</view>
+<view class="wtimg" wx:for="{{imageList}}" wx:key="idx2" wx:for-item="value2">
+<image class="shanchu" src="/pages/image/mine-cancel@3x.png"  catchtap="baogaodelimg" data-type="jiance"   data-id="{{index}}"></image>
+  <image class="jcbg"  src="{{value2}}"></image>
+</view>
+
+</view>
+</view>

@@ -1,0 +1,35 @@
+<template name="editpass"> 
+ 
+  <view class="infolist">
+        <view class="listrow" style="width:94%">
+        <view style="width:50%;">
+          <text>旧密码</text>
+          </view>
+          <view class="rigthB">
+          
+            <input type='password' bindinput="ysinput" data-name="YS_obja.params.oldpasswd"  placeholder='请输入'></input>
+          </view>
+        </view>
+  </view>
+  <view class="infolist">
+        <view class="listrow">
+        <view style="width:50%;">
+          <text>新密码</text>
+          </view>
+          <view class="rigthB">
+            <input type='password' bindinput="ysinput" data-name="YS_obja.params.newpasswd"  placeholder='请输入'></input>
+          </view>
+        </view>
+  </view>
+  <view class="infolist">
+        <view class="listrow">
+        <view style="width:50%;">
+          <text>确认密码</text>
+          </view>
+          <view class="rigthB">
+            <input type='password' bindinput="ysinput" data-name="YS_obja.params.newpasswd1"  placeholder='请输入'></input>
+          </view>
+        </view>
+  </view>
+  <button class="bcbtn" type="button" bindtap="editpwd">修改</button>
+</template>  

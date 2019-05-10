@@ -1,0 +1,19 @@
+<template name="item">
+  <view class="comwrap">
+          <view class="comlist">
+              <view class="comuser">
+                    <view class="userimg"><image src="http://f8.topitme.com/8/51/48/11314970306a848518o.jpg"></image></view>
+                    <view class="userinfo">
+                      <text class="uname">王小花</text>
+                      <text class="usname">回复 chen</text>
+                    </view>
+              </view>
+              <view class="ctime"><text>05-10</text></view>
+          </view>
+           <view class="deslist">
+              <view class="desbox">
+                  <text class="comdes">还是可以的！</text>
+              </view>
+            </view>
+        </view>
+</template>

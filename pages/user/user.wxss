@@ -1,0 +1,32 @@
+
+.userwrap{
+  display: flex;
+  justify-content:center;   
+  margin-top: -66rpx;
+  margin-bottom: 60rpx;
+}
+.loginbox{
+  width:674rpx;
+  height: 382rpx;
+  background: #FFF;
+  box-shadow: 0 5px 15px 0 rgba(0,43,74,0.14);
+  border-radius: 6rpx;
+
+} 
+.ruesr{
+  width:446rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  background: #0094FD;
+  color: #FFF;
+  margin-top:74rpx;
+  margin-bottom: 54rpx;
+}
+.yuser{
+  width:446rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  background: #FFFFFF;
+  border: 1rpx solid #0094FD;
+  color: #0094FD;
+}

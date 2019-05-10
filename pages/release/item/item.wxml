@@ -1,0 +1,63 @@
+<!--pages/my/Release/item/item.wxml-->
+<view class="deswrap">
+   <view class="mewrap">
+        <view class="meboxA">
+          <view class="metop">
+              <text class="m_A">资料员</text>
+              <text class="m_B">3-5K</text>
+          </view>
+        </view>
+          <view class="meright">
+            <view class="address">
+              <image src="/pages/image/zhaogong-weizhi1@3x.png"></image>
+              <text>广东 · </text><text>深圳 ·  </text><text>宝安 </text>
+            </view>
+          </view>
+           <view class="mehr">
+              <view class="metA">
+                <view class="meleft">
+                   <view class="meuser">
+                     <view class="userpic"><image src="http://www.yh31.com/UploadFiles/NSTX/201707162258094941.jpg"></image></view>
+                     <view class="vrz" ><image src="/pages/image/zhaogong-renzheng@3x.png"></image></view>
+                   </view>
+                   <view class="linfo">
+                      <text class="username">{{value.realname}}</text>
+                      <text class="comp">深圳建工集团有限公司.hr</text>
+                  </view>
+                </view>
+                <view class="meright">
+                  <view class="sajiao"><image src='/pages/image/icon-next@3x.png'></image></view>
+                </view>
+              </view>
+           </view>
+          <view class="melabel">
+              <text>熟手</text>
+              <text>包吃住</text>
+          </view>
+        </view>
+   <view class="des">
+   <view class="dtitle">职位描述</view>
+      <view class="conte">
+        <rich-text nodes="{{html}}" bindtap="tap"></rich-text>
+      </view>
+  <view class="page-section page-section-gap">
+    <map
+      id="myMap"
+      style="width: 100%; height: 360rpx;"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      covers="{{covers}}"
+      show-location>
+    </map>
+  </view>
+  <view class='operation'>
+    <button class="delbtnA">删除职位</button>
+  </view>
+   </view>     
+</view>
+
+  <view class="opbot">
+    <button class="off">关闭</button>
+    <button class="edit">编辑</button>
+  </view>

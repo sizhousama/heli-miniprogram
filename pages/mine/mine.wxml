@@ -1,0 +1,38 @@
+<view style="background:#FFF;padding-bottom:100rpx;overflow: hidden;position: relative;">
+	<view  class="minetop">
+	<image class="topimg" src='/image/mybg@2x.png'/>
+	<view class="headimg" style="width:100vw;height:200rpx;">
+<image style="width:200rpx;height:200rpx;border-radius:100px;" src='{{YS_obja.data.headimg}}'/>
+			<view style="color:#333333">
+{{YS_obja.data.nickname}}
+			</view>			
+			</view>
+	</view>
+
+<!--内容-->
+ 	<view > 
+<button bindtap="nav" data-to="../mybuy/mybuy" class="list">
+	<image class="imgl"  src="/image/icon-buy@2x.png"/>
+	<text>我买的</text>
+	<image class="imgr" src="/image/icon-more@2x.png"/>
+</button>
+<button bindtap="nav" data-to="../mysell/mysell" class="list">
+	<image class="imgl"  src="/image/icon-sale@2x.png"/>
+	<text>我卖的</text>
+	<image class="imgr" src="/image/icon-more@2x.png"/>
+</button>
+<button bindtap="nav" data-to="../bindphone/bindphone"  class="list">
+	<image class="imgl" style="width:26rpx;height:44rpx;margin-right:40rpx;" src="/image/phone@2x.png"/>
+	<text>绑定手机号</text>
+
+	<image class="imgr" style="margin-left:20rpx;" src="/image/icon-more@2x.png"/>
+	<text class="phone {{YS_obja.data.phone?YS_obja.data.phone:'dpn'}}">136****1123</text>
+	<text class="phonered {{YS_obja.data.phone?'dpn':''}}">去绑定</text>
+</button>
+	</view>
+	<!--内容-->
+
+
+
+
+</view>

@@ -1,0 +1,108 @@
+<!--pages/single/single.wxml-->
+<view class="page">  
+  
+  <!--顶部导航栏-->  
+  <!-- <view class="swiper-tab">  
+    <view class="tab-item"><text data-current="1" data-inter="YS_plista" bindtap="swichNavAndFetch"  class=" btn {{currentTab==1 ? 'on' : ''}}">单位工程</text></view> 
+    <view class="tab-item"><text data-current="0" data-inter="YS_plistc" bindtap="swichNavAndFetch"  class="btn {{currentTab==0 ? 'on' : ''}}">施工机械</text></view>  
+  </view>   -->
+  
+  <!--内容主体-->  
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">  
+   
+
+    <swiper-item>  
+       <scroll-view scroll-y  style="height:100vh;">
+      <view class="main">
+    <!--施工机械-->
+          <view class="Uniteng">
+       <block wx:for="{{YS_plistc.data.datalist}}" wx:key="idx" wx:for-item="value">
+            <view class="Uintengbox"  data-id="{{value.codeid}}" bindtap="jixietc">
+              <view class="Uinleft">
+                <view class="Uinimg">
+                <image src="{{value.jximg?value.jximg:'/pages/image/jixie1.png'}}"></image>
+                </view>
+                <view class="Uininfo">
+                <text class="f_17">{{value.jname}}</text>
+                <view class="Uinlabel f_13" style='color:#0094FD '>
+                  <image class="lebicon" src="/pages/image/biaoqian@3x.png"></image>
+                  <text>{{value.jixielxname}}</text>
+                </view>
+                </view>
+              </view>
+              <view class="Uinright">
+                <image src="/pages/image/more@3x.png"></image>
+              </view>
+            </view>
+        </block>
+        <view class="bottom"></view> 
+        <view wx:if='{{YS_plistc.data.length==0}}'>
+          <image src="../../pages/image/danwei.png" style="width:60%;height:30vh;margin-left:12vh;margin-top:40rpx"></image>
+           <view style="text-align:center;width:105%;font-size:32rpx;">暂时没有施工机械！</view>
+          </view>
+            <view class="prbot">
+              <button bindtap="nav" data-to='/pages/addjixie/addjixie?codeid={{options.codeid}}' class="prbtn">添加新机械</button>
+            </view>
+
+          </view>
+      </view>
+      
+      </scroll-view> 
+      
+    </swiper-item> 
+    
+     <swiper-item> 
+      <view class="main">
+ 
+        <scroll-view scroll-y style="height: 100vh;">
+            <!--单位工程-->
+            <view class="Uniteng">
+    
+         <block wx:for="{{YS_lista.data}}" wx:key="idx" wx:for-item="value">
+         
+              <view class="Uintengbox" data-id="{{value.codeid}}" >
+               
+               <navigator url="/pages/editsingle/editsingle?codeid={{value.codeid}}"> 
+               
+                <view class="Uinleft">
+                  <view class="Uinimg">
+                  <image src="{{value.sinimg?value.sinimg:'/pages/image/img-zidanwei@3x.png'}}"></image>
+                  </view>
+                  <view class="Uininfo">
+                  <text class="f_17">{{value.sname}}</text>
+                  <view class="Uinlabel f_13" style='color:#0094FD '>
+                    <image class="lebicon" src="/pages/image/biaoqian@3x.png"></image>
+                    <text>{{value.jiegoustr}}</text>
+                    <text class="lebwrap">地上{{value.cengshu?value.cengshu:0}}层</text>
+                    <text class="lebwrap">地下{{value.dxcengshu?value.dxcengshu:0}}层</text>
+                  </view>
+                  </view>
+                </view>
+                </navigator>
+
+
+
+                <view class="Uinright" bindtap="singletc" hover-class='changebg'>
+                  <image src="/pages/image/more@3x.png"></image>
+                </view>
+              </view>
+
+          </block>
+           <view class="bottom"></view>
+          <view wx:if='{{YS_plista.data.length<1}}'>
+          <image src="../../pages/image/danwei.png" style="width:60%;height:30vh;margin-left:12vh;margin-top:40rpx"></image>
+          <view style="text-align:center;width:105%;font-size:32rpx;">暂时没有单位工程！</view>
+          </view>
+              </view>
+             
+        </scroll-view>
+
+      </view>
+    
+        <view class="prbot">
+          <button bindtap="nav" data-to='/pages/addsingle/addsingle' class="prbtn">添加新单位</button>
+        </view>
+
+    </swiper-item>   
+  </swiper>  
+</view>  

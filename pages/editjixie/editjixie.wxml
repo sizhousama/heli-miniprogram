@@ -1,0 +1,61 @@
+
+<view class="addsing_3">
+     <view class="weui-cells weui-cells_after-title">
+
+              <view class="weui-cell weui-cell_access" >
+                  <view class="weui-cell__bd">施工机械图片</view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access" bindtap="chooseImage" data-key="YS_obja.params.jximg">
+                  <image  class="gcicon" src="{{uploadPicUrl||'http://img2.imgtn.bdimg.com/it/u=1986495797,438215067&fm=27&gp=0.jpg'}}"></image>
+                  </view>
+              </view>
+   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">施工机械名称</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="ysinput" data-name="YS_obja.params.jname" placeholder-class="phcolor" placeholder="请填写" name="jname" value="{{YS_objc.data.jname}}" />
+                </view>
+            </view>
+
+           <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">类型</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindjxlxChange" value="{{jxindex}}" range="{{jxlx}}" name="jixielx">
+                        <view class="weui-select weui-select_in-select-after piker">{{jxlx[jxindex]}}</view>
+                    </picker>
+                </view>
+            </view>
+
+           <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">开始时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindbegChange" mode="date" value="{{date}}" start="1978-01-01" end="2028-1-1" name="begintime">  
+                         <view class="picker weui-select weui-select_in-select-after">{{YS_objc.data.begintime}}</view>  
+                    </picker> 
+
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">结束时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker bindchange="bindendChange" mode="date" value="{{date}}" start="1978-01-01" end="2028-1-1" name="endtime">  
+                         <view class="weui-select weui-select_in-select-after piker">{{YS_objc.data.endtime}}</view>  
+                    </picker> 
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" style='height:0'>
+            </view>
+            <view class="botbox " style='position:initial;'>
+             <button type='submit' class="nextbtn" bindtap="tapfetch" data-key="YS_obja">保存</button>
+          </view>
+        </view>
+</view>

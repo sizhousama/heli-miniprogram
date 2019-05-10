@@ -1,0 +1,297 @@
+
+page{
+  background:#fff
+}
+.textarea-p{
+  padding: 0 40rpx;
+}
+.fb_text textarea{
+	font-size:28rpx;
+}
+
+.fb_title input{
+  font-size:28rpx;
+}
+.disabled{ 
+  color: #ccc; 
+} 
+.normal{ 
+  color: black; 
+  background: #07BF42!important;
+} 
+.yunfeitype{
+padding:15px 0;
+margin-top: 0!important;
+}
+.weui-cells{
+  margin-top: 0;
+}
+.up_img image{
+	width:140rpx;
+	height:140rpx;
+	margin:0 8px;
+
+}
+.up_img{
+	width:100%;
+}
+.up_imgbtn{
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+}
+.cl_icon{
+  position:absolute;
+  top:-5px;
+  right:-5px;
+}
+.up_img{
+  display: flex;
+}
+.up_tip{
+  text-align: right;
+  font-size: 28rpx;
+  width:70vw;
+  line-height:140rpx;
+  color: #CCCCCC;
+}
+.pro_degree{
+  margin-top: 50rpx;
+  font-size: 30rpx;
+  color: #ffffff;
+}
+.all_new{
+  background: #999999;
+  padding: 2rpx 30rpx;
+  border-radius: 24px;
+  margin: 0 5rpx;
+}
+.used{
+  background: #999999;
+  padding: 2rpx 30rpx;
+  border-radius: 24px;
+  margin: 0 20rpx;
+}
+.act_bntg{
+  background: #07BF42;
+}
+
+.picker{
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  font-size: 32rpx;
+}
+.leb_l{
+  width: 27%;
+  text-align: right;
+}
+.leb_r{
+  width: 60%;
+  text-align: right;
+}
+.leb_show{
+  width: 10%;
+  text-align: right;
+}
+.leb_show image{
+  width:22rpx;
+  height:34rpx;
+}
+.bottom_line{
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.leb_price{
+  line-height: 88rpx;
+  font-size: 32rpx;
+}
+.leb_num{
+  width: 70%;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.leb_numl{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius:8rpx; 
+  background: #F5FEFB;
+  border: 1rpx solid #e5e5e5;
+  text-align: center;
+  font-size: 36rpx;
+}
+.leb_numr{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius:8rpx; 
+  background: #07BF42;
+  border: 1rpx solid #e5e5e5;
+  text-align: center;
+  font-size: 36rpx;
+}
+.leb_numc{
+  font-size: 44rpx;
+  color: #07BF42;
+  padding:0 20rpx; 
+  text-align: center;
+}
+.fbpro_btn{
+  color: #ffffff;
+  box-shadow:0rpx 1rpx 8rpx #1EC052;
+  background-image:linear-gradient(90deg, #23D75D 0%, #1EC052 100%);
+}
+.weui-btn-area{
+  margin-bottom: 40rpx;
+}
+
+
+
+/* 绑定手机号弹窗 */
+.setwin{
+width:100%;
+height:100vh;
+z-index:111111111100001;
+background:rgba(0,0,0,0.5);
+margin-top:0rpx;
+position:absolute;
+top:0;
+
+
+}
+
+.winbody{
+width:80%;
+background:#fff;
+margin:auto auto;
+top:20%;
+position:relative;
+border-radius:10rpx;
+justify-content: center;
+text-align: center
+
+}
+.szbq{
+  font-size: 40rpx;
+}
+.zk{
+font-size: 32rpx;
+color:#666;
+margin:20rpx 0 40rpx;
+}
+.settagbtn{
+width:100%;
+height:100rpx;
+border-top:1px solid #ddd;
+display: flex;
+line-height: 100rpx;
+
+}
+.stbtn{
+width:50%;
+text-align: center
+}
+.midline{
+height: 100rpx;
+background-color: #ddd;
+width:1px
+}
+.tagtsimg image{
+width:240rpx;
+height:214rpx;
+margin:60rpx 0 20rpx
+}
+.bl{
+color: #0094FD
+}
+.ch_t{
+font-size: 34rpx;
+text-align: center;
+margin:20rpx 0;
+margin-left:20rpx;
+
+}
+.nextbtn{
+background-image: linear-gradient(90deg, #00C9FF 0%, #0098FF 100%);
+border-radius:4px;
+width:200rpx;
+height:70rpx;
+line-height:70rpx;
+color:#fff;
+font-size:32rpx;
+
+}
+.setwin{
+width:100%;
+height:100vh;
+z-index:111111111100001;
+background:rgba(0,0,0,0.5);
+margin-top:0rpx;
+position:absolute;
+top:0;
+
+
+}
+
+.winbody{
+width:80%;
+background:#fff;
+margin:auto auto;
+top:20%;
+position:relative;
+border-radius:10rpx;
+justify-content: center;
+text-align: center
+
+}
+.szbq{
+  font-size: 40rpx;
+}
+.zk{
+font-size: 32rpx;
+color:#666;
+margin:20rpx 20rpx 40rpx;
+text-align: left;
+}
+.settagbtn{
+width:100%;
+height:100rpx;
+border-top:1px solid #ddd;
+display: flex;
+line-height: 100rpx;
+
+}
+.stbtn{
+width:50%;
+text-align: center
+}
+.midline{
+height: 100rpx;
+background-color: #ddd;
+width:1px
+}
+.tagtsimg image{
+width:240rpx;
+height:214rpx;
+margin:60rpx 0 20rpx
+}
+.bl{
+color: #0094FD
+}
+.ch_t{
+font-size: 34rpx;
+text-align: center;
+margin:20rpx 0;
+margin-left:20rpx;
+
+}
+.nextbtn{
+background-image: linear-gradient(90deg, #00C9FF 0%, #0098FF 100%);
+border-radius:4px;
+width:200rpx;
+height:70rpx;
+line-height:70rpx;
+color:#fff;
+font-size:32rpx;
+
+}

@@ -1,0 +1,182 @@
+<!--pages/recomdetail/recomdetail.wxml-->
+<!--文章内容模块--> 
+
+<scroll-view scroll-y="true" scroll-into-view="{{toView}}" scroll-with-animation="true" style="height: 91vh;"   bindscrolltolower="lower">
+<view class="listbox">
+  <view class="listwrap">
+   <!--文章详情--> 
+    <view class="wzlist">
+      <text class="ltitle" style="font-weight:bold">{{YS_obja.title}}</text>
+      <view class="tbot" style="display:flex">
+      <view style="flex:1">
+          <image style="width:50rpx;height:50rpx;border-radius:50%;margin-top:-6rpx;border:1px solid #ddd;" src="{{YS_obja.userinfo.photourl||'http://p5u15xcze.bkt.clouddn.com/o_1cffs33hgddf1vu1eb31dk0djt7.png?imageView2/1/w/1000/h/1000'}}"></image></view>
+          <view style="flex:6;text-align:left"><text style="font-size:28rpx;color:#999;margin-top:-3rpx;" ><text style="margin-right:10rpx;"></text>{{YS_obja.userinfo.realname||'无名氏'}}<text style="margin-right:10rpx;margin-left:10rpx"></text>{{YS_obja.createtime}}</text></view>
+          
+          
+          
+          <view class="rnum" style="flex:3;text-align:right"><image src="/pages/image/faxian-yuedu@3x.png"></image> {{YS_obja.view}}</view>
+      </view>
+      <view class="cten">
+        <rich-text nodes="{{YS_obja.content}}" bindtap="tap"></rich-text>
+      </view>
+      <view data-newsid="{{YS_obja.id}}" data-type="news" bindtap="click_thumb" class="dz">
+        <image wx:if="{{!YS_obja.isthumb}}" src="/pages/image/faxian-like-default@3x.png"></image>
+        <image wx:else  class="shoucang" src="/pages/image/faxian-like-select@3x.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!--相关文章 -- 视频详情时需要隐藏--> 
+<view class="listbox" hidden="{{YS_obja.related.length<1?'true':''}}">
+   <view class="listwrap">
+      <view class="btitle">相关文章</view>
+
+
+    <block wx:for="{{YS_obja.related}}" wx:key="idx" wx:for-item="value">
+      <navigator url='../../pages/recomdetail/recomdetail?discodeid={{value.codeid}}'>
+        <view class="newbox">      
+            <view class="newlist" style="width:{{value.picture==''?'80%':'63%'}}">
+                <view class="ncontent">{{value.title}}</view>
+                  <view class="newbot">
+                      <view class="ftime">{{value.createtime}}</view>
+                      <view class="rnum"><image src='/pages/image/faxian-yuedu@3x.png'></image> {{value.view}}</view>
+                      <view class="rnum" style='margin-left:30rpx'><image src='/pages/image/faixan-pinglun@3x.png'></image> {{value.commentnum}}</view>
+                  </view>
+            </view>
+                <view class="newright" style="width:{{value.picture==''?'10%':''}}"><image class="newimg" src="{{value.picture}}"></image></view>
+           <view class="line" style="margin-top:{{value.picture==''?'-1px':''}}"></view>
+          </view>
+      </navigator>
+    </block>
+   </view>
+</view>
+<!--用户评论--> 
+<view class="listbox" style='padding-bottom: 100rpx'>
+   <view class="listwrap"  id="inToView">
+      <view class="btitle">用户评论({{YS_obja.commentnum}})</view>
+    <view wx:if='{{YS_obja.commentnum==0}}'>
+    <image src="../../pages/image/commenttx.png" style="width:60vw;height:25vh;margin-left:25%"></image>
+    <view style="text-align:center;width:155%;font-size:32rpx;">暂无评论，快去评论吧！</view>
+    </view>
+<!--       <view class="userpl">
+        <view><image class="userpic" src="{{YS_obja.headimg}}"></image></view>
+	        <view class="rbox">
+	          <view class="userplright">
+	            <view class="useinfo">
+	              <text class="name">王小华</text>
+	              <text class="pltime">2018-05-16</text>
+	            </view>
+	            <view class="plright">
+	              <image class="plicon" style='margin-top:3px' src="/pages/image/pinglun-pinglun@3x.png"></image>
+	              <view  class="pldz"><image class="plicon" src="/pages/image/pinglun-like@3x.png"></image> 2</view>
+	            </view>
+	          </view>
+	           <view class="plnr">
+	          		<text>还是可以的！</text>
+	          </view> 
+	        </view>
+      </view> -->
+
+<!-- 第二条  -->
+
+    <block wx:for="{{YS_lista.data}}"  wx:for-item="value2" >
+      <view class="userpl">
+        <view><image class="userpic" src="{{value2.headimg}}"></image></view>
+	        <view class="rbox">
+	          <view class="userplright">
+	            <view class="useinfo">
+	              <text class="name">{{value2.realname}}</text>
+	              <text class="pltime">{{value2.createtime}}</text>
+	            </view>
+	            <view class="plright">
+	              <!-- <image class="plicon" style='margin-top:3px' src="/pages/image/pinglun-pinglun@3x.png"></image> -->
+	              <view data-newsid="{{value2.id}}" data-type="comment" data-index="{{index}}" bindtap="click_thumb" class="pldz"><image class="plicon" src="/pages/image/pinglun-like@3x.png"></image> {{value2.thumbnum}}</view>
+	            </view>
+	          </view>
+	           <view class="plnr">
+	          		<text>{{value2.content}}</text>
+	          </view> 
+
+
+	           <view class="hfnr" wx:if="{{value2.child.length>0}}"  wx:for="{{value2.child}}" wx:key="idx3" wx:for-item="value3">
+	          	<view class="uhf" wx:if="{{!value3.torealname}}">
+              <text class="hfname">{{value3.realname}}：</text><text>{{value3.content}}</text>
+              </view>
+	          	<view class="uhfs" wx:else>
+              <text class="hfname">{{value3.realname}} </text>回复 <text class="hfname">{{value3.torealname}}：</text><text>{{value3.content}}</text></view>
+	          </view> 
+
+
+<!--              <view class="hfnr">
+              <view class="uhf"><text class="hfname">张三胖：</text><text>该产品能让和企业开发者在云端即完成开发工作</text></view>
+
+              <view class="uhfs"><text class="hfname">王小花 </text>回复 <text class="hfname">张三胖：</text><text>该产品能让和企业开发者在云端即完成开发工作</text></view>
+            </view> 
+ -->
+
+
+
+	        </view>
+      </view>
+    </block>
+   </view>
+ </view>
+
+    </scroll-view>
+<!--回复输入框--> 
+
+
+<!-- <view class="plbg" style="display:{{showpl?'block':'none'}};">
+<view class="plbg2" bindtap="showpl"></view>
+     <view class="pltc {{showpl?'slidup':'slidown'}}" style="display:{{showpl?'block':'none'}}">
+      
+     
+      <view class="tctop">
+          <view class="quxiao">
+              <text class="quxiao" catchtap="showpl">取消</text>
+          </view>
+          <view class="tcfb">
+              <text data-type="news" data-id="{{YS_obja.id}}" catchtap="add_comment">发布</text>
+          </view>
+      </view>
+
+      <view>
+       <textarea wx:if="{{showpl}}" focus="true" placeholder='说点什么吧' class="plinput" placeholder-class='plpc' bindinput="ysinput" data-name="YS_objc.params.content" data-id="{{YS_obja.id}}" data-type="news" value="{{YS_objc.params.content}}" show-confirm-bar="false" cursor-spacing="85" ></textarea>
+      </view>
+     
+    
+     </view>
+     </view> -->
+    <!-- 评论弹窗 -->
+ <view class="release" style="display:flex">
+ <view style="flex:6;margin-bottom:6rpx">
+   <textarea class="text {{showpl?'dpn':''}}"
+          placeholder-class="input_null" 
+          fixed="true" 
+          maxlength="1000" 
+          show-confirm-bar="false" 
+          cursor-spacing="15" 
+          auto-height="true"   
+           bindfocus="getfocus" 
+          bindblur='losefocus' 
+          placeholder="说点什么吧" bindinput="ysinput"  data-name="YS_objc.params.content" data-id="{{YS_obja.id}}" data-type="news"   value="{{YS_objc.params.content}}" ></textarea>
+          </view>
+          <!-- <view class="text" bindtap="showpl"><text style="">说点什么吧</text></view> -->
+  <view class="chf" wx:if="{{focus}}">
+    <!-- <image src="/pages/image/tabbar-punglun-default@3x.png"  bindtap="add_comment"  data-id="{{YS_obja.id}}" data-type="news"></image> -->
+    <button class="addcom" bindtap="add_comment"  data-id="{{YS_obja.id}}" data-type="news">发表</button>
+
+
+
+  </view>
+  <view data-newsid="{{YS_obja.id}}" data-type="news" bindtap="click_collect" class="chf" style="flex:0;margin-bottom:6rpx"  wx:if="{{!focus}}">
+    <image class="" wx:if="{{!YS_obja.iscollect}}" src="../../pages/image/tabbar-shoucang-default@3x.png"></image>
+    <image wx:else class="shoucang" src="/pages/image/tabbar-shoucang-default-copy@3x.png"></image>
+  </view>
+   <!-- data-id="{{YS_obja.id}}" bindtap="add_comment"  -->
+  <view data-type="news" class="chf" style="flex:0;margin-bottom:6rpx" wx:if="{{!focus}}">
+     <button class='' id="shareBtn" open-type="share" data-type="article" data-url="pages/recomdetail/recomdetail?discodeid={{YS_obja.codeid}}" data-title="{{YS_obja.title}}" style="background:rgba(255,255,255,0);top:20rpx;width:74rpx">   
+        <image  src="../../pages/image/tabbar-fenxiang-default@3x.png"/>
+    </button>
+  </view>
+</view>

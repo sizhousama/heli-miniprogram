@@ -1,0 +1,106 @@
+<!--pages/my/integral/Shop/Shop.wxml-->
+<view class="intewrap">
+  <!--  顶部 -->
+    <view class="inttop">
+      <view class="inp">
+        <view class="inpleft">
+          <text class="inpnum">0</text>
+          <text class="inpjf">积分</text>
+        </view>
+        <view class="inpright">
+          <image src="/pages/image/mine-help@3x.png"></image>
+          <text>积分说明</text>
+        </view>
+      </view>
+      <view class="inb">
+        <button>赚取积分</button>
+        <button>兑换明细</button>
+      </view>
+    </view>
+         <!--  下部 -->
+    <view class="intbop">
+      <view class="taskb">推荐</view>
+      <view class="goods">
+
+      <navigator url="details/details" hover-class="none">
+        <view class="gbule">
+          <view class="gleft">
+            <text class="G_A">5元话费</text>
+            <text class="G_B">需500积分</text>
+          </view>
+          <view class="gright">
+              <text  class="G_C">去兑换</text>
+          </view>
+        </view>
+      </navigator >
+     <navigator url="details/details" hover-class="none">
+        <view class="gbule">
+          <view class="gleft">
+            <text class="G_A">10元话费</text>
+            <text class="G_B">需1000积分</text>
+          </view>
+          <view class="gright">
+              <text  class="G_C">去兑换</text>
+          </view>
+        </view>
+    </navigator >
+        <view class="gbule">
+          <view class="gleft">
+            <text class="G_A">20元话费</text>
+            <text class="G_B">需2000积分</text>
+          </view>
+          <view class="gright">
+              <text  class="G_C">去兑换</text>
+          </view>
+        </view>
+
+        <view class="gbule">
+          <view class="gleft">
+            <text class="G_A">50元话费</text>
+            <text class="G_B">需5000积分</text>
+          </view>
+          <view class="gright">
+              <text  class="G_C">去兑换</text>
+          </view>
+        </view>
+
+        <view class="orange">
+          <view class="gleft">
+            <text class="G_A">一年VIP</text>
+            <text class="G_B">需要68800积分</text>
+          </view>
+          <view class="gright">
+              <text  class="G_C">去兑换</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+</view>
+
+<!-- 积分说明 -->
+
+  <view class="jfhelp">
+  <view class="helpbox">
+    <text class="J_A">1、什么是积分</text>
+    <text class="J_B">积分是helii推出的一种..</text>
+  </view>
+   <view class="helpbox">
+    <text class="J_A">2、积分可以干嘛</text>
+    <text class="J_B">积分可以兑换超值奖品..</text>
+    </view>
+  </view>
+
+  <!-- 兑换记录 -->
+
+  <view class="drecord">
+      <view class="rnt">
+          <view class="rlleft">
+            <text class="C_A">兑换5元话费</text>
+            <text class="C_B">2018-05-01 12:53:22</text>
+          </view>
+          <view class="rlright">
+            <text class="reduce">-500</text>
+          </view>
+      </view>
+  </view>

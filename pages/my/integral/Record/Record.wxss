@@ -1,0 +1,5 @@
+/* pages/my/integral/integral/Record/Record.wxss */
+.rlist{
+  display: flex;
+  flex-direction:column;
+}

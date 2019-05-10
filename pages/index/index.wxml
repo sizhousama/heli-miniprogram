@@ -1,0 +1,147 @@
+<!--资讯列表模块--> 
+ 
+ 
+<view class="" styel="width:100vw;height:100vh;">   
+
+  <!--顶部导航栏  --> 
+  <view class="swiper-tab">  
+    <view class="tab-item"><text data-current="0" bindtap="swichNav" class=" btn {{currentTab==0 ? 'on' : ''}}">最近</text></view> 
+  
+ </view> 
+
+
+
+  
+  <!--内容主体 --> 
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange" style="height:94vh">  
+    <swiper-item>
+            <scroll-view scroll-y   bindscrolltolower="lower">
+      <view class="main">
+   <block wx:for="{{YS_lista.data}}" wx:key="idx" wx:for-item="value">
+                <navigator url='../../pages/recomdetail/recomdetail?discodeid={{value.codeid}}'>
+                <!-- 无图/单图 -->
+                        <view class="newbox" wx:if="{{value.is_video==0&&value.picturearr.length<=1}}">      
+                            <view class="newlist " style="width:{{value.picture==''?'95%':'63%'}}">
+                                <view class="ncontent">{{value.title}}</view>
+                                  <view class="newbot" style="height:{{value.title==''?'180rpx':''}}">
+                                      <view class="ftime">{{value.createtime}}</view>
+          <view class="rnum {{value.view==0?'dpn':''}}">
+          <image src='../../pages/image/faxian-yuedu@3x.png'></image> {{value.view}}</view>
+          <view class="rnum {{value.commentnum==0?'dpn':''}}" style='margin-left:30rpx'>
+          <image src='../../pages/image/faixan-pinglun@3x.png'></image> {{value.commentnum}}</view>
+                                  </view>
+                            </view>
+                            <view class="newright {{value.picture==''?'dpn':''}}" style="" >
+                            
+                           <image class="newimg" src="{{value.picture}}"></image>
+                           </view>
+                            <text class="line" style="margin-top:{{value.picture==''?'-1px':''}}"></text>
+                        </view>
+                   <!-- 无图/单图 -->     
+                   <!-- 多图 -->
+                        <view class="newbox" wx:if="{{value.is_video==0&&value.picturearr.length>1&&value.picturearr.length<=3}}">      
+                            <view class="newlist2" style="width:100%">
+                                <view class="ncontent" style="width:100%">{{value.title}}</view>
+                               
+                                 <view class="newright " style="width:32%;" wx:for="{{value.picturearr}}" wx:key="" wx:for-item="pic">
+                                 <image class="newimg2" src="{{pic}}"></image>
+                                 </view>
+                               
+                                  <view class="newbot" style="height:{{value.title==''?'180rpx':''}}">
+                                      <view class="ftime">{{value.createtime}}</view>
+                                    <view class="rnum {{value.view==0?'dpn':''}}">
+          <image src='../../pages/image/faxian-yuedu@3x.png'></image> {{value.view}}</view>
+          <view class="rnum {{value.commentnum==0?'dpn':''}}" style='margin-left:30rpx;margin-right:40rpx'>
+          <image src='../../pages/image/faixan-pinglun@3x.png'></image> {{value.commentnum}}</view>
+                                  </view>
+                            </view>
+                          
+                            <text class="line" style="margin-top:{{value.picture==''?'-1px':''}}"></text>
+                        </view>
+                   <!-- 多图 -->
+
+                    <!-- 视频 -->
+                        <view class="newbox" wx:if="{{value.is_video==1&&value.picturearr.length<=1}}">      
+                            <view class="newlist " style="width:{{value.picture==''?'95%':'63%'}}">
+                                <view class="ncontent">{{value.title}}</view>
+                                  <view class="newbot" style="height:{{value.title==''?'180rpx':''}}">
+                                      <view class="ftime">{{value.createtime}}</view>
+          <view class="rnum {{value.view==0?'dpn':''}}">
+          <image src='../../pages/image/faxian-yuedu@3x.png'></image> {{value.view}}</view>
+          <view class="rnum {{value.commentnum==0?'dpn':''}}" style='margin-left:30rpx'>
+          <image src='../../pages/image/faixan-pinglun@3x.png'></image> {{value.commentnum}}</view>
+                                  </view>
+                            </view>
+                            <view class="newright {{value.picture==''?'dpn':''}}" style="" >
+                            <view></view>
+                            <view class="video"><image src="../../pages/image/faxina-player@3x.png"></image></view>
+                           <image class="newimg" src="{{value.picture}}"></image>
+                           </view>
+                            <text class="line" style="margin-top:{{value.picture==''?'-1px':''}}"></text>
+                        </view>
+                   <!-- 视频 -->
+
+
+<!-- 视频 -->
+<!-- <view class="newright " style="width:30%;margin-right:10rpx;" wx:if="{{value.is_video==1}}">
+<video class="newimg" src="{{value.picture}}"></video>
+</view> -->
+                          
+                </navigator>
+          </block>
+<view class="weui-loadmore" wx:if="{{showload}}" style="">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips" >正在加载</view>
+        </view>
+        <view class="weui-loadmore weui-loadmore_line"  wx:if="{{YS_lista.data.length==YS_plista.total}}" style="margin-bottom:-100rpx">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">喂喂，你碰到我的底线了</view>
+        </view>
+
+      </view>
+  </scroll-view>
+    </swiper-item>  
+ 
+ 
+  </swiper> 
+
+ <!--底部导航-->
+<!--    <view class="tabbar_box" style="background-color:{{tabbar.backgroundColor}}; border-top:2rpx solid {{tabbar.borderStyle}}; {{tabbar.position == 'top' ? 'top:0' : 'bottom:0'}};color:#666" >  
+        <block>  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/index/index"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-shequ-select@3x.png"></image>  
+                <text style='color:#0094FD'>发现</text>  
+            </navigator>  
+        </block> 
+        <block wx:if="{{showwork}}">  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/findjob/findjob"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-zhaogz@3x.png"></image>  
+                <text>建筑圈</text>  
+            </navigator>  
+        </block>  
+        <block>  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/eng/eng"  open-type="switchTab"> 
+            <view class="engcls">
+                <view class="beng">
+                <image class="tabbar_icon engicon" src="/pages/image/tabbar-center@3x.png"></image>  
+                </view>
+                <text>工程</text>  
+            </view> 
+            </navigator>  
+        </block> 
+        <block  wx:if="{{showwork}}">  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/findace/findace"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-zhaorc@3x.png"></image>  
+                <text>建材市场</text>  
+            </navigator>  
+        </block> 
+        <block>  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/my/my"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-mine@3x.png"></image>  
+                <text>我的</text>  
+            </navigator>  
+        </block>  
+    </view>   -->
+    
+</view>  
+
+

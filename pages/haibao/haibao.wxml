@@ -1,0 +1,19 @@
+
+<view class="canvas" >
+<view style="width:66%">
+<canvas canvas-id='haibao' class="hbmuban" style="height:880rpx" bindlongtap="longsave"></canvas>
+</view>
+</view>
+<view class="choosemb">
+ <scroll-view scroll-x style="width:100vw;height:20vh">
+   <image bindtap="choosemb" class="mubanimg {{hbon==1?'hbon':'hbdef'}}" data-value="1" src="https://api.helii.cn/upload/poster/mb1.png" data-mb="https://api.helii.cn/upload/poster/mb1.png"></image>
+   <image bindtap="choosemb" class="mubanimg {{hbon==2?'hbon':'hbdef'}}" data-value="2" src="https://api.helii.cn/upload/poster/mb2.png" data-mb="https://api.helii.cn/upload/poster/mb2.png"></image>
+   <image bindtap="choosemb" class="mubanimg {{hbon==3?'hbon':'hbdef'}}" data-value="3" src="https://api.helii.cn/upload/poster/mb3.png" data-mb="https://api.helii.cn/upload/poster/mb3.png"></image>
+   <image bindtap="choosemb" class="mubanimg {{hbon==4?'hbon':'hbdef'}}" data-value="4" src="https://api.helii.cn/upload/poster/mb4.png" data-mb="https://api.helii.cn/upload/poster/mb4.png"></image>
+
+
+ </scroll-view>
+</view>
+
+<button class="savelocal" bindtap="savelocal" style="height:{{108*myrpx}}rpx;line-height:{{108*myrpx}}rpx">保存到相册</button>
+<!-- <image src="https://api.helii.cn/{{YS_objb.data}}"></image> -->

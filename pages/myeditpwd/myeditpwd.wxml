@@ -1,0 +1,4 @@
+<import src="/pages/myinfo/template/editpass"/> 
+<view class="myinfo">
+<template is="editpass" />
+</view>

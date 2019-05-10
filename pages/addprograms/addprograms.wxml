@@ -1,0 +1,80 @@
+<!--pages/addprograms/addprograms.wxml-->
+<!--新建项目--2-->
+<view class="gram_1" data-a="{{sgitems}}">
+            <checkbox-group>
+                <label class="weui-cell weui-check__label" wx:for="{{sgitems}}" wx:key="value">
+                <navigator url='/pages/addprosingle/addprosingle?index={{index}}' style="width:100%">
+
+                    <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox gram_1box">
+                        <view class="gram_top">
+                        <view class="gleft">
+              <icon class="weui-icon-checkbox_circle" type="circle" size="15" wx:if="{{!item.checked}}"></icon>
+              <icon class="weui-icon-checkbox_success" type="success" size="15" color='#0094FD' wx:if="{{item.checked}}"></icon>
+                        </view>
+                    <view class="weui-cell__bd">{{item.sname}}</view>
+                    <view  class="gright">结构：{{item.jiegou==1?'框剪':'框架'}}</view>
+                    </view>
+                      <view class="gram_bot">
+                        <view class="ds">地上层数: <text class="stcolor">{{item.cengshu?item.cengshu:'未设置'}}</text></view>
+                        <view class="dx">地下层数: <text class="stcolor">{{item.dxcengshu?item.dxcengshu:'未设置'}}</text></view>
+                      </view>
+
+                      <view class="nextright">
+                        <image src="/pages/image/next@3x.png"></image>
+                      </view>
+                  </view>
+                </navigator>
+                </label>
+            </checkbox-group>
+<!--添加单位工程按钮
+  <view class='addgc' bindtap="addProsingle">
+    <image class="addicon" src="/pages/image/add@3x.png"></image>
+    <text style='color: #0094FD;'>添加单位工程</text>
+  </view>-->
+<!--保存按钮-->
+  <view class='storage'>
+    <button class="storbtn" bindtap="sumbit_Program">保存</button>
+  </view>
+</view>
+
+<!--新建项目--2-->
+<!-- 
+<view class="gram_2">
+  <view class="weui-cells weui-cells_after-title">
+   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">子单位名称</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input"  placeholder-class="phcolor" value='1栋' placeholder="填写项目名称"/>
+                </view>
+            </view>
+
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="weui-cell weui-cell_access">
+                  <view class="weui-cell__bd">结构</view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access">框架</view>
+              </view>
+            </picker>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">地上层数</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">未设置</view>
+            </view>
+            </picker>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">地下层数</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">未设置</view>
+            </view>
+            </picker>
+        </view>
+
+        <view class="gram2-bot">
+          <button type='button' class="btn_2">保存</button> 
+          <button type='button' class="del_2">删除</button>  
+        </view>
+</view> -->

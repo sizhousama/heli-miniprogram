@@ -1,0 +1,10 @@
+<!--index.wxml-->
+
+<map id="myMap" latitude="{{userinfo.latitude}}" longitude="{{userinfo.longitude}}" scale="18"   markers="{{YS_lista.data}}"  bindmarkertap="markertap" bindtap="maptap" circles="{{circles}}" show-location style="width: 100%; height: 100vh;" bindregionchange="movemap">
+  
+
+</map>
+ 
+
+
+

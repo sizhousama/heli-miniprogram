@@ -1,0 +1,68 @@
+/* pages/single/single.wxss */
+.main {
+  padding: 24rpx;
+}
+.swiper{
+  margin-top:0
+}
+.Uintengbox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+}
+.Uinleft{
+  display: flex;
+  flex-direction: row;
+}
+.Uininfo{
+  margin-left: 26rpx;
+}
+.Uinimg{
+  width:120rpx;
+  height: 120rpx;
+}
+.Uinimg image{
+  width:100%;
+  height: 100%;
+}
+.Uinright{
+ width:160rpx;
+height:115rpx;
+align-items:center;
+text-align:center;
+line-height:98rpx;
+ 
+
+}
+.Uinright image{
+  width:40rpx;
+height:17rpx; 
+}
+.lebicon{
+  width:28rpx;
+  height: 28rpx;
+  vertical-align: sub;
+}
+.lebwrap{
+  width:120rpx;
+  height: 36rpx;
+  border: 2rpx solid #0094FD ;
+  border-radius: 122rpx;
+  padding: 0 10rpx;
+}
+.Uinlabel {
+  margin-top:10rpx;
+}
+.Uinlabel text{
+  margin-left: 10rpx;
+}
+.Uniteng{
+  height:92vh;
+ 
+}
+.bottom{
+  width:100%;
+  height: 20vh;
+}

@@ -1,0 +1,83 @@
+<!--pages/my/comment/comment.wxml-->
+<import src="template/items.wxml"/>
+<import src="template/item.wxml"/>
+<view class="page">  
+  
+  <!--顶部导航栏-->  
+  <view class="swiper-tab">  
+    <!-- <view class="tab-item"><text data-current="0" data-inter="YS_plista" bindtap="swichNavAndFetch" class=" btn {{currentTab==0 ? 'on' : ''}}">回复我的</text></view>  -->
+    <view class="tab-item"><text data-current="0" data-inter="YS_plistb" bindtap="swichNavAndFetch" class="btn {{currentTab==0 ? 'on' : ''}}">我评论的</text></view>  
+  </view>  
+  
+  <!--内容主体-->  
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">  
+    <!-- <swiper-item> 
+      <view class="main">
+       <view wx:if='{{YS_plista.data.total == 0}}'>
+   <image src="../../pages/image/tixing.png" style="width:250rpx;height:300rpx;margin-left:35%;margin-top:40rpx"></image>
+    <view style="text-align:center;width:105%;font-size:32rpx;">暂无回复信息！</view>
+  </view>
+        <scroll-view scroll-y style="height: 94vh;"   bindscrolltolower="lower">
+          <block wx:for="{{YS_lista.data}}" wx:key="idx" wx:for-item="value">
+              <view class="comwrap">
+                <view class="comlist">
+                    <view class="comuser">
+                          <view class="userimg"><image src="{{value.photourl}}"></image></view>
+                          <view class="userinfo">
+                            <text class="uname">{{value.realname}}</text>
+                            <text class="usname">回复 {{value.origin.realname}}</text>
+                          </view>
+                    </view>
+                    <view class="ctime"><text>{{value.createtime}}</text></view>
+                </view>
+                 <view class="deslist">
+                    <view class="desbox">
+                        <text class="comdes">{{value.titel}}</text>
+                        <view class="hcomdes">
+                         
+                          <rich-text nodes="{{value.origin.title}}"></rich-text>
+                        </view>
+                    </view>
+                  </view>
+              </view>
+          </block>
+          </scroll-view>
+      </view>
+    </swiper-item>   -->
+     <swiper-item> 
+      <view class="main">
+           <view wx:if='{{YS_plistb.data.total == 0}}'>
+   <image src="../../pages/image/tixing.png" style="width:250rpx;height:300rpx;margin-left:35%;margin-top:40rpx"></image>
+    <view style="text-align:center;width:105%;font-size:32rpx;">暂无评论！</view>
+  </view>
+        <scroll-view scroll-y style="height: 94vh;" bindscrolltoupper="upper" bindscrolltolower="lower"  data-inter="YS_plistb">
+          <block wx:for="{{YS_listb.data}}" wx:key="idx" wx:for-item="value">
+              <view class="comwrap">
+                <view class="comlist">
+                    <view class="comuser">
+                          <view class="userimg"><image src="{{value.photourl}}"></image></view>
+                          <view class="userinfo">
+                            <text class="uname">{{value.realname}}</text>
+                          </view>
+                    </view>
+                    <view class="ctime"><text>{{value.createtime}}</text></view>
+                </view>
+                 <view class="deslist">
+                    <view class="desbox">
+                        <text class="comdes">{{value.content}}</text>
+                        <!-- <navigator url='../../pages/recomdetail/recomdetail?discodeid={{value.newsInfo.codeid}}'> -->
+                        <view class="hcomdes">
+                          <!-- <text>{{value.origin.title}}</text> -->
+                          
+                          文章：<rich-text nodes="{{value.origin.title}}" style="font-weight:bold"></rich-text>
+                        </view>
+                        <!-- </navigator> -->
+                    </view>
+                  </view>
+              </view>
+          </block>
+        </scroll-view>
+      </view>
+    </swiper-item>   
+  </swiper>  
+</view>  

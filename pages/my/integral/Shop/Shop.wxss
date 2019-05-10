@@ -1,0 +1,150 @@
+/* pages/my/integral/Shop/Shop.wxss */
+
+.inttop{
+  width:100vw;
+  height: 304rpx;
+  background:#0094FD;
+  padding: 5rpx 24rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.inp{
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+}
+.inpleft{
+  display: flex;
+  flex-wrap:nowrap;
+}
+.inpright{
+  display: flex;
+  flex-wrap:nowrap;
+  margin-top: 17rpx;
+}
+.inpright image{
+  width:36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.inpright text{
+  font-size: 28rpx;
+  color: #FFFFFF;
+}
+.inpnum{
+  font-size: 96rpx;
+  color: #FFFFFF;
+  margin-top: -25rpx;
+  margin-right: 10rpx;
+}
+.inpjf{
+  font-size: 28rpx;
+  color: #FFFFFF;
+}
+.inb{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 90rpx;
+}
+.inb button{
+  width:328rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  color: #FFF;
+  font-size: 32rpx;
+  background: #0094FD;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+}
+.intbop{
+  box-sizing: border-box;
+  padding: 46rpx 18rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: #FFF;
+  margin-bottom: 20rpx;
+}
+.taskb{
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+.goods{
+  width:100%;
+  padding: 14rpx 22rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+.gbule,.orange{
+  width:312rpx;
+  height: 140rpx;
+  background-size: 100% 100%;
+  padding: 24rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+.gbule{
+  background-image: url('http://chuantu.biz/t6/329/1529212844x-1404795780.png');
+}
+.orange{
+  background-image: url('http://chuantu.biz/t6/329/1529212920x-1404795780.png');
+
+}
+.gleft{
+  display: flex;
+  flex-direction:column;
+}
+.G_A{
+  font-size: 36rpx;
+  color: #FFFFFF;
+}
+.G_B{
+ font-size: 24rpx;
+  color: #FFFFFF;
+}
+.G_C{
+  font-size: 28rpx;
+  color: #FFFFFF;
+}
+.gright{
+  width:36rpx;
+  height: 102rpx;
+  line-height: 30rpx;
+  margin-top: -5rpx;
+}
+
+/**积分说明**/
+.jfhelp{
+ padding: 28rpx 16rpx;
+}
+.helpbox{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+}
+.J_A{
+  font-size: 32rpx;
+  color: #333333;
+}
+.J_B{
+  font-size: 30rpx;
+  color: #333333;
+  padding-left: 50rpx;
+}
+
+.drecord{
+  display: flex;
+  flex-direction:column;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+

@@ -1,0 +1,17 @@
+<template name="vitem">
+        <view class="newbox">      
+            <view class="newlist">
+                <view class="ncontent">深圳楼市调控取得阶段性成果专家建议加快推荐深莞惠一体化调控</view>
+                  <view class="newbot">
+                      <view class="ftime">10分钟前</view>
+                      <view class="rnum"><image src='/pages/image/faxian-yuedu@3x.png'></image> 211</view>
+                      <view class="rnum" style='margin-left:30rpx'><image src='/pages/image/faixan-pinglun@3x.png'></image> 211</view>
+                  </view>
+            </view>
+                <view class="newright">
+                <video class="videomax"></video>
+                </view>
+           <text class="line"></text>
+          </view>
+         
+</template>

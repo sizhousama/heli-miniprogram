@@ -1,0 +1,43 @@
+<!--pages/my/collection/collection.wxml-->
+<!--资讯列表模块--> 
+<!-- <import src="/pages/index/template/item.wxml"/> -->
+<view class="collwrap">
+  <view class="Articlelist">
+    <block>
+     <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange" style="height:86vh">  
+    <swiper-item>
+            <scroll-view scroll-y   bindscrolltolower="lower">
+      <view class="main">
+   <block wx:for="{{YS_lista.data}}" wx:key="idx" wx:for-item="value" >
+                <navigator url='../../pages/recomdetail/recomdetail?discodeid={{value.newsInfo.codeid}}' wx:if="{{value.newsInfo != null}}">
+                        <view class="newbox">      
+                            <view class="newlist " style="width:{{value.picture==''?'80%':'63%'}}">
+                                <view class="ncontent">{{value.newsInfo.title}}</view>
+                                  <view class="newbot" style="height:{{value.title==''?'180rpx':''}}">
+                                      <view class="ftime">{{value.newsInfo.createtime}}</view>
+                                      <view class="rnum"><image src='../../pages/image/faxian-yuedu@3x.png'></image> {{value.newsInfo.view}}</view>
+                                      <view class="rnum" style='margin-left:30rpx'><image src='../../pages/image/faixan-pinglun@3x.png'></image> {{value.newsInfo.commentnum}}</view>
+                                  </view>
+                            </view>
+                                <view class="newright " style="width:{{value.picture==''?'10%':'32%'}}"><image class="newimg" src="{{value.newsInfo.picturearr[0]}}"></image></view>
+                           <text class="line" style="margin-top:{{value.picture==''?'-1px':''}}"></text>
+                          </view>
+                </navigator>
+          </block>
+<view class="weui-loadmore" wx:if="{{showload}}">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+        </view>
+        <view class="weui-loadmore weui-loadmore_line"  wx:if="{{YS_lista.data.length==YS_plista.total}}">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">喂喂，你碰到我的底线了</view>
+        </view>
+
+      </view>
+  </scroll-view>
+    </swiper-item>  
+ 
+ 
+  </swiper> 
+    </block>
+  </view>
+</view>

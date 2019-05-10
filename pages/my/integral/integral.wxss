@@ -1,0 +1,121 @@
+/* pages/my/integral/integral.wxss */
+page{
+  background: #F5F5F5;
+}
+.inttop{
+  width:100vw;
+  height: 304rpx;
+  background:#0094FD;
+  padding: 10rpx 24rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.inp{
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+}
+.inpleft{
+  display: flex;
+  flex-wrap:nowrap;
+}
+.inpright{
+  display: flex;
+  flex-wrap:nowrap;
+  margin-top: 10rpx;
+}
+.inpright image{
+  width:36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.inpright text{
+  font-size: 28rpx;
+  color: #FFFFFF;
+}
+.inpnum{
+  font-size: 96rpx;
+  color: #FFFFFF;
+  margin-top: -25rpx;
+  margin-right: 10rpx;
+}
+.inpjf{
+  font-size: 28rpx;
+  color: #FFFFFF;
+  margin-top: 5rpx;
+}
+.inb{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 85rpx;
+}
+.inb button{
+  width:328rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  color: #FFF;
+  font-size: 32rpx;
+  background: #0094FD;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+}
+.intbop{
+  padding: 46rpx 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: #FFF;
+  margin-bottom: 20rpx;
+}
+.taskb{
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 16rpx;
+  padding: 0 18rpx;
+}
+.tasklist{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+  margin-left: 38rpx;
+  margin-right: 18rpx;
+
+}
+.intbop.j_c{
+  padding:26rpx 0;
+}
+.taskright{
+  margin-top: 10rpx;
+}
+.taskletf{
+  display: flex;
+  flex-direction:column;
+  padding-top: 10rpx;
+}
+.C_C{
+  width:138rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  background: #FFFFFF;
+  border: 1px solid #0094FD;
+  border-radius: 4px;
+  font-size: 28rpx;
+  color: #0094FD;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+.C_D{
+  width:138rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  background: #FFFFFF;
+  color: #999999;
+  display: inline-block;
+  text-align: center;
+  font-size: 28rpx;
+}

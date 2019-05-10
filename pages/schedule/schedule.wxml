@@ -1,0 +1,571 @@
+<!--pages/protect/protect.wxml-->
+<!--pages/schedule/schedule.wxml-->
+<!--pages/editsingle/editsingle.wxml-->
+<view class="page">  
+    <!--mask-->
+    <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+    <!--content-->
+    <!--使用animation属性指定需要执行的动画-->
+    <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}"> 
+        <!--drawer content-->
+        <view class="drawer_content"> 
+        <view class="drawer_title lineon">删除</view> 
+        <view class="drawer_title" bindtap="powerDrawer" data-statu="close">取消</view> 
+        </view> 
+    </view> 
+   
+ <view class="swiper-tab"> 
+  <scroll-view scroll-x style="width:95%">
+    <view class="tab-item"  wx:for="{{YS_lista.data}}" wx:key="" wx:for-item="value" bindtap="swichNav">
+    <text data-current="{{index}}" data-codeid="{{value.codeid}}" data-sid="{{value.sid}}" class=" btn {{currentTab==index ? 'on' : ''}}">{{value.sname}}</text>
+    </view> 
+
+ 
+   </scroll-view>
+    
+  </view>  
+   
+  
+
+  
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiper1">  
+  
+    <swiper-item wx:for="{{YS_lista.data}}" wx:key="" wx:for-item="value">  
+      <view class="main" style='padding-top:30rpx'>
+      <view class="{{selected?'show':'hidden'}}">
+        <view class="schedulebox" >
+        <scroll-view scroll-y  style="height: 81vh">
+          <view class="stitle"></view>
+
+        <view class="schetable">
+
+     
+
+         <view  wx:for="{{YS_listb.data}}" wx:key="" wx:for-item="value" style=''> 
+       
+
+        <view class="build-img1" wx:if="{{value.xc_bwtype=='ban0'}}">
+          <image class="build-1" src="/pages/image/ban1.png" wx:if="{{value.jiaozhuriqi==''}}"></image> 
+          <image class="build-1" src="/pages/image/ban2.png" wx:elif="{{value.jiaozhuriqi!=''}}"></image> 
+          
+          <view class="lcwrap" data-tid="{{value.tid}}" >
+            <view class="left" style="flex:2">
+              <text class="s1">{{value.bybuwei}}</text>
+              <text class="w_52">C{{value.byqiangdu}}</text>
+            </view>
+      <view class="midtime" style="flex:4" bindtap="setTapshow2" data-tap="1"    data-sdata='{{value}}'   >
+            
+        <view style="display:inline-block">
+        <text wx:if="{{value.jiaozhuriqi==''}}">计划：</text>
+        <text wx:else  style="">浇筑于</text>
+        </view>
+        <view style="display:inline-block">
+        <text wx:if="{{!value.jihuariqi&&!value.jiaozhuriqi}}">未填写</text>
+        </view>     
+            <view style="display:inline-block">
+            <text class="green" wx:if="{{value.jiaozhuriqi==''}}">{{value.jihuariqi}}</text>
+             <text class="green" wx:else>{{value.jiaozhuriqi}}</text>
+            </view>
+
+ <view style="display:inline-block;margin-left:5px;">     
+<text wx:if="{{value.riqistatus==1}}"    class="green">正常</text>
+<text wx:elif="{{value.riqistatus==2}}"  class="text-primary">提前{{value.days}}天</text>
+<text wx:elif="{{value.riqistatus==3}}"  class="text-danger">延期{{value.days}}天</text>
+<text wx:elif="{{value.riqistatus==4}}"  class="">未施工</text>
+<text wx:elif="{{value.riqistatus==5}}"  class="text-warning">超时未施工</text>
+ </view>   
+   
+            </view>
+            <view class="right" data-tid="{{value.tid}}"  data-buwei="{{value.bybuwei}}"  data-missionNum="{{value.missionNum}}" bindtap="showpl" style="flex:1">       
+              <view class="schbox" style="margin-top:15rpx">
+              <view class="pinglun">
+
+                  <view class="pinglun {{value.missionNum>0?'hidden':''}}">
+                    <image src="/pages/image/paizhao1@3x.png"></image>
+                  </view>
+
+
+                   <image wx:if="{{value.missionNum>0}}" src="/pages/image/pinglun@3x.png">
+                     
+                    <text class="schn0">{{value.missionNum?value.missionNum:''}}</text> 
+                   </image>
+                 
+                  </view>
+
+              </view>
+
+
+            </view>
+          </view>
+          </view>       
+
+         <view class="build-img2" wx:if="{{value.xc_bwtype=='ban1'}}">
+   <image class="build-1" src="/pages/image/ban1.png" wx:if="{{value.jiaozhuriqi==''}}"></image> 
+   <image class="build-1" src="/pages/image/ban2.png" wx:elif="{{value.jiaozhuriqi!=''}}"></image> 
+          <view class="lcwrap">
+            <view class="left" style="flex:2">
+              <text class="s1">{{value.bybuwei}}</text>
+              <text class="w_53">C{{value.byqiangdu}}</text>
+            </view>
+            <view class="midtime" style="flex:4" bindtap="setTapshow2" data-tap="1"    data-sdata='{{value}}'>     
+
+        <view style="display:inline-block">
+        <text wx:if="{{value.jiaozhuriqi==''}}">计划：</text>
+        <text wx:else  style="">浇筑于</text>
+        </view>
+        <view style="display:inline-block">
+        <text wx:if="{{!value.jihuariqi&&!value.jiaozhuriqi}}">未填写</text>
+        </view>     
+            <view style="display:inline-block">
+            <text class="green" wx:if="{{value.jiaozhuriqi==''}}">{{value.jihuariqi}}</text>
+             <text class="green" wx:else>{{value.jiaozhuriqi}}</text>
+            </view>
+
+ <view style="display:inline-block;margin-left:5px;">     
+<text wx:if="{{value.riqistatus==1}}"    class="green">正常</text>
+<text wx:elif="{{value.riqistatus==2}}"  class="text-primary">提前{{value.days}}天</text>
+<text wx:elif="{{value.riqistatus==3}}"  class="text-danger">延期{{value.days}}天</text>
+<text wx:elif="{{value.riqistatus==4}}"  class="">未施工</text>
+<text wx:elif="{{value.riqistatus==5}}"  class="text-warning">超时未施工</text>
+ </view>   
+            </view>
+            <view class="right" data-tid="{{value.tid}}"  data-buwei="{{value.bybuwei}}"  data-missionNum="{{value.missionNum}}" bindtap="showpl" style="flex:1">       
+              <view class="schbox" style="margin-top:15rpx">
+                  <view class="pinglun {{value.missionNum>0?'hidden':''}}">
+                    <image src="/pages/image/paizhao1@3x.png"></image>
+                  </view>
+
+
+                   <image class="schn0" wx:if="{{value.missionNum>0}}" src="/pages/image/pinglun@3x.png">
+                     
+                   <text class="bannum">{{value.missionNum?value.missionNum:''}}</text>  
+                   </image>  
+                    
+                 
+              </view>
+            </view>
+          </view>
+          </view> 
+          <view style="width:100%" style="display:flex">
+          <view class="jge-2" wx:if="{{value.xc_bwtype=='zhu0'}}" >
+          
+            <image  src="/pages/image/zhu1.png" wx:if="{{value.jiaozhuriqi==''}}"></image>
+            <image  src="/pages/image/zhu2.png" wx:if="{{value.jiaozhuriqi!=''}}"></image>
+
+
+            <view class="zhus" style="display:flex"> 
+            <view style="felx:1">
+             <text class="w_53">C{{value.byqiangdu}}</text>
+            </view>
+            <view  bindtap="setTapshow2" data-tap="1"    data-sdata='{{value}}' style="flex:5;text-align:{{value.sgriqi==''?'center':'right'}};font-size:26rpx;color:#666">
+
+        <view style="display:inline-block">
+        <text wx:if="{{value.jiaozhuriqi==''}}">计划：</text>
+        <text wx:else  style="">浇筑于</text>
+        </view>
+        <view style="display:inline-block">
+        <text wx:if="{{!value.jihuariqi&&!value.jiaozhuriqi}}">未填写</text>
+        </view>     
+            <view style="display:inline-block">
+            <text class="green" wx:if="{{value.jiaozhuriqi==''}}">{{value.jihuariqi}}</text>
+             <text class="green" wx:else>{{value.jiaozhuriqi}}</text>
+            </view>
+
+ <view style="display:inline-block;margin-left:5px;">     
+<text wx:if="{{value.riqistatus==1}}"    class="green">正常</text>
+<text wx:elif="{{value.riqistatus==2}}"  class="text-primary">提前{{value.days}}天</text>
+<text wx:elif="{{value.riqistatus==3}}"  class="text-danger">延期{{value.days}}天</text>
+<text wx:elif="{{value.riqistatus==4}}"  class="">未施工</text>
+<text wx:elif="{{value.riqistatus==5}}"  class="text-warning">超时未施工</text>
+ </view>  
+            </view>
+
+            <view class="zhur" data-tid="{{value.tid}}"  data-buwei="{{value.bybuwei}}"  data-missionNum="{{value.missionNum}}" bindtap="showpl" style="flex:1">
+            <view class="pinglun {{value.missionNum>0?'hidden':''}}" >
+              <image src="/pages/image/paizhao1@3x.png"></image>
+            </view>
+        
+       
+
+
+             <image class="schn0" wx:if="{{value.missionNum>0}}" src="/pages/image/pinglun@3x.png"  style="width:32rpx;height:32rpx;float:right"  >
+               
+               <text class="zhunum">{{value.missionNum?value.missionNum:''}}</text>    
+             </image>     
+                   </view>
+            <!-- <text class="schn-j20 {{value.missionNum>0?'':'hidden'}}">{{value.missionNum?value.missionNum:''}}</text> -->
+
+            </view>
+         </view>
+         </view>
+
+          <view class="jge-2" wx:if="{{value.xc_bwtype=='zhu1'}}" >
+                        <image  src="/pages/image/zhu1.png" wx:if="{{value.jiaozhuriqi==''}}"></image>
+            <image  src="/pages/image/zhu2.png" wx:if="{{value.jiaozhuriqi!=''}}"></image>
+            <view class="zhus" style="display:flex"> 
+            <view style="felx:1">
+             <text class="w_53">C{{value.byqiangdu}}</text>
+            </view>
+            <view  bindtap="setTapshow2" data-tap="1"    data-sdata='{{value}}'  style="flex:5;text-align:{{value.sgriqi==''?'center':'left'}}">
+        <view style="display:inline-block">
+        <text wx:if="{{value.jiaozhuriqi==''}}">计划：</text>
+        <text wx:else  style="">浇筑于</text>
+        </view>
+        <view style="display:inline-block">
+        <text wx:if="{{!value.jihuariqi&&!value.jiaozhuriqi}}">未填写</text>
+        </view>     
+            <view style="display:inline-block">
+            <text class="green" wx:if="{{value.jiaozhuriqi==''}}">{{value.jihuariqi}}</text>
+             <text class="green" wx:else>{{value.jiaozhuriqi}}</text>
+            </view>
+
+ <view style="display:inline-block;margin-left:5px;">     
+<text wx:if="{{value.riqistatus==1}}"    class="green">正常</text>
+<text wx:elif="{{value.riqistatus==2}}"  class="text-primary">提前{{value.days}}天</text>
+<text wx:elif="{{value.riqistatus==3}}"  class="text-danger">延期{{value.days}}天</text>
+<text wx:elif="{{value.riqistatus==4}}"  class="">未施工</text>
+<text wx:elif="{{value.riqistatus==5}}"  class="text-warning">超时未施工</text>
+ </view>  
+
+
+            </view>
+
+            <view class="zhur" data-tid="{{value.tid}}"  data-buwei="{{value.bybuwei}}"  data-missionNum="{{value.missionNum}}" bindtap="showpl" style="flex:1">
+            <view class="pinglun {{value.missionNum>0?'hidden':''}}">
+              <image src="/pages/image/paizhao1@3x.png"></image>
+            </view>
+            <!-- <text class="schn-j20 {{value.missionNum>0?'':'hidden'}}">{{value.missionNum?value.missionNum:''}}</text> -->
+            
+             <image class="schn0" wx:if="{{value.missionNum>0}}" src="/pages/image/pinglun@3x.png" style="width:32rpx;height:32rpx;float:right">
+               
+              <text class="zhunum">{{value.missionNum?value.missionNum:''}}</text>  
+             </image>  
+              </view>
+            </view>
+         </view>
+
+
+
+         <view class="build-img3" wx:if="{{value.xc_bwtype=='jichu0'}}">
+
+          <image class="build-1" src="/pages/image/jichu1.png" wx:if="{{value.jiaozhuriqi==''}}"></image> 
+          <image class="build-1" src="/pages/image/jichu2.png" wx:elif="{{value.jiaozhuriqi!=''}}"></image> 
+
+          <view class="lcwrap2"  data-tid="{{value.tid}}">
+            <view class="left" style="flex:2">
+              <text class="s1">{{value.bybuwei}}</text>
+              <text class="w_52">C{{value.byqiangdu}}</text>
+            </view>
+             <view class="midtime" style="flex:4" bindtap="setTapshow2" data-tap="1"    data-sdata='{{value}}'>
+          
+        <view style="display:inline-block">
+        <text wx:if="{{value.jiaozhuriqi==''}}">计划：</text>
+        <text wx:else  style="">浇筑于</text>
+        </view>
+        <view style="display:inline-block">
+        <text wx:if="{{!value.jihuariqi&&!value.jiaozhuriqi}}">未填写</text>
+        </view>     
+            <view style="display:inline-block">
+            <text class="green" wx:if="{{value.jiaozhuriqi==''}}">{{value.jihuariqi}}</text>
+             <text class="green" wx:else>{{value.jiaozhuriqi}}</text>
+            </view>
+
+ <view style="display:inline-block;margin-left:5px;">     
+<text wx:if="{{value.riqistatus==1}}"    class="green">正常</text>
+<text wx:elif="{{value.riqistatus==2}}"  class="text-primary">提前{{value.days}}天</text>
+<text wx:elif="{{value.riqistatus==3}}"  class="text-danger">延期{{value.days}}天</text>
+<text wx:elif="{{value.riqistatus==4}}"  class="">未施工</text>
+<text wx:elif="{{value.riqistatus==5}}"  class="text-warning">超时未施工</text>
+ </view>   
+
+            </view>
+            <view class="right" data-tid="{{value.tid}}"  data-buwei="{{value.bybuwei}}"  data-missionNum="{{value.missionNum}}" bindtap="showpl" style="flex:1">       
+              <view class="schbox" style="margin-top:15rpx">
+                  <view class="pinglun {{value.missionNum>0?'hidden':''}}">
+                    <image src="/pages/image/paizhao1@3x.png"></image>
+                  </view>
+                  <!-- <text class="schn0 {{value.missionNum>0?'':'hidden'}}">{{value.missionNum?value.missionNum:''}}</text> -->
+            
+                 <image class="schn0" wx:if="{{value.missionNum>0}}" src="/pages/image/pinglun@3x.png">
+                 <text class="zhunum">{{value.missionNum?value.missionNum:''}}</text>  
+                 </image>  
+                  
+                 
+              </view>
+            </view>
+          </view>
+          </view> 
+
+
+         <view class="build-img3" wx:if="{{value.xc_bwtype=='jichu1'}}">
+         <image class="build-1" src="/pages/image/jichu1.png" wx:if="{{value.jiaozhuriqi==''}}"></image> 
+          <image class="build-1" src="/pages/image/jichu2.png" wx:elif="{{value.jiaozhuriqi!=''}}"></image> 
+          <view class="lcwrap2"  data-tid="{{value.tid}}">
+            <view class="left" style="flex:2">
+              <text class="s1">{{value.bybuwei}}</text>
+              <text class="w_52">C{{value.byqiangdu}}</text>
+            </view>
+             <view class="midtime" style="flex:4" bindtap="setTapshow2" data-tap="1"    data-sdata='{{value}}'>
+
+        <view style="display:inline-block">
+        <text wx:if="{{value.jiaozhuriqi==''}}">计划：</text>
+        <text wx:else  style="">浇筑于</text>
+        </view>
+        <view style="display:inline-block">
+        <text wx:if="{{!value.jihuariqi&&!value.jiaozhuriqi}}">未填写</text>
+        </view>     
+            <view style="display:inline-block">
+            <text class="green" wx:if="{{value.jiaozhuriqi==''}}">{{value.jihuariqi}}</text>
+             <text class="green" wx:else>{{value.jiaozhuriqi}}</text>
+            </view>
+
+ <view style="display:inline-block;margin-left:5px;">     
+<text wx:if="{{value.riqistatus==1}}"    class="green">正常</text>
+<text wx:elif="{{value.riqistatus==2}}"  class="text-primary">提前{{value.days}}天</text>
+<text wx:elif="{{value.riqistatus==3}}"  class="text-danger">延期{{value.days}}天</text>
+<text wx:elif="{{value.riqistatus==4}}"  class="">未施工</text>
+<text wx:elif="{{value.riqistatus==5}}"  class="text-warning">超时未施工</text>
+ </view>   
+
+
+            </view>
+            <view class="right" data-tid="{{value.tid}}"  data-buwei="{{value.bybuwei}}"  data-missionNum="{{value.missionNum}}" bindtap="showpl" style="flex:1">       
+              <view class="schbox" style="margin-top:15rpx">
+                  <view class="pinglun {{value.missionNum>0?'hidden':''}}">
+                    <image src="/pages/image/paizhao1@3x.png"></image>
+                  </view>
+                  <!-- <text class="schn0 {{value.missionNum>0?'':'hidden'}}">{{value.missionNum?value.missionNum:''}}</text> -->
+
+                 <image class="schn0" wx:if="{{value.missionNum>0}}" src="/pages/image/pinglun@3x.png">
+                   
+                  <text class="zhunum">{{value.missionNum?value.missionNum:''}}</text> 
+                 </image> 
+                  
+              </view>
+            </view>
+          </view>
+          </view> 
+         </view> 
+        </view>
+        </scroll-view>
+          </view>
+      </view>  
+
+      </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <view class="{{selected1?'show':'hidden'}}">
+      <view class="main" style=''>
+       
+      <view class="schedulebox ">
+      <scroll-view scroll-y  style="height: 81vh"   bindscrolltolower="lower" data-inter="YS_plistc">
+          <view class="stitle">全部动态</view>
+           <view wx:if='{{YS_plistc.data.total == 0}}'>
+    <image src="../../pages/image/tixing.png" style="width:150rpx;height:190rpx;margin-left:40%;margin-top:40rpx"></image>
+    <view style="text-align:center;width:105%;font-size:30rpx;color:#999">暂无动态！</view>
+    </view>
+          <view class="userbox" wx:for="{{YS_listc.data}}" wx:key="idx" wx:for-item="value">
+            <view class="userwrap">
+              <view class="useleft">
+                <view class="userpic">
+                  <image src="{{value.userInfo.photourl}}"></image>
+                </view>
+                <view class="userinfo">
+                  <view class="username">{{value.userInfo.realname}} · <text style='color:#58BAFF'>{{value.buweiInfo.bybuwei}}</text></view>
+                  <text class="time">{{value.createtime}}</text>
+                </view>
+                </view>
+                <view class="useright"  bindtap="delschedule"  data-id="{{value.id}}">
+                  <image src="/pages/image/more@3x.png" ></image>
+                </view>
+            </view>
+
+            <view class="schinfo">
+              <view><text>{{value.content}}</text>
+              </view>
+              <view class="imgs">
+                  <view class="placeholder" wx:for="{{value.picture}}" wx:key="idx2" wx:for-item="value2">
+                  <image src="{{value2}}" data-src="{{value2}}" bindtap="previewImage"></image>
+                  </view>
+              </view>
+
+              <view class="schleba">
+                <view class="schtime">
+                  <image src="/pages/image/date-blue@3x.png"></image>
+                  <text>{{value.createtime}}</text>
+                </view>
+                <view class="labj">
+                 <image src="../../pages/image/biaoqian-big@3x.png" class="biaoqian"></image>
+                 <view style="z-index:9;position:absolute"> {{value.typeInfo.name}}</view>
+                </view>
+              <view>
+            </view>
+          </view>
+        </view>
+      </view>
+ </scroll-view> 
+        </view>      
+     
+      </view> 
+      </view>
+
+
+<view class="setwin" wx:if="{{tapshow==1}}">
+  <view class="authbody">
+  
+    <view class="bhtitle"><text>浇筑日期</text><image bindtap="setTapshow" data-tap="0" class="closebh" src="/pages/image/close.png"></image></view>
+
+<view class="cd">
+<view class="cptime">
+<view class="cptitle"><text>计划浇筑日期</text></view>
+
+<view class="cpdata">
+<picker mode="date" value="{{YS_objb.params.jihuariqi}}"  bindchange="setdate" data-key="YS_objb.params.jihuariqi">
+<view>{{YS_objb.params.jihuariqi||'请选择'}}></view>
+</picker>
+</view>
+
+</view>
+<view class="cptime">
+<view class="cptitle"><text>实际浇筑日期</text></view>
+
+<view class="cpdata">
+<picker mode="date" value="{{YS_objb.params.jiaozhuriqi}}"  bindchange="setdate" data-key="YS_objb.params.jiaozhuriqi">
+<view>{{YS_objb.params.jiaozhuriqi||'请选择'}}></view>
+</picker>
+</view>
+
+</view>
+
+</view>
+
+            <!-- <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">进场日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.intime}}"  bindchange="setdate" data-key="YS_obja.params.intime">
+                        <view class="weui-input">{{YS_obja.params.intime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view> -->
+
+
+  <view  class="bhconf" bindtap="tapfetch" data-key="YS_objb" >
+    <button >确定</button>
+  </view>
+
+</view>
+</view>
+
+
+
+
+
+
+       <!-- 评论弹窗 -->
+      <view class="plbg" style="display:{{showpl?'block':'none'}}" bindtap="showpl">
+      
+     <view class="pltc {{showpl?'slidup':'slidown'}}" style="display:{{showpl?'block':'none'}}">
+      
+     <view catchtap="sss">
+      <view class="tctop">
+      <view class="cengshu">
+      <text>{{currentBuwei}}</text>
+      <text class="guanbi" catchtap="showpl">关闭</text>
+      </view>
+      <!-- <view class="qxpl" catchtap="showpl">关闭</view> -->
+      </view>
+      <view class="plcont">
+      <scroll-view scroll-y style="height:50vh">
+          <view class="userbox2" wx:for="{{YS_listd.data}}" wx:key="idx" wx:for-item="value">
+            <view class="userwrap">
+              <view class="useleft">
+                <view class="userpic">
+                  <image src="{{value.userInfo.photourl}}"></image>
+                </view>
+                <view class="userinfo">
+                  <view>{{value.userInfo.realname}} · <text style='color:#58BAFF'>{{value.buweiInfo.bybuwei}}</text></view>
+                  <text class="time">{{value.createtime}}</text>
+                </view>
+                </view>
+                <view class="useright"  catchtap="delschedule" data-id="{{value.id}}">
+                  <image src="/pages/image/more@3x.png" ></image>
+                </view>
+            </view>
+
+            <view class="schinfo">
+              <view><text>{{value.content}}</text></view>
+              <view class="imgs">
+                  <view class="placeholder" wx:for="{{value.picture}}"  wx:key="" wx:for-item="value2" >
+                  <image src="{{value2}}" data-src="{{value2}}" bindtap="previewImage"></image>
+                  </view>
+                  
+              </view>
+
+              <view class="schleba">
+                <view class="schtime">
+                  <image src="/pages/image/date-blue@3x.png"></image>
+                  <text>{{value.date}}</text>
+                </view>
+                <view class="labj">
+                 <image src="../../pages/image/biaoqian-big@3x.png" class="biaoqian"></image>
+                 <view style="z-index:9;position:absolute"> {{value.typeInfo.name}}</view>
+                </view>
+              <view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      </scroll-view>
+      </view>
+     </view>
+
+     <view class="fbpl">
+        <view class="fabu" bindtap="nav" data-to="../../pages/addschedule/addschedule?currentTid={{currentTid}}" hover-class='changebg' >发布进度</view>
+        <!-- <view class="midline"></view> -->
+        <!-- <picker style="width:50%" mode="date" value="" start="1978-01-01" end="2028-1-1"  bindchange="bindsgriqiChange" >
+        <view class="settime" hover-class='changebg'>设置时间</view>    
+        </picker> -->
+        
+    </view>
+
+     </view>
+     </view>
+    <!-- 评论弹窗 -->
+
+
+      <view class="{{selected2?'show':'hidden'}}">
+      <view class="main" style='padding-top:30rpx'>
+        <view class="schedulebox">
+          <view class="stitle">送检统计</view>
+          
+        </view>
+      </view> 
+      </view>
+      <view class="nav bc_white" style='display:none;'>
+        <view class="{{selected?'red':'default'}}" bindtap="selected">进度表</view>
+        <view class="{{selected1?'red':'default'}}" bindtap="selected1">全部动态</view>
+       <!-- <view class="{{selected2?'red':'default'}}" bindtap="selected2">送检统计</view>-->
+      </view>
+      
+    </swiper-item> 
+ 
+   
+
+    
+ 
+  </swiper> 
+</view> 

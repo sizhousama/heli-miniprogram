@@ -1,0 +1,562 @@
+<view class="page">
+    <!-- 顶部菜单栏--> 
+    <view class="nav">
+    <view class="swiper-tab"> 
+  <scroll-view scroll-x style="width:95%">
+    <view class="tab-item">
+    <text data-field="by" class=" btn {{YS_listc.params.field=='by'?'on':''}}" bindtap="changesj">标养</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="ty" class="btn {{YS_listc.params.field=='ty'?'on':''}}" bindtap="changesj">同养</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="ks" class="btn {{YS_listc.params.field=='ks'?'on':''}}" bindtap="changesj">抗渗</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="zt" class="btn {{YS_listc.params.field=='zt'?'on':''}}" bindtap="changesj">柱头</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="cm" class="btn {{YS_listc.params.field=='cm'?'on':''}}" bindtap="changesj">拆模</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="dz" class="btn {{YS_listc.params.field=='dz'?'on':''}}" bindtap="changesj">焊接</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="qz" class="btn {{YS_listc.params.field=='qz'?'on':''}}" bindtap="changesj">砌筑</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="wq" class="btn {{YS_listc.params.field=='wq'?'on':''}}" bindtap="changesj">外抹灰</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="nq" class="btn {{YS_listc.params.field=='nq'?'on':''}}" bindtap="changesj">内抹灰</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="zp" class="btn {{YS_listc.params.field=='zp'?'on':''}}" bindtap="changesj">找平</text>
+    </view> 
+   </scroll-view> 
+  </view>  
+    </view>
+ 
+  
+    
+ 
+  
+    <view class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+           <view style="margin-top:80rpx;">
+            <scroll-view scroll-y style="height:94vh;margin-bottom:200rpx"  bindscrolltolower="lower" bindscroll="alert">
+            
+
+
+
+             <!--标养-->
+             <block wx:if="{{YS_listc.params.field=='by'}}" wx:for="{{YS_listc.data.datalist}}" wx:key="" wx:for-item="value">
+                
+                <view class="weui-cell weui-check__label" >
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox gram_2box"  >
+                    <view class="leftinfo"> 
+                    
+                    <view class="gram_top">
+                      <view class="gleft" data-codeid="{{value.codeid}}" >
+                   
+                          <label class="checkbox" bindtap="setchksin" data-index="{{index}}">
+                             <checkbox checked="{{value.ischk}}"></checkbox> 
+                          </label>
+                         
+ 
+                     
+              <view class="weui-cell__bd"><text style='font-size: 26rpx;color: #999999;margin-left:16rpx;'> </text>{{value.bybuwei}}</view>
+                        </view>
+                      <view class="weui-cell__ft">
+                       <text style="margin-right:20rpx;font-size:24rpx;color:#0094fd" wx:if='{{value.byys==1}}'>已送</text>
+                       <text style="margin-right:20rpx;font-size:24rpx;" wx:if="{{value.byys==0}}">未送</text>
+                          <switch checked="{{value.byys==1}}" bindchange="comchk" data-codeid="{{value.codeid}}" data-key="byys"/>
+                      </view>
+                      </view>  
+
+                    
+                 <view class="clssinfo">
+                      <view  class="info_1">强度: <text>C{{value.byqiangdu}}</text></view>
+                      <view  class="info_1">组数: <text>{{value.byzushu}}组</text></view>
+                    </view> 
+
+                     
+                    <view class="clssinfo">
+                      <view  class="info_1">浇筑: <text style='color:#0098FF'>{{value.byriqi}}</text></view>
+                      <view  class="info_1" style='margin-right:66rpx;margin-left:10rpx;'>送检: <text style='color:#07bf42'>{{value.bytime}}</text></view>
+                      <view  class="info_1"><text style='color:#0098FF'>{{value.bylq}}天</text></view>
+                    </view>
+
+                    </view>
+                    <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=by'>
+                      <view class="nextright" hover-class='changebg' >
+                        <image src="/pages/image/next@3x.png"></image>                     
+                      </view>
+                      </navigator>
+                    
+                      
+                  </view>
+                </view>
+           
+            </block> 
+
+          <!-- 同养 -->
+            <block wx:if="{{YS_listc.params.field=='ty'&&value.tyornot==1}}" wx:for="{{YS_listc.data.datalist}}" wx:key="" wx:for-item="value">
+                
+                <view class="weui-cell weui-check__label">
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox gram_2box" >
+                    <view class="leftinfo"> 
+                    
+                    <view class="gram_top">
+                      <view class="gleft" data-codeid="{{value.codeid}}" > 
+              <view class="weui-cell__bd"><text style='font-size: 26rpx;color: #999999;margin-left:60rpx;'></text>{{value.bybuwei}}</view>
+ 
+                        </view>
+                      <view class="weui-cell__ft">
+                       <text style="margin-right:20rpx;font-size:24rpx;color:#0094fd" wx:if='{{value.tyys==1}}'>已送</text>
+                       <text style="margin-right:20rpx;font-size:24rpx;" wx:if="{{value.tyys==0}}">未送</text>
+                          <switch checked="{{value.tyys==1}}" bindchange="comchk" data-codeid="{{value.codeid}}" data-key="tyys"/>
+                      </view>
+                      </view>  
+
+                    
+                 <view class="clssinfo">
+                      <view  class="info_1">强度: <text>C{{value.byqiangdu}}</text></view>
+                      <view  class="info_1">组数: <text>{{value.tyzushu}}组</text></view>
+                    <view  class="info_1"><text style="color:red" wx:if="{{value.byriqi}}">{{value.wstem}}℃</text></view>
+                    </view> 
+
+                     
+                    <view class="clssinfo">
+                      <view  class="info_1">浇筑: <text style='color:#0098FF'>{{value.byriqi}}</text></view>
+                      <view  class="info_1" style='margin-right:66rpx;margin-left:10rpx;'>送检: <text style='color:#07bf42'>{{value.tytime}}</text></view>
+                      <view  class="info_1"><text style='color:#0098FF;width:64rpx'>{{value.tylq}}</text></view>
+                    </view>
+
+                    </view>
+                    
+                    <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=ty'>
+                      <view class="nextright" hover-class='changebg' >
+                        <image src="/pages/image/next@3x.png"></image>                     
+                      </view>
+                      </navigator>
+                  </view>
+                </view>
+            
+            </block> 
+
+            <!-- 抗渗 -->
+            <block  wx:if="{{YS_listc.params.field=='ks'&&value.ksornot==1}}" wx:for="{{YS_listc.data.datalist}}" wx:key="" wx:for-item="value">
+                
+                <view class="weui-cell weui-check__label">
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox gram_2box" >
+                    <view class="leftinfo"> 
+                    
+                    <view class="gram_top">
+                      <view class="gleft" data-codeid="{{value.codeid}}" >
+                      
+           
+              <view class="weui-cell__bd"><text style='font-size: 26rpx;color: #999999;margin-left:60rpx;'></text>{{value.bybuwei}}</view>
+                        </view>
+                      <view class="weui-cell__ft">
+                       <text style="margin-right:20rpx;font-size:24rpx;color:#0094fd" wx:if='{{value.ksys==1}}'>已送</text>
+                       <text style="margin-right:20rpx;font-size:24rpx;" wx:if="{{value.ksys==0}}">未送</text>
+                          <switch  checked="{{value.ksys==1}}" bindchange="comchk" data-codeid="{{value.codeid}}" data-key="ksys"/>
+                      </view>
+                      </view>  
+
+                    
+                 <view class="clssinfo">
+                      <view  class="info_1">强度:<text>C{{value.byqiangdu}}</text></view>
+                      <view  class="info_1">组数:<text>{{value.kszushu}}组</text></view>
+                      <view  class="info_1">等级:<text>{{value.ksdengji}}</text></view>
+                    </view> 
+
+                     
+                    <view class="clssinfo">
+                      <view  class="info_1">浇筑: <text style='color:#0098FF'>{{value.byriqi}}</text></view>
+                      <view  class="info_1" style='margin-right:66rpx;margin-left:10rpx;'>送检: <text style='color:#07bf42'>{{value.kstime}}</text></view>
+                      <view  class="info_1"><text style='color:#0098FF'>{{value.kslq}}天</text></view>
+                    </view>
+
+                    </view>
+                      
+                    <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=ks'>
+                      <view class="nextright" hover-class='changebg' >
+                        <image src="/pages/image/next@3x.png"></image>                     
+                      </view>
+                      </navigator>
+                  </view>
+                </view>
+            
+            </block> 
+
+            <!-- 柱头 -->
+            <block  wx:if="{{YS_listc.params.field=='zt'&&value.ztornot==1}}" wx:for="{{YS_listc.data.datalist}}" wx:key="" wx:for-item="value">
+                
+                <view class="weui-cell weui-check__label">
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox gram_2box"  >
+                    <view class="leftinfo"> 
+                    
+                    <view class="gram_top">
+                      <view class="gleft" data-codeid="{{value.codeid}}" >
+                      
+           
+              <view class="weui-cell__bd"><text style='font-size: 26rpx;color: #999999;margin-left:60rpx;'> </text>{{value.bybuwei}}</view>
+                        </view>
+                      <view class="weui-cell__ft">
+                       <text style="margin-right:20rpx;font-size:24rpx;color:#0094fd" wx:if='{{value.ztys==1}}'>已送</text>
+                       <text style="margin-right:20rpx;font-size:24rpx;" wx:if="{{value.ztys==0}}">未送</text>
+                          <switch  checked="{{value.ztys==1}}" bindchange="comchk" data-codeid="{{value.codeid}}" data-key="ztys"/>
+                      </view>
+                      </view>  
+
+                    
+                 <view class="clssinfo">
+                      <view  class="info_1">强度: <text>C{{value.byqiangdu}}</text></view>
+                      <view  class="info_1">组数: <text>{{value.ztzushu}}组</text></view>
+                    </view> 
+
+                     
+                    <view class="clssinfo">
+                      <view  class="info_1">浇筑: <text style='color:#0098FF'>{{value.byriqi}}</text></view>
+                      <view  class="info_1" style='margin-right:66rpx;margin-left:10rpx;'>送检: <text style='color:#07bf42'>{{value.zttime}}</text></view>
+                      <view  class="info_1"><text style='color:#0098FF'>{{value.ztlq}}天</text></view>
+                    </view>
+
+                    </view>
+                        
+                    <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=zt'>
+                      <view class="nextright" hover-class='changebg' >
+                        <image src="/pages/image/next@3x.png"></image>                     
+                      </view>
+                      </navigator>
+                  </view>
+                </view>
+            
+            </block> 
+
+            <!-- 拆模 -->
+            <block  wx:if="{{YS_listc.params.field=='cm'&&value.cmornot==1}}"  wx:for="{{YS_listc.data.datalist}}" wx:key="" wx:for-item="value">
+                
+                <view class="weui-cell weui-check__label">
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox gram_2box" >
+                    <view class="leftinfo"> 
+                    
+                    <view class="gram_top">
+                      <view class="gleft" data-codeid="{{value.codeid}}" >
+                      
+            
+              <view class="weui-cell__bd"><text style='font-size: 26rpx;color: #999999;margin-left:60rpx;'></text>{{value.bybuwei}}</view>
+                        </view>
+                      <view class="weui-cell__ft">
+                       <text style="margin-right:20rpx;font-size:24rpx;color:#0094fd" wx:if='{{value.cmys==1}}'>已送</text>
+                       <text style="margin-right:20rpx;font-size:24rpx;" wx:if="{{value.cmys==0}}">未送</text>
+                          <switch  checked="{{value.cmys==1}}" bindchange="comchk" data-codeid="{{value.codeid}}" data-key="cmys"/>
+                      </view>
+                      </view>  
+
+                    
+                 <view class="clssinfo">
+                      <view  class="info_1">强度: <text>C{{value.byqiangdu}}</text></view>
+                      <view  class="info_1">组数: <text>{{value.cmzushu}}组</text></view>
+                    </view> 
+
+                     
+                    <view class="clssinfo">
+                      <view  class="info_1">浇筑: <text style='color:#0098FF'>{{value.byriqi}}</text></view>
+                      <view  class="info_1" style='margin-right:66rpx;margin-left:10rpx;'>送检: <text style='color:#07bf42'>{{value.cmtime}}</text></view>
+                      <view  class="info_1"><text style='color:#0098FF'>{{value.cmlq}}天</text></view>
+                    </view>
+
+                    </view>
+                    <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=cm'>
+                      <view class="nextright" hover-class='changebg' >
+                        <image src="/pages/image/next@3x.png"></image>                     
+                      </view>
+                      </navigator>
+                  </view>
+                </view>
+            
+            </block> 
+
+            <!-- 焊接 -->
+            <block wx:if="{{YS_listc.params.field=='dz'&&value.dzornot==1}}"  wx:for="{{YS_listc.data.datalist}}" wx:key="" wx:for-item="value">
+                
+                <view class="weui-cell weui-check__label">
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox gram_2box"  >
+                    <view class="leftinfo"> 
+                    
+                    <view class="gram_top">
+                      <view class="gleft" data-codeid="{{value.codeid}}" >
+                      
+           
+              <view class="weui-cell__bd"><text style='font-size: 26rpx;color: #999999;margin-left:60rpx;'></text>{{value.bybuwei}}</view>
+                        </view>
+                      <view class="weui-cell__ft">
+                       <text style="margin-right:20rpx;font-size:24rpx;color:#0094fd" wx:if='{{value.dzys==1}}'>已送</text>
+                       <text style="margin-right:20rpx;font-size:24rpx;" wx:if="{{value.dzys==0}}">未送</text>
+                          <switch checked="{{value.dzys==1}}" bindchange="comchk" data-codeid="{{value.codeid}}" data-key="dzys"/>
+                      </view>
+                      </view>  
+
+                    
+                 <view class="clssinfo">
+                      <view  class="info_1">规格: <text>{{value.dzguige}}</text></view>
+                      
+                    </view> 
+
+                     
+                    <view class="clssinfo">
+                      <view  class="info_1">制作: <text style='color:#0098FF'>{{value.byriqi}}</text></view>
+                      <view  class="info_1" style='margin-right:66rpx;margin-left:10rpx;'>送检: <text style='color:#07bf42'>{{value.dztime}}</text></view>
+                    <view  class="info_1">组数: <text>{{value.dzzushu}}组</text></view>
+                    </view>
+
+                    </view>
+                    <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=dz'>
+                      <view class="nextright" hover-class='changebg' >
+                        <image src="/pages/image/next@3x.png"></image>                     
+                      </view>
+                      </navigator>
+                  </view>
+                </view>
+            
+            </block> 
+
+            <!-- 砌筑 -->
+            <block  wx:if="{{YS_listc.params.field=='qz'&&value.qzornot==1}}"  wx:for="{{YS_listc.data.datalist}}" wx:key="" wx:for-item="value">
+                
+                <view class="weui-cell weui-check__label">
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox gram_2box"  >
+                    <view class="leftinfo"> 
+                    
+                    <view class="gram_top">
+                      <view class="gleft" data-codeid="{{value.codeid}}" >
+                      
+            
+              <view class="weui-cell__bd"><text style='font-size: 26rpx;color: #999999;margin-left:60rpx;'></text>{{value.bybuwei}}</view>
+                        </view>
+                      <view class="weui-cell__ft">
+                       <text style="margin-right:20rpx;font-size:24rpx;color:#0094fd" wx:if='{{value.qzys==1}}'>已送</text>
+                       <text style="margin-right:20rpx;font-size:24rpx;" wx:if="{{value.zqys==0}}">未送</text>
+                          <switch  checked="{{value.qzys==1}}" bindchange="comchk" data-codeid="{{value.codeid}}" data-key="qzys"/>
+                      </view>
+                      </view>  
+
+                    
+                 <view class="clssinfo">
+                      <view  class="info_1">强度/配比: <text>M{{value.qzqiangdu}}</text></view>
+                      <view  class="info_1">组数: <text>{{value.qzzushu}}组</text></view>
+                    </view> 
+
+                     
+                    <view class="clssinfo">
+                      <view  class="info_1">制作: <text style='color:#0098FF'>{{value.qzriqi}}</text></view>
+                      <view  class="info_1" style='margin-right:66rpx;margin-left:10rpx;'>送检: <text style='color:#07bf42'>{{value.qztime}}</text></view>
+                      <view  class="info_1"><text style='color:#0098FF'>{{value.qzlq}}天</text></view>
+                    </view>
+
+                    </view>
+                    <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=qz'>
+                      <view class="nextright" hover-class='changebg' >
+                        <image src="/pages/image/next@3x.png"></image>                     
+                      </view>
+                      </navigator>
+                  </view>
+                </view>
+            
+            </block> 
+
+            <!-- 外抹灰 -->
+            <block  wx:if="{{YS_listc.params.field=='wq'&&value.wqornot==1}}"  wx:for="{{YS_listc.data.datalist}}" wx:key="" wx:for-item="value">
+                
+                <view class="weui-cell weui-check__label">
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox gram_2box" >
+                    <view class="leftinfo"> 
+                    
+                    <view class="gram_top">
+                      <view class="gleft" data-codeid="{{value.codeid}}" >
+                      
+           
+              <view class="weui-cell__bd"><text style='font-size: 26rpx;color: #999999;margin-left:60rpx;'></text>{{value.bybuwei}}</view>
+                        </view>
+                      <view class="weui-cell__ft">
+                       <text style="margin-right:20rpx;font-size:24rpx;color:#0094fd" wx:if='{{value.wqys==1}}'>已送</text>
+                       <text style="margin-right:20rpx;font-size:24rpx;" wx:if="{{value.wqys==0}}">未送</text>
+                          <switch  checked="{{value.wqys==1}}" bindchange="comchk" data-codeid="{{value.codeid}}" data-key="wqys"/>
+                      </view>
+                      </view>  
+
+                    
+                 <view class="clssinfo">
+                      <view  class="info_1">强度/配比: <text>M{{value.wqqiangdu}}</text></view>
+                      <view  class="info_1">组数: <text>{{value.wqzushu}}组</text></view>
+                    </view> 
+
+                     
+                    <view class="clssinfo">
+                      <view  class="info_1">制作: <text style='color:#0098FF'>{{value.wqriqi}}</text></view>
+                      <view  class="info_1" style='margin-right:66rpx;margin-left:10rpx;'>送检: <text style='color:#07bf42'>{{value.wqtime}}</text></view>
+                      <view  class="info_1"><text style='color:#0098FF'>{{value.wqlq}}天</text></view>
+                    </view>
+
+                    </view>
+                    <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=wq'>
+                      <view class="nextright" hover-class='changebg' >
+                        <image src="/pages/image/next@3x.png"></image>                     
+                      </view>
+                      </navigator>
+                  </view>
+                </view>
+            
+            </block> 
+
+            <!-- 内抹灰 -->
+            <block  wx:if="{{YS_listc.params.field=='nq'&&value.nqornot==1}}"  wx:for="{{YS_listc.data.datalist}}" wx:key="" wx:for-item="value">
+                
+                <view class="weui-cell weui-check__label">
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox gram_2box" >
+                    <view class="leftinfo"> 
+                    
+                    <view class="gram_top">
+                      <view class="gleft" data-codeid="{{value.codeid}}" >
+                      
+           
+              <view class="weui-cell__bd"><text style='font-size: 26rpx;color: #999999;margin-left:60rpx;'></text>{{value.bybuwei}}</view>
+                        </view>
+                      <view class="weui-cell__ft">
+                       <text style="margin-right:20rpx;font-size:24rpx;color:#0094fd" wx:if='{{value.nqys==1}}'>已送</text>
+                       <text style="margin-right:20rpx;font-size:24rpx;" wx:if="{{value.nqys==0}}">未送</text>
+                          <switch  checked="{{value.nqys==1}}" bindchange="comchk" data-codeid="{{value.codeid}}" data-key="nqys"/>
+                      </view>
+                      </view>  
+
+                    
+                 <view class="clssinfo">
+                      <view  class="info_1">强度/配比: <text>M{{value.wqqiangdu}}</text></view>
+                      <view  class="info_1">组数: <text>{{value.nqzushu}}组</text></view>
+                    </view> 
+
+                     
+                    <view class="clssinfo">
+                      <view  class="info_1">制作: <text style='color:#0098FF'>{{value.nqriqi}}</text></view>
+                      <view  class="info_1" style='margin-right:66rpx;margin-left:10rpx;'>送检: <text style='color:#07bf42'>{{value.nqtime}}</text></view>
+                      <view  class="info_1"><text style='color:#0098FF'>{{value.nqlq}}天</text></view>
+                    </view>
+
+                    </view>
+                    <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=nq'>
+                      <view class="nextright" hover-class='changebg' >
+                        <image src="/pages/image/next@3x.png"></image>                     
+                      </view>
+                      </navigator>
+                  </view>
+                </view>
+            
+            </block> 
+
+            <!-- 找平 -->
+              <block  wx:if="{{YS_listc.params.field=='zp'&&value.zpornot==1}}"  wx:for="{{YS_listc.data.datalist}}" wx:key="" wx:for-item="value">
+                
+                <view class="weui-cell weui-check__label">
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox gram_2box"  >
+                    <view class="leftinfo"> 
+                    
+                    <view class="gram_top">
+                      <view class="gleft" data-codeid="{{value.codeid}}" >
+                      
+           
+              <view class="weui-cell__bd"><text style='font-size: 26rpx;color: #999999;margin-left:60rpx;'></text>{{value.bybuwei}}</view>
+                        </view>
+                      <view class="weui-cell__ft">
+                       <text style="margin-right:20rpx;font-size:24rpx;color:#0094fd" wx:if='{{value.zpys==1}}'>已送</text>
+                       <text style="margin-right:20rpx;font-size:24rpx;" wx:if="{{value.zpys==0}}">未送</text>
+                          <switch  checked="{{value.zpys==1}}" bindchange="comchk" data-codeid="{{value.codeid}}" data-key="zpys"/>
+                      </view>
+                      </view>  
+
+                    
+                 <view class="clssinfo">
+                      <view  class="info_1">强度/配比: <text>M{{value.zpqiangdu}}</text></view>
+                      <view  class="info_1">组数: <text>{{value.zpzushu}}组</text></view>
+                    </view> 
+
+                     
+                    <view class="clssinfo">
+                      <view  class="info_1">制作: <text style='color:#0098FF'>{{value.zpriqi}}</text></view>
+                      <view  class="info_1" style='margin-right:66rpx;margin-left:10rpx;'>送检: <text style='color:#07bf42'>{{value.zptime}}</text></view>
+                      <view  class="info_1"><text style='color:#0098FF'>{{value.zplq}}天</text></view>
+                    </view>
+
+                    </view>
+                    <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=zp'>
+                      <view class="nextright" hover-class='changebg' >
+                        <image src="/pages/image/next@3x.png"></image>                     
+                      </view>
+                      </navigator>
+                  </view>
+                </view>
+            
+            </block>   
+           <view class="bottom">
+
+           </view>
+ 
+              </scroll-view> 
+              <view class="prbot" wx:if="{{YS_listc.params.field=='by'}}">
+               
+                <button bindtap="addsj" class="prbtn">添加</button>
+               
+              </view>
+
+
+                <view class="prbot" wx:if="{{YS_listc.params.field!='by'}}">
+            
+                <button bindtap="settype" class="prbtn">设置</button>
+              
+              </view>
+             </view> 
+
+<!-- 试块送检 -->
+    <view class="planbot" wx:if="{{chkcount>0}}">
+        <view class="plleft">
+            <checkbox checked="{{YS_listc.data.datalist.length==chkcount}}" bindtap="chkall" ></checkbox> 
+            <text>全选</text>
+        </view>
+        <view class="plright">
+          <button class="plbtn" bindtap="comdel" data-key="YS_listc">删除({{chkcount}})</button>
+        </view>
+    </view>
+    <!-- 试块送检 -->
+
+
+
+   
+</view>

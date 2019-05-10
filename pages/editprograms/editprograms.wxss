@@ -1,0 +1,99 @@
+/* pages/editprograms/editprograms.wxss */
+page{
+  font-size: 32rpx;
+}
+.weui-cells {
+background-color:#fff;
+line-height:1.41176471;
+font-size:32rpx;
+display:initial;
+}
+.weui-cell{
+  height: 90rpx;
+  line-height: 90rpx;
+  padding:0 24rpx;
+}
+.weui-cell__ft_in-access {
+  padding-right:13px;
+  position:relative;
+  display:flex;
+  margin-right:12rpx;
+}
+.gcicon{
+  width:92rpx;
+  height: 50rpx;
+  border-radius: 8rpx;
+  margin-right: 14rpx;
+  
+}
+.weui-cell__bd{
+  margin-left: 10rpx;
+}
+.weui-label{
+  margin-left: 10rpx;
+}
+.weui-input{
+  text-align: right;
+  margin-right: 36rpx;
+}
+.phcolor{
+  color:#999;
+}
+.weui-line{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #F5F5F5;
+  padding: 0 32rpx;
+  font-size: 28rpx;
+  color: #999999;
+
+}
+
+.weui-select{
+  border-right: none;
+  text-align: right;
+  margin-right:-20rpx;
+}
+.weui-cell__hd{
+  padding: 0;
+}
+.botbox{
+    position: fixed;
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:85vh;
+  z-index:9;
+}
+
+.allline{
+  width:100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #F5F5F5;
+  font-size: 28rpx;
+  color: #999999; 
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+.jline{
+  height: 20rpx;
+  background: #F5F5F5;
+}
+.bottom{
+  width:100%;
+  height:20vh;
+}
+.editpro_1,
+.editpro_2,
+.editpro_3,
+.editpro_4,
+.editpro_5,
+.editpro_6,
+.editpro_7,
+.editpro_8,
+.editpro_9{
+   /* margin-bottom:30vh */
+}

@@ -1,0 +1,32 @@
+<template name="myinfos"> 
+  <view class="myline">
+    <text>头像</text>
+    <image class="userpic" src="{{YS_obja.data.photourl||'http://www.yh31.com/UploadFiles/NSTX/201707162258094941.jpg'}}" bindtap="torc"></image>
+  </view>
+  <navigator url="../myeditnick/myeditnick">
+  <view class="myline">
+    <text>昵称</text>
+    <view class="lineright">
+      <text>{{YS_obja.data.nicheng}}</text>
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+   </navigator>
+  <navigator url="../myeditphone/myeditphone">
+  <view class="myline">
+    <text>电话号码</text>
+    <view class="lineright">
+      <text>{{YS_obja.data.tel}}</text>
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+   </navigator>
+  <navigator url="../myeditpwd/myeditpwd">
+  <view class="myline">
+    <text>修改密码</text>
+    <view class="lineright">
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+  </navigator>
+</template>  

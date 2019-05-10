@@ -1,0 +1,8 @@
+<template name="editname"> 
+  <view class="ename">
+    <text class="namecolor">昵称</text>
+    <image src="/pages/image/mine-cancel@3x.png"></image>
+    <input ></input>
+  </view>
+  <button class="bcbtn" type="button">保存</button>
+</template>  

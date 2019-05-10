@@ -1,0 +1,65 @@
+
+
+<!-- 发布页面（弹窗形式出现）----开始 -->
+<loading wx:if="{{!show}}">加载中...</loading>
+<view class='page '>
+  <view class='weui-cell'>
+      <view class="weui-cell__bd">
+            <input bindinput='inputchange'  data-type="title" name="title" value='{{title}}' class='weui-input' type='text' placeholder="标题（必填），40字" />
+                </view>
+                  </view>
+<!-- 发布页面（弹窗形式出现）----开始 -->
+  <view class='weui-cell'>
+    <view class='weui-cell__bd'>
+      <textarea bindinput='inputchange' class='weui_textarea' maxlength="{{-1}}"  value='{{content}}' data-type="content"  name="content" placeholder='内容（必填）' rows='3'></textarea>
+
+<view class="up_img" >
+<view class="up_imgbtn" >
+
+
+	<view style="position: relative;" wx:for="{{img}}">
+		  <icon type="clear" bindtap="clearimg"  data-id="{{index}}"  class="cl_icon" color="rgb(169,169,169)" style="" size="{{20}}"/>
+		 <image  src="{{item}}" bindtap="previewImg" data-id="{{index}}" ></image>
+	</view>
+
+ <image bindtap='changeimg' wx:if="{{img.length<4}}"  src='/static/images/icon/updata_pic.png'></image>
+</view>
+</view>
+
+
+
+    </view>
+  </view>
+<!--     <view class='weui-cell'>
+    <view class="weui-cell__bd">
+      <input class='weui-input'  bindinput='inputchange' data-type="tel" value='{{tel}}' name="tel" type='number' maxlength="11" placeholder="电话号码（必填）" />
+    </view>
+  </view> -->
+
+      <view class='weui-cell'>
+    <view class="weui-cell__bd">
+      <input class='weui-input'  bindinput='inputchange' data-type="credit1" value='{{credit1}}' name="credit1" type='text' placeholder="豆豆数（必填）" />
+    </view>
+  </view>
+      <view class='weui-cell'>
+          <view class="weui-cell__bd">
+      <input class='weui-input'  bindinput='inputchange' data-type="times" value='{{times}}' name="times" type='text' placeholder="设置可领取总数（必填）" />
+    </view>
+</view>
+  <view class='weui-btn-area'>
+    <button type="primary" bindtap='fabuad' class='weui-btn weui-btn_primary'>提交编辑</button>
+  </view>
+
+      <view class="detailbottom weui-flex" >
+        <view class='weui-flex__item tel-l' bindtap="isup">
+                  <button class="{{statu==1?'statu':'statu2'}}">{{statutext}}</button>
+ 
+        </view>
+
+       <view  class="weui-flex__item tel-r  " bindtap="delad">
+                  <button>删除</button>
+      </view>
+  </view>
+
+</view>
+<!-- 发布页面（弹窗形式出现）----结束 -->

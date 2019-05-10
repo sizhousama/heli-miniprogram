@@ -1,0 +1,123 @@
+.ivtop{
+  font-size:32rpx;
+  margin-left: 30rpx;
+  margin-top:20rpx;
+}
+.proimg{
+ width:200rpx;
+height:120rpx;
+background:#ddd;
+border-radius:5px;
+margin-top:20rpx;
+
+
+}
+.proname{
+margin-right:40rpx;
+font-size:32rpx;
+font-weight:bold;
+margin-top:-16%;
+margin-left:35%;
+margin-bottom:20rpx;
+
+}
+
+.loginwrap{
+  width:100%;
+  height: 100%;
+
+}
+.logtop{
+  width:100%;
+  height: 300rpx;
+  background: #0094FD;
+  display: flex;
+  justify-content:center;
+}
+
+.logobox{
+  text-align: center;
+}
+.hlpic{
+  width:168rpx;
+  height: 166rpx;
+  margin-top:22rpx;
+}
+.hltext{
+   color: #FFF;
+}
+.regwrap{
+  display: flex;
+  justify-content:center;   
+  margin-top: -66rpx;
+  margin-bottom: 60rpx;
+}
+.regbox{
+  width:674rpx;
+  height:40vh;
+  background: #FFF;
+  box-shadow: 0 5px 15px 0 rgba(0,43,74,0.14);
+  border-radius: 6px;
+} 
+.input{
+  width:492rpx;
+  height: 72rpx;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  padding: 0 20rpx;
+  float: left;
+}
+.rlab{
+  margin-top: 44rpx;
+  display: flex;
+  justify-content:center; 
+}
+.rlab label{
+  float:left;
+  line-height: 72rpx;
+  margin-right: 20rpx;
+  font-size: 32rpx;
+}
+.code{
+  position: relative;
+}
+.codecolor{
+  font-size: 28rpx;
+  color:#0094FD;
+  position: absolute;
+  top:18rpx;
+  right: 62rpx;
+}
+.regbtn{
+  width:446rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  background: #0094FD;
+  color: #FFF;
+  font-size: 32rpx;
+}
+.xieyi{
+   font-size: 24rpx;
+   color: #999999;
+   text-align: center;
+   margin-top:20rpx;
+}
+.yuser{
+  font-size: 24rpx;
+  text-align: center;
+  color: #4D4D4D;
+  margin-top:30rpx;
+}
+.getvcode{
+background:#fff;
+font-size:28rpx;
+color:#0094fd;
+margin-left:200rpx;
+height:40rpx;
+line-height:40rpx;
+margin-top:15rpx;
+position:absolute;
+z-index:9;
+}

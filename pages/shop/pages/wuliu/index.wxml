@@ -1,0 +1,60 @@
+<!--   <view class='weui-cell_select bottom_line weui-flex'>
+      <view class='weui-cell__hd leb_l'>
+        <label class='weui-label leb_price'>快递公司：</label>
+      </view>
+      <view class='leb_r'>
+        <input class='weui-input' type='text'  bindinput='inputchange' data-type="kdcompany" value='{{kdcompany}}' name="kdcompany" ></input>
+      </view>
+    </view> -->
+
+    <view class='weui-cell weui-cell_select bottom_line'>
+      <view class='weui-cell__bd'>
+        <picker bindchange="bindPickerChange22" range-key="{{'name'}}" data-id="{{wllist[index].id}}" value="{{index}}"  range="{{wllist}}">
+          <view class="picker">
+            <view class='leb_l'>
+              快递公司：
+            </view>
+            <view class='leb_r'>
+              {{wllist[index].name}}
+            </view>
+            <view class='leb_show'>
+              <image src='/static/images/icon/next.png'></image>
+            </view>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+
+  <view class='weui-cell_select bottom_line weui-flex'>
+      <view class='weui-cell__hd leb_l'>
+        <label class='weui-label leb_price'>快递单号：</label>
+      </view>
+      <view class='leb_r'>
+        <input class='weui-input' type='number' pattern='[0-9]*'  bindinput='inputchange' data-type="kdnum" value='{{kdnum}}' name="kdnum" ></input>
+      </view>
+    </view>
+
+ 
+  <view class='weui-btn-area' bindtap="sub">
+    <button class='weui-btn weui-btn_primary fbpro_btn'>发货</button>
+  </view>
+
+<view class="setwin " wx:if="{{setwinshow}}">
+  <view class="winbody">
+    <view class="szbq"><text>确认发货信息</text></view>
+    <view class="zk">
+    <text>快递公司：</text> <text>{{kdcompany}}</text>
+    </view>
+
+        <view class="zk">
+            <text>快递单号：</text> <text>{{kdnum}}</text>
+    </view>
+    <view class="settagbtn">
+    <view class="stbtn" bindtap="colsenum" data-value='0'><text>取消</text></view>
+    <view class="midline"></view>
+    <view class="stbtn bl" bindtap="tosub"><text>确认</text></view>
+    </view>
+  </view>
+
+</view>

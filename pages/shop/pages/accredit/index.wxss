@@ -1,0 +1,34 @@
+/* 授权页面 */
+.weui-btn-area{
+  margin-bottom: 40rpx;
+}
+.fbpro_btn{
+  color: #ffffff;
+  box-shadow:0rpx 1rpx 8rpx #1EC052;
+  background-image:linear-gradient(90deg, #23D75D 0%, #1EC052 100%);
+}
+.page{
+  background: #ffffff;
+}
+.get_power{
+  height: 500rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.get_power image{
+  width: 400rpx;
+  height: 400rpx;
+}
+.cancel_power{
+  color: #999999;
+  text-align: center;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.none_dic{
+  color: #999999;
+  font-size: 32rpx;
+  text-align: center;
+}

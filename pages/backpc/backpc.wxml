@@ -1,0 +1,4 @@
+<view class="heli">
+<image class="backpc" src="../image/gotopc.png"></image>
+</view>
+<view class="tot">请前往电脑端官网<text style='font-weight:700;color:#0094fd;'>www.helii.cn</text>登陆查看详情！</view>

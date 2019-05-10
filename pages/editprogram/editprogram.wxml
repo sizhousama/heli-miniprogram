@@ -1,0 +1,51 @@
+<!--pages/editprogram/editprogram.wxml-->
+<!--编辑项目首页-->
+<view class="editpr_1">
+     <view class="weui-cells weui-cells_after-title">   
+            <navigator url="/pages/editprograms/editprograms?editshow=1" class="weui-cell weui-cell_access" >
+                <view class="weui-cell__bd">基本信息</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"  style='color:#000' wx:if="{{YS_obja.data.prname}}">{{YS_obja.data.prname}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" wx:else>未设置</view>
+            </navigator>
+            <navigator url="/pages/editprograms/editprograms?editshow=2" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">基本信息续</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">编辑</view>
+            </navigator>
+            <navigator url="/pages/editprograms/editprograms?editshow=3" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">工程技术信息</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">编辑</view>
+            </navigator>
+            <navigator url="/pages/editprograms/editprograms?editshow=4" class="weui-cell weui-cell_access" >
+                <view class="weui-cell__bd">施工单位</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"  style='color:#000' wx:if="{{YS_obja.data.sgname}}">{{YS_obja.data.sgname}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" wx:else>未设置</view>
+            </navigator>
+            <navigator url="/pages/editprograms/editprograms?editshow=5" class="weui-cell weui-cell_access" >
+                <view class="weui-cell__bd">建设单位</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"  style='color:#000' wx:if="{{YS_obja.data.jsname}}">{{YS_obja.data.jsname}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" wx:else>未设置</view>
+            </navigator>
+            <navigator url="/pages/editprograms/editprograms?editshow=6" class="weui-cell weui-cell_access" >
+                <view class="weui-cell__bd">监理单位</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"  style='color:#000' wx:if="{{YS_obja.data.jlname}}">{{YS_obja.data.jlname}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" wx:else>未设置</view>
+            </navigator>
+            <navigator url="/pages/editprograms/editprograms?editshow=7" class="weui-cell weui-cell_access" >
+                <view class="weui-cell__bd">勘查单位</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"  style='color:#000' wx:if="{{YS_obja.data.kcname}}">{{YS_obja.data.kcname}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" wx:else>未设置</view>
+            </navigator>
+            <navigator url="/pages/editprograms/editprograms?editshow=8" class="weui-cell weui-cell_access" >
+                <view class="weui-cell__bd">设计单位</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"  style='color:#000' wx:if="{{YS_obja.data.sjname}}">{{YS_obja.data.sjname}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" wx:else>未设置</view>
+            </navigator>
+            <navigator url="/pages/editprograms/editprograms?editshow=9" class="weui-cell weui-cell_access" >
+                <view class="weui-cell__bd">其它单位</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"  style='color:#000' wx:if="{{YS_obja.data.hntname}}">{{YS_obja.data.hntname}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" wx:else>未设置</view>
+            </navigator>
+            <view class="weui-cell weui-cell_access" style='height:0'>
+            </view>
+        </view>
+</view>

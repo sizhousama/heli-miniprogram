@@ -1,0 +1,14 @@
+<!--新建子单位 - 2 -->
+<view class="addsing_2">
+     <view class="sing_2box">
+     <view class="sing_title">地基基础</view>
+       <textarea class="textbox"></textarea>
+     <view class="sing_title" style='margin-top:52rpx;'>地基基础</view>
+       <textarea class="textbox"></textarea>
+     </view>
+      <view class="botbox " style='position:initial;margin-top:80rpx'>
+      
+        <button type='button' class="nextbtn" bindtap="addsgsubmit" data-to="/pages/single/single">确定</button>
+        
+    </view>
+</view>

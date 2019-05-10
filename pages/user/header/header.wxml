@@ -1,0 +1,8 @@
+<template name="header">
+    <view class="logtop">
+        <view class="logobox">
+          <image class="hlpic" src='/pages/image/logo@3x.png'></image>
+          <view class="hltext">绑定河狸账号</view>
+        </view>
+    </view>
+</template>

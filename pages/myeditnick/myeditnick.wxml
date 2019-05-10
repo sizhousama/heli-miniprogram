@@ -1,0 +1,9 @@
+
+<view class="myinfo">
+ <view class="ename">
+    <text class="namecolor">姓名</text>
+    <image src="/pages/image/mine-cancel@3x.png" bindtap="rest"></image>
+    <input bindinput="ysinput" data-name="YS_obja.params.realname" value="{{nickname}}"></input>
+  </view>
+  <button class="bcbtn" type="button" bindtap="tapfetch" data-key='YS_obja'>保存</button>
+</view>

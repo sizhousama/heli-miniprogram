@@ -1,0 +1,251 @@
+.all_mian{
+  background-color: #F5F5F5;
+}
+.uce_head{
+  height: 35vh;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+.head_pic{
+  height: 18vh;
+  text-align: center;
+}
+.head_pic image{
+  width: 20vw;
+  height: 20vw;
+  border-radius: 20vw;
+  margin-top: 4vh;
+  border: 1rpx #999999 solid;
+}
+.head_name{
+  text-align: center;
+}
+.head_detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.det_box{
+  width: 33.1%;
+  float: left;
+  text-align: center;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.det_words{
+  display: block;
+  font-size: 30rpx;
+  color: #666;
+}
+.det_num{
+  color: #66ccff;
+  line-height: 66rpx;
+  font-size: 40rpx;
+}
+.det_solid{
+  background-color: #999999;
+  width: 1rpx;
+  height: 6vh;
+  float: left;
+  margin-top: 20rpx;
+}
+
+
+/* 顶部导航栏 */
+.nav_btn {  
+justify-content:space-around;
+text-align:center;  
+display: block;
+margin-top:20rpx
+}
+.contant_nav{
+  background-color: #fff;
+}
+.btn{
+  display:inline-block;
+  line-height:76rpx;
+  width:30vw;
+  margin:0 8vw;
+}
+.on{
+  padding: 0;
+}
+/* 建築圈內容 */
+.comwrap{
+    border-bottom: 1px solid #F5F5F5;
+    padding: 20rpx 22rpx 28rpx 110rpx;
+    background: #fff;
+    margin-bottom:4rpx;
+    position: relative;
+}
+.comlist{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.comuser{
+  display: flex;
+  flex-wrap:nowrap;
+}
+.userimg{
+  width:80rpx;
+  height: 80rpx;
+  position:absolute;
+left:22rpx;
+top:34rpx;
+
+}
+.userimg image{
+  width:100%;
+  height:100%;
+  border-radius: 2%; 
+}
+.userinfo{
+  display:flex;
+  flex-direction: column;
+  margin-left: 18rpx;
+}
+.uname{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #435B90;
+  font-weight: 600;
+}
+.jobtag{
+ flex:2;
+ text-align: right
+ 
+}
+.jtag text{  
+  font-size:26rpx;
+  color: orange;
+   
+}
+.wh_24{
+  width:22rpx; 
+  height:22rpx; 
+  margin-right:5rpx;
+}
+.jobdes{
+   
+  font-size:30rpx;
+  margin-left: 18rpx;
+}
+.relimg{
+  margin-top:20rpx;
+}
+.relimg1 image{
+ width:180rpx;
+height:114rpx;
+border-radius:8rpx;
+margin-right:15rpx;
+}
+.jobbot{
+  margin-top:10rpx;
+  display: flex;
+  margin-left: 18rpx;
+  justify-content: center;
+  align-items: center;
+}
+.jdr{
+  font-size: 20rpx;
+  color: #999;
+  text-align: left;
+  flex:5;
+  }
+.jdr image{
+  width:18rpx;
+  height: 22rpx;
+  margin-right:10rpx;
+  margin-bottom: -1rpx
+}
+.area-delete{
+  flex: 3;
+  text-align: right;
+}
+.jobadr{
+  flex:2;
+  text-align:right;
+}
+.lianxi{
+ padding:5rpx 10rpx;
+border:1px solid #0094FD;
+color:#0094FD;
+border-radius:10rpx;
+font-size:26rpx;
+text-align:center;
+}
+.u_delete{
+  width: 30rpx;
+  height: 30rpx;
+  padding-right:16rpx;
+}
+.text_view{
+  text-align: right;
+}
+/* 發佈文章列表 */
+.main{
+  padding: 0;
+  padding-bottom:160rpx; 
+}
+.videomax{
+ width:226rpx;
+  height:186rpx;
+  border-radius:4px;
+
+}
+.tab-item {  
+justify-content:space-around;
+text-align:left;  
+display: block;
+margin-left:20rpx
+}
+
+.weui-loadmore_line { 
+margin-top:1.8em; 
+}
+
+.ncontent{
+   overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:normal;
+    height:110rpx;
+    /* font-weight: bold; */
+   
+}
+.newimg2{
+  width:215rpx;
+  height:170rpx;
+  border-radius: 4px;
+}
+.newlist2{
+ overflow:hidden;
+ display:flex;
+ flex-wrap:wrap;
+}
+.video{
+width:113px;
+height:190rpx;
+z-index:999;
+background:rgba(0,0,0,0.5);
+position:absolute;
+margin-top:-1rpx;
+border-radius:4px;
+
+}
+.video image{
+  width:80rpx;
+  height:80rpx;
+  margin-left:30%;
+  margin-top:20%;
+}
+.uer_new2 .newbox{
+  border-top:#f5f5f5 20rpx solid;
+  background-color:#fff;
+}
+.u_delete_aricl{
+  width: 30rpx;
+  height: 30rpx;
+  padding-right: 40rpx;
+}

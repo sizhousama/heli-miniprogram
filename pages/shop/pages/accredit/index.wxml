@@ -1,0 +1,20 @@
+<!-- 授权页面 -->
+<view class='page'>
+  <view class='get_power'>
+    <image src='/static/images/ads_accredit.png'></image>
+  </view>
+  <view class='none_dic'>
+    <text>暂时无法为您提供服务</text>
+  </view>
+  <view class='none_dic'>
+    <text>需要授权才能使用</text>
+  </view>
+
+  <view class='weui-btn-area'>
+    <button class='weui-btn weui-btn_primary fbpro_btn'>授权登录</button>
+  </view>
+
+  <view class='cancel_power'>
+    <text>取消授权</text>
+  </view>
+</view>

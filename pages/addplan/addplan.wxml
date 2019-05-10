@@ -1,0 +1,76 @@
+<!--pages/addplan/addplan.wxml-->
+ <view class="addplan dpn">
+          <navigator url=''  class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">同养 <text style='color:#ff8d00'>·6</text></view>
+                <view class="planclass">桩芯;承台;电梯基坑垫层;电梯基坑垫层...;</view>
+                <text class=" weui-cell__ft_in-access"></text>
+          </navigator>
+
+           <navigator url=''  class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">抗渗 <text style='color:#ff8d00'>·6</text></view>
+                <view class="planclass">电梯基坑垫层;</view>
+                <text class=" weui-cell__ft_in-access"></text>
+          </navigator>
+
+           <navigator url=''  class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">柱头 <text style='color:#ff8d00'>·6</text></view>
+                <view class="planclass">桩芯;承台;电梯基坑垫层;电梯基坑垫层;</view>
+                <text class=" weui-cell__ft_in-access"></text>
+           </navigator>
+
+           <navigator url=''  class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">拆模</view>
+                <view class="planclass">桩芯;承台;电梯基坑垫层;电梯基坑垫层;</view>
+                <text class=" weui-cell__ft_in-access"></text>
+
+           </navigator>
+
+          <navigator url=''  class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">焊接</view>
+                <view class="planclass"></view>
+                <text class=" weui-cell__ft_in-access"></text>
+           </navigator>
+
+           <navigator url=''  class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">砌筑</view>
+                <view class="planclass">桩芯;承台;承台垫层;</view>
+                <text class=" weui-cell__ft_in-access"></text>
+
+           </navigator>
+
+           <navigator url=''  class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">外抹灰</view>
+                <view class="planclass">电梯基坑垫层；电梯基坑垫层;</view>
+                <text class=" weui-cell__ft_in-access"></text>
+
+          </navigator>
+
+         <navigator url=''  class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">内抹灰</view>
+                <view class="planclass">电梯基坑垫层；电梯基坑垫层;</view>
+                <text class=" weui-cell__ft_in-access"></text>
+
+           </navigator>
+
+          <navigator url=''  class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">找平</view>
+                <view class="planclass">电梯基坑垫层；电梯基坑垫层;</view>
+                <text class=" weui-cell__ft_in-access"></text>
+           </navigator>
+            <view class="weui-cell weui-cell_access" style='height:0'>
+            </view>
+  </view>  
+
+  <!--同养部位设置-->
+  <view class="setplan">
+    <view class="settop">{{littabname}}部位设置</view>
+      <label bindtap="setornot" data-keys="{{index}}" class="weui-cell weui-check__label" style=' position: inherit;'  wx:for="{{YS_lista.data}}" wx:key="index" wx:for-item="value">
+              <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                 <label class="checkbox" bindtap="setornot" data-key="{{index}}">
+                             <checkbox checked="{{value[str]==1}}"></checkbox> 
+                          </label>
+              </view>
+              <view class="weui-cell__bd">{{value.bybuwei}}</view>
+      </label>
+       
+  </view>

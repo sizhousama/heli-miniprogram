@@ -1,0 +1,77 @@
+<!--pages/myprogram/myprogram.wxml-->
+
+<view class="page">  
+ <view class="swiper-tab">  
+    <view class="tab-item"><text data-current="0" data-inter="YS_plista" bindtap="swichNavAndFetch"  class=" btn {{currentTab==0 ? 'on' : ''}}">我创建的项目</text></view> 
+    <view class="tab-item"><text data-current="1" data-inter="YS_plistb" bindtap="swichNavAndFetch"  class="btn {{currentTab==1 ? 'on' : ''}}">我加入的项目</text></view>  
+  </view>  
+  
+  <!--我创建的项目-->  
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">  
+    <swiper-item> 
+       <scroll-view scroll-y  style="height: 94vh;"   bindscrolltolower="lower">
+      <view class="main">
+      
+       <block wx:for="{{YS_plista.data.datalist}}" wx:key="idx" wx:for-item="value">
+        <!-- <navigator url="/pages/editprogram/editprogram?codeid={{value.codeid}}"> -->
+             <view class="progdes" >
+
+                <navigator url='/pages/single/single?codeid={{value.codeid}}'>
+                    <view class="progleft">
+                      <image src="{{value.proimg?value.proimg:'http://img2.imgtn.bdimg.com/it/u=1986495797,438215067&fm=27&gp=0.jpg'}}"></image>
+                      <text>{{value.prname}}</text>
+                    </view>
+                </navigator>
+                 <view class="progright"  bindtap="editpro" data-id='{{value.codeid}}' data-prname="{{value.prname}}">
+                 <image class="select" src="/pages/image/select@3x.png" wx:if="{{value.codeid==prcodeid}}"></image>
+                  <image class="editpro" src="/pages/image/more@3x.png" ></image>
+                </view>
+             </view>
+        <!-- </navigator> -->
+      </block>
+      <view class="bottom"></view>
+      <view wx:if='{{YS_plista.data.total==0}}'>
+      <image src="../../pages/image/protx.png" style="width:70%;height:35vh;margin-left:13%;margin-top:40rpx;"></image>
+      <view style="text-align:center;width:105%;font-size:32rpx;">暂无工程！</view>
+      </view>
+
+      </view>
+      </scroll-view>
+      <view class="prbot" style='bottom:160rpx'>
+          <button bindtap="nav" data-to='/pages/addprogram/addprogram' class="prbtn" >创建新项目</button>
+        </view>
+    </swiper-item> 
+    <!--我加入的的项目-->   
+    <swiper-item>  
+        <view class="main">
+      <view wx:if='{{YS_plistb.data.datalist.length==0}}'>
+      <image src="../../pages/image/protx.png" style="width:70%;height:35vh;margin-left:13%;margin-top:40rpx;"></image>
+      <view style="text-align:center;width:105%;font-size:32rpx;">暂无工程！</view>
+      </view>
+       <scroll-view scroll-y  style="height: 94vh;"   bindscrolltolower="lower">
+       <block wx:for="{{YS_listb.data}}" wx:key="idx" wx:for-item="value">
+       
+       <view class="progdes">
+          <view class="progleft" bindtap="editpro" data-codeid="{{value.codeid}}" data-prname="{{value.prname}}">
+            <image src="{{value.proimg?value.proimg:'http://img5.imgtn.bdimg.com/it/u=45092476,3791090593&fm=200&gp=0.jpg'}}"></image>
+            <text>{{value.prname}}</text>
+          </view>
+          <view class="progright"  bindtap="editpro" data-id='{{value.codeid}}'>
+                 <image class="select" src="/pages/image/select@3x.png" wx:if="{{value.codeid==prcodeid}}"></image>
+                  <image class="editpro" src="/pages/image/more@3x.png" ></image>
+                </view>
+       </view>
+       
+      </block>
+      <view class="bottom"></view>
+      </scroll-view>
+
+
+      </view>
+      <!-- <view class="prbot dpn" style='bottom:220rpx'>
+          <button bindtap="nav" data-to='/pages/addprogram/addprogram' class="prbtn" >创建新项目</button>
+        </view> -->
+    </swiper-item>  
+  </swiper> 
+</view> 
+

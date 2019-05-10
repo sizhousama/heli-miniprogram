@@ -1,0 +1,268 @@
+<!--pages/protect/protect.wxml-->
+<!--pages/schedule/schedule.wxml-->
+<!--pages/editsingle/editsingle.wxml-->
+<view class="page">  
+    <!--mask-->
+    <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+    <!--content-->
+    <!--使用animation属性指定需要执行的动画-->
+    <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}"> 
+        <!--drawer content-->
+        <view class="drawer_content"> 
+        <view class="drawer_title lineon">删除</view> 
+        <view class="drawer_title" bindtap="powerDrawer" data-statu="close">取消</view> 
+        </view> 
+    </view> 
+   
+ <view class="swiper-tab"> 
+  <scroll-view scroll-x style="width:95%">
+    <view class="tab-item"  wx:for="{{YS_lista.data}}" wx:key="" wx:for-item="value" bindtap="swichNav">
+    <text data-current="{{index}}" data-codeid="{{value.codeid}}" class=" btn {{currentTab==index ? 'on' : ''}}">{{value.sname}}</text>
+    </view> 
+
+ 
+   </scroll-view>
+    
+  </view>  
+   
+  
+  <!--1栋-->  
+  
+  <swiper class="swiper" current="{{currentTab}}" duration="200" bindchange="swiper1">  
+  
+    <swiper-item wx:for="{{YS_lista.data}}" wx:key="" wx:for-item="value">  
+      <view class="main" style='padding-top:30rpx'>
+      <view class="{{selected?'show':'hidden'}}">
+        <view class="schedulebox" style="margin-bottom:30rpx;margin-top:30px">
+        <scroll-view scroll-y  style="height: 75vh">
+          <view class="stitle"></view>
+
+        <view class="schetable">
+
+     
+
+         <view  wx:for="{{YS_listb.data}}" wx:key="" wx:for-item="value" style=''> 
+       
+
+        <view class="build-img1" wx:if="{{value.bwtype=='ban0'}}">
+          <image class="build-1" src="/pages/image/ban1.png"></image> 
+          <view class="lcwrap" >
+            <view class="left">
+              <text class="s1">{{value.bybuwei}}</text>
+              <text class="w_52">C{{value.byqiangdu}}</text>
+            </view>
+            <view class="right">
+              <text class="schetime">{{value.cbyriqi}}</text>
+              <view class="schbox">
+                  <text class="schn{{value.by}}">标</text>
+                  <text class="schn{{value.ty}}"  wx:if="{{value.tyornot==1}}">同</text>
+                  <text class="schn{{value.ks}}" wx:if="{{value.ksornot==1}}">渗</text>
+                  <text class="schn{{value.zt}}"  wx:if="{{value.ztornot==1}}">柱</text>
+                  <text class="schn{{value.dz}}"  wx:if="{{value.dzornot==1}}">焊</text>
+                  <text class="schn{{value.cm}}"  wx:if="{{value.cmornot==1}}">拆</text>
+                  <text class="schn{{value.qz}}"  wx:if="{{value.qzornot==1}}">砌</text>
+                  <text class="schn{{value.wq}}"  wx:if="{{value.wqornot==1}}">外</text>
+                  <text class="schn{{value.nq}}" wx:if="{{value.nqornot==1}}">内</text>
+                  <text class="schn{{value.zp}}" wx:if="{{value.zpornot==1}}">找</text>
+              </view>
+            </view>
+          </view>
+          </view>       
+
+         <view class="build-img2" wx:if="{{value.bwtype=='ban1'}}">
+          <image class="build-1" src="/pages/image/ban2.png"></image> 
+          <view class="lcwrap" >
+            <view class="left">
+              <text class="s1">{{value.bybuwei}}</text>
+              <text class="w_53">C{{value.byqiangdu}}</text>
+            </view>
+            <view class="right">
+              <text class="schetime">{{value.cbyriqi}}</text>
+              <view class="schbox">
+                  <text class="schn{{value.by}}">标</text>
+                  <text class="schn{{value.ty}}"  wx:if="{{value.tyornot==1}}">同</text>
+                  <text class="schn{{value.ks}}" wx:if="{{value.ksornot==1}}">渗</text>
+                  <text class="schn{{value.zt}}"  wx:if="{{value.ztornot==1}}">柱</text>
+                  <text class="schn{{value.dz}}"  wx:if="{{value.dzornot==1}}">焊</text>
+                  <text class="schn{{value.cm}}"  wx:if="{{value.cmornot==1}}">拆</text>
+                  <text class="schn{{value.qz}}"  wx:if="{{value.qzornot==1}}">砌</text>
+                  <text class="schn{{value.wq}}"  wx:if="{{value.wqornot==1}}">外</text>
+                  <text class="schn{{value.nq}}" wx:if="{{value.nqornot==1}}">内</text>
+                  <text class="schn{{value.zp}}" wx:if="{{value.zpornot==1}}">找</text>
+              </view>
+            </view>
+          </view>
+          </view> 
+
+          <view class="jge-2" wx:if="{{value.bwtype=='zhu0'}}">
+            <image  src="/pages/image/zhu1.png"></image>
+             <text class="w_53">C{{value.byqiangdu}}</text>
+             <view class="zhus">
+
+            <text class="schn-j2{{value.by}}">标</text>
+                  <text class="schn-j2{{value.ty}}"  wx:if="{{value.tyornot==1}}">同</text>
+                  <text class="schn-j2{{value.ks}}" wx:if="{{value.ksornot==1}}">渗</text>
+                  <text class="schn-j2{{value.zt}}"  wx:if="{{value.ztornot==1}}">柱</text>
+                  <text class="schn-j2{{value.dz}}"  wx:if="{{value.dzornot==1}}">焊</text>
+                  <text class="schn-j2{{value.cm}}"  wx:if="{{value.cmornot==1}}">拆</text>
+                  <text class="schn-j2{{value.qz}}"  wx:if="{{value.qzornot==1}}">砌</text>
+                  <text class="schn-j2{{value.wq}}"  wx:if="{{value.wqornot==1}}">外</text>
+                  <text class="schn-j2{{value.nq}}" wx:if="{{value.nqornot==1}}">内</text>
+                  <text class="schn-j2{{value.zp}}" wx:if="{{value.zpornot==1}}">找</text>
+            </view>
+         </view>
+
+          <view class="jge-2" wx:if="{{value.bwtype=='zhu1'}}">
+            <image  src="/pages/image/zhu2.png"></image>
+<text class="w_53">C{{value.byqiangdu}}</text>
+            <view class="zhus"> 
+            <text class="schn-j2{{value.by}}">标</text>
+                  <text class="schn-j2{{value.ty}}"  wx:if="{{value.tyornot==1}}">同</text>
+                  <text class="schn-j2{{value.ks}}" wx:if="{{value.ksornot==1}}">渗</text>
+                  <text class="schn-j2{{value.zt}}"  wx:if="{{value.ztornot==1}}">柱</text>
+                  <text class="schn-j2{{value.dz}}"  wx:if="{{value.dzornot==1}}">焊</text>
+                  <text class="schn-j2{{value.cm}}"  wx:if="{{value.cmornot==1}}">拆</text>
+                  <text class="schn-j2{{value.qz}}"  wx:if="{{value.qzornot==1}}">砌</text>
+                  <text class="schn-j2{{value.wq}}"  wx:if="{{value.wqornot==1}}">外</text>
+                  <text class="schn-j2{{value.nq}}" wx:if="{{value.nqornot==1}}">内</text>
+                  <text class="schn-j2{{value.zp}}" wx:if="{{value.zpornot==1}}">找</text>
+            </view>
+         </view>
+
+
+
+         <view class="build-img3" wx:if="{{value.bwtype=='jichu0'}}">
+          <image class="build-1" src="/pages/image/jichu1.png"></image> 
+          <view class="lcwrap2" >
+            <view class="left">
+              <text class="s1">{{value.bybuwei}}</text>
+              <text class="w_52">C{{value.byqiangdu}}</text>
+            </view>
+            <view class="right">
+              <text class="schetime">{{value.cbyriqi}}</text>
+              <view class="schbox">
+                  <text class="schn{{value.by}}">标</text>
+                  <text class="schn{{value.ty}}"  wx:if="{{value.tyornot==1}}">同</text>
+                  <text class="schn{{value.ks}}" wx:if="{{value.ksornot==1}}">渗</text>
+                  <text class="schn{{value.zt}}"  wx:if="{{value.ztornot==1}}">柱</text>
+                  <text class="schn{{value.dz}}"  wx:if="{{value.dzornot==1}}">焊</text>
+                  <text class="schn{{value.cm}}"  wx:if="{{value.cmornot==1}}">拆</text>
+                  <text class="schn{{value.qz}}"  wx:if="{{value.qzornot==1}}">砌</text>
+                  <text class="schn{{value.wq}}"  wx:if="{{value.wqornot==1}}">外</text>
+                  <text class="schn{{value.nq}}" wx:if="{{value.nqornot==1}}">内</text>
+                  <text class="schn{{value.zp}}" wx:if="{{value.zpornot==1}}">找</text>
+              </view>
+            </view>
+          </view>
+          </view> 
+
+
+         <view class="build-img3" wx:if="{{value.bwtype=='jichu1'}}">
+          <image class="build-1" src="/pages/image/jichu2.png"></image> 
+          <view class="lcwrap2" >
+            <view class="left">
+              <text class="s1">{{value.bybuwei}}</text>
+              <text class="w_52">C{{value.byqiangdu}}</text>
+            </view>
+            <view class="right">
+              <text class="schetime">{{value.cbyriqi}}</text>
+              <view class="schbox">
+                  <text class="schn{{value.by}}">标</text>
+                  <text class="schn{{value.ty}}"  wx:if="{{value.tyornot==1}}">同</text>
+                  <text class="schn{{value.ks}}" wx:if="{{value.ksornot==1}}">渗</text>
+                  <text class="schn{{value.zt}}"  wx:if="{{value.ztornot==1}}">柱</text>
+                  <text class="schn{{value.dz}}"  wx:if="{{value.dzornot==1}}">焊</text>
+                  <text class="schn{{value.cm}}"  wx:if="{{value.cmornot==1}}">拆</text>
+                  <text class="schn{{value.qz}}"  wx:if="{{value.qzornot==1}}">砌</text>
+                  <text class="schn{{value.wq}}"  wx:if="{{value.wqornot==1}}">外</text>
+                  <text class="schn{{value.nq}}" wx:if="{{value.nqornot==1}}">内</text>
+                  <text class="schn{{value.zp}}" wx:if="{{value.zpornot==1}}">找</text>
+              </view>
+            </view>
+          </view>
+          </view> 
+
+
+
+
+
+
+         </view> 
+ 
+
+  
+
+
+        </view>
+        </scroll-view>
+          </view>
+      </view>  
+
+      <view class="botbox">
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="placeholder">
+              <text class="dot"></text>
+              <text>已送</text>
+            </view></view>
+            <view class="weui-flex__item"><view class="placeholder">
+              <text class="dot"  style='background: #FFFFFF;border: 2rpx solid #B3B3B3;'></text>
+              <text>未送</text>
+            </view></view>
+            <view class="weui-flex__item"><view class="placeholder">
+              <text class="dot" style='background: #FF4E57;'></text>
+              <text>漏送</text>
+            </view></view>
+            <view class="weui-flex__item"><view class="placeholder">
+              <text class="dot" style='background:#FF8D00;'></text>
+              <text>异常</text>
+            </view></view>
+             <view class="weui-flex__item"><view class="placeholder">
+              
+              
+              <view class="tx">提醒
+                 <view class="txnum">17</view>
+              </view>
+           
+              
+            
+            </view></view>
+        </view>
+      </view>
+      </view>
+      <view class="{{selected1?'show':'hidden'}}">
+      <view class="main" style='padding-top:30rpx'>
+        <view class="schedulebox">
+        <scroll-view scroll-y sytle="height:75vh">
+          <view class="stitle">送检提醒</view>
+          <view class="remindbox"  wx:for="{{remind}}" wx:key="" wx:for-item="value">
+            <text class="line-3"></text>
+            <text class="f_16">{{value.str}}</text>
+          </view>
+
+         
+           </scroll-view>
+        </view>       
+      </view> 
+      </view>
+      <view class="{{selected2?'show':'hidden'}}">
+      <view class="main" style='padding-top:30rpx'>
+        <view class="schedulebox">
+          <view class="stitle">送检统计</view>
+          
+        </view>
+      </view> 
+      </view>
+      <view class="nav bc_white">
+        <view class="{{selected?'red':'default'}}" bindtap="selected">形象进度</view>
+        <view class="{{selected1?'red':'default'}}" bindtap="selected1">送检提醒</view>
+       <!-- <view class="{{selected2?'red':'default'}}" bindtap="selected2">送检统计</view>-->
+      </view>
+      
+    </swiper-item> 
+ 
+   
+
+    
+ 
+  </swiper> 
+</view> 

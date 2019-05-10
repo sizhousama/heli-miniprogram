@@ -1,0 +1,302 @@
+<view class="page {{shownavindex == 1||shownavindex == 2||shownavindex == 3?'C_scroll':''}}">
+    <!-- 顶部菜单栏<view class="content qytext">最新</view>  wx:for="{{YS_lista.data}}" wx:key="" wx:for-item="value" bindtap="swichNav"-->
+    <view class="nav" wx:if="{{searchjob==0}}" >
+   
+
+        <view class="nav-son ">
+             <scroll-view scroll-x style="width: 100%;text-align: left;">
+
+    <view class="tab-item" wx:for="{{favorite}}" wx:key="idx" wx:for-item="value" data-id="{{value.id}}" bindtap="favorite_tap">
+    
+    <text class=" btn {{value.myclass?value.myclass:'def'}}">{{value.name}}</text>
+    <text class="favcity  {{value.myclass?'onc':'defc'}}" wx:if="{{value.province!=null}}">{{value.province}}</text>
+    </view> 
+    <view class="tab-item" bindtap="nav_job" data-url="addbelief">
+     <navigator url="/pages/release/release" hover-class="none">
+    <text class="addfav">+标签</text>
+      </navigator> 
+    </view>
+   </scroll-view>
+        </view>
+
+ 
+
+        
+       
+        
+
+    <view class="nav-sonbox">
+      <view class="nav-sonB" bindtap="searchjob" data-key="1">  
+         <!-- <navigator url="/pages/release/release" hover-class="none"> -->
+          <image class="searchimg" src='/pages/image/navbar-search@3x.png'></image>
+          <!-- <text class="f_c" style="margin-left:10rpx;">选我喜欢</text> -->
+      <!-- </navigator>         -->
+      </view>
+    </view>
+
+   
+  </view>
+
+
+<view class="nav snav" wx:if="{{searchjob==1}}" >
+   
+ 
+       <view class="searchbox">
+       <view class="searchtag" bindtap="smf"><text>{{joblei}}</text><image src="/pages/image/dowm.png"></image></view>
+       <view class="sjobinput"><input placeholder='搜索' class="searchp" bindconfirm="searchSubmit"></input></view>
+       </view>
+
+       <view class="sqxbtn" bindtap="cancelSearch" data-key="0"><text>取消</text></view>
+       </view>
+              
+  <view class="select_box" wx:if="{{smf}}">
+     <view class="select_one {{joblei=='最近'?'jobon':''}}" bindtap="mySelect" data-name="最近">最近</view>
+     <view class="select_one {{joblei=='最新'?'jobon':''}}" bindtap="mySelect" data-name="最新">最新</view>
+  </view>
+
+
+    <!-- <view class="fullbg fullopacity"> </view> -->
+<view class="setwin" wx:if="{{tapshow==1}}">
+<view class="winbody">
+    
+<view class="tagtsimg"><image src="../../pages/image/settag.png"></image></view>
+<view class="szbq"><text>设置标签</text></view>
+ <!-- <view class="closeimg" ><image bindtap="ystapshow" data-value='0' class="search" src='/pages/image/close.png'></image></view>        -->
+<view class="zk">只看我想看的建筑圈动态！</view>
+
+
+<view class="settagbtn">
+<view class="stbtn" bindtap="ystapshow" data-value='0'><text>下次再说</text></view>
+<view class="midline"></view>
+<!-- <navigator url="../../pages/addrelease/addrelease"> -->
+<view class="stbtn bl" bindtap="addre"><text>立即设置</text></view>
+<!-- </navigator> -->
+</view>
+</view>
+
+</view>
+
+
+<!-- 授权框 -->
+<view class="setwin authmc" wx:if="{{tapshow==4}}">
+<view class="authbody"> 
+<view class="authhead">
+<open-data type="userAvatarUrl"></open-data>
+</view>
+<view class="authname"><open-data type="userNickName" lang="zh_CN"></open-data></view>
+<view  class="azbtn">
+<button  open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权登录</button>
+</view> 
+</view> 
+</view>
+
+
+
+
+
+<view class="setwin" wx:if="{{jzqshare==1}}" bindtap="jzqshare" data-key="0">
+<view class="sharebox">
+    <view style="display:flex">
+      <view style="width:50%" bindtap="addsharenum" data-id="{{hbcodeid}}">
+        <button id="shareBtn" open-type="share" data-tourl="pages/jobdetail/jobdetail" data-url="../../pages/jobdetail/jobdetail?jobcodeid={{hbcodeid}}" data-title="{{sharet}}" style="background:rgba(255,255,255,0);"><image class="wechat" src="../../pages/image/wechat.png"></image></button>
+        <view style="font-size:34rpx"><text>发给好友</text></view>
+      </view>
+      <view class="smidline"></view>
+       <view style="width:50%">
+        <view>
+<image class="haibao" src="../../pages/image/haibao.png" bindtap="gotohb" ></image>
+        </view>
+        <view style="font-size:34rpx;margin-top:16rpx;"><text>生成海报</text></view>
+      </view>
+    </view>
+
+</view>
+
+</view>
+
+
+
+
+    <!-- 工作&找人引入 -->
+<!--       <import src="template/list.wxml"/>  -->
+
+      <!-- <import src="/pages/findace/findace.wxml"/>  -->
+  <!-- <scroll-view scroll-y enable-back-to-top="true"   bindscrolltolower="lower" bindscroll="alert" >
+    <view class="relist " >
+
+    <block wx:for="{{YS_lista.data}}" wx:key="idx" wx:for-item="value">
+     <navigator url="/pages/jobdetail/jobdetail?jobcodeid={{value.codeid}}">
+                <view class="mewrap">
+
+        
+          <view class="meboxA">
+            <view class="metop">
+                <text class="m_A">{{value.title}}</text>
+                <text class="m_B">{{value.salary}}</text>
+            </view>
+          </view>
+            <view class="melabel">
+                <text wx:for="{{value.tag}}" wx:key="idx2" wx:for-item="v">{{v}}</text>
+            </view>
+            <view class="metitle">
+                <view class="metA">
+                  <view class="meleft">
+                    <view><image src="{{value.company_name==''?'/pages/image/zhaogong-xiangmu@3x.png':'/pages/image/zhaogogn-qiye@3x.png'}}"></image></view>
+                    <text hidden="">{{value.company_name==''?value.prname:value.company_name}}</text>
+                  </view>
+                  <view class="meright">
+                    <view><image src="/pages/image/zhaogong-weizhi1@3x.png"></image></view>
+                    <view class="ycconten">
+                    <text>{{value.city}} </text>
+                    </view>
+                  </view>
+                </view>
+            </view>
+             <view class="mehr">
+                <view class="metB">
+                  <view class="meleft">
+                     <view class="meuser">
+                       <view class="userpic"><image src="{{value.photourl}}"></image></view>
+                       <view class="vrz" ><image src="/pages/image/zhaogong-renzheng@3x.png"></image></view>
+                     </view>
+                    <text class="username">{{value.realname}}·hr</text>
+                  </view>
+                  <view class="meright">
+                    <text class="time">{{value.createtime}}</text>
+                  </view>
+                </view>
+             </view>
+           </view>
+    </navigator>  
+      </block>
+    <view class="weui-loadmore" wx:if="{{showload}}" style="margin-bottom:150rpx">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+        </view>
+        <view class="weui-loadmore weui-loadmore_line"  wx:if="{{YS_lista.data.length==YS_plista.total}}">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line" style="margin-bottom:100rpx">喂喂，你碰到我的底线了</view>
+        </view>
+
+    </view>
+  </scroll-view> -->
+
+<scroll-view scroll-y enable-back-to-top="true"   bindscrolltolower="lower" bindscroll="alert" style="margin-top:80rpx" >
+            <block wx:for="{{YS_lista.data}}" wx:key="idx" wx:for-item="value">
+            
+               
+              <view class="comwrap">
+                <view class="comlist">
+                    <view class="comuser">
+                          <view class="userimg" style="position:absolute">
+                          <image src="{{value.photourl?value.photourl:'../../pages/image/pop-qiehuan@3x.png'}}" bindtap="nav" data-to="../../pages/ucenter/ucenter?currentUid={{value.uid}}"></image></view>
+                          <view class="userinfo">
+                            <text class="uname" bindtap="nav" data-to="../../pages/ucenter/ucenter?currentUid={{value.uid}}">{{value.realname?value.realname:'用户'}}</text>
+                          <!--  <text class="time">{{value.createtime}}</text>-->
+                          </view>
+                    </view>
+                   <view class="jobtag">
+                  <view class="jtag">
+                    <image class="wh_24" src="/pages/image/bq.png"></image>
+                  <text>{{value.biaoqian}}</text></view>
+                  </view>
+                </view>
+                 <navigator url="/pages/jobdetail/jobdetail?jobcodeid={{value.codeid}}">
+                 <view class="jobdes">
+                 <text>{{value.description}}</text>
+                 </view>
+                  </navigator>
+                 <view class="relimg relimg1" wx:if="{{value.picture}}">
+                 <image wx:if="{{index<3}}" wx:for="{{value.picturearr}}" wx:key="i" wx:for-item="val" src="{{val}}" data-src="{{val}}" bindtap="previewImage" data-arr="{{value.picturearr}}"> </image> 
+                 </view>
+                 <view class="jobbot">
+                  <view class="jdr">
+                  <view style="height:36rpx;">
+                    <image wx:if="{{value.city}}" src="../../pages/image/zhaogong-weizhi1@3x.png"></image>
+                    <text>{{value.city}}</text>
+                  </view>
+                  <view ><text style="font-size:22rpx">{{value.createtime}}</text></view>
+                  
+                  </view>
+                
+                  <view class="jobadr">
+                  <view style="display:inline-block" bindtap="jzqshare" data-key="1" data-id="{{value.codeid}}" data-des="{{value.description}}">
+                  <image class="share" src="../../pages/image/share.png" ></image>
+                  <view class="sharenum overep" style="display:inline-block;width:80rpx;margin-bottom:-10rpx;" wx:if="{{value.repeatNum!=0}}">
+                  <text >{{value.repeatNum}}</text>
+                  </view>
+                  <view class="sharenum" style="display:inline-block;width:80rpx" wx:else>
+                   <text  style="font-size:24rpx;color:#666">转发</text>
+                  </view>
+
+                  </view>
+                  <text class="lianxi" catchtap='tel' data-tel="{{value.tel}}">联系</text>
+                  
+                  </view>
+                 </view>
+              </view>
+                 
+              
+               </block>
+
+              <view class="weui-loadmore" wx:if="{{showload}}" style="margin-bottom:0rpx">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+        </view>
+        <view class="weui-loadmore weui-loadmore_line"  wx:if="{{YS_lista.data.length==YS_plista.total}}">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line" style="margin-bottom:100rpx">
+            {{YS_lista.data.length==0?"找不到你所需要的数据":"喂喂，你碰到我的底线了"}}
+            </view>
+        </view>
+
+              
+        </scroll-view>
+    
+            
+  <view class="czbot">
+<!-- <navigator url="/pages/addbelief/addbelief"> -->
+      <button class="Release" bindtap="nav_job" data-url="addbelief">发布</button>
+      <!-- </navigator>  -->
+  </view>
+  
+
+<!--底部导航-->
+<!--    <view class="tabbar_box" style="background-color:{{tabbar.backgroundColor}};  border-top:2rpx solid {{tabbar.borderStyle}}; {{tabbar.position == 'top' ? 'top:0' : 'bottom:0'}};color:#666" >  
+        <block>  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/index/index"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-shequ@3x.png"></image>  
+                <text>发现</text>  
+            </navigator>  
+        </block> 
+        <block wx:if="{{showwork}}">  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/findjob/findjob"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-zhaogz-select@3x.png"></image>  
+                <text style='color:#0094FD'>建筑圈</text>  
+            </navigator>  
+        </block>  
+        <block>  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/eng/eng"  open-type="switchTab"> 
+            <view class="engcls">
+                <view class="beng">
+                <image class="tabbar_icon engicon" src="/pages/image/tabbar-center@3x.png"></image>  
+                </view>
+                <text>工程</text>  
+            </view> 
+            </navigator>   
+        </block> 
+        <block wx:if="{{showwork}}">  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/findace/findace"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-zhaorc@3x.png"></image>  
+                <text>建材市场</text>  
+            </navigator>  
+        </block> 
+        <block>  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/my/my"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-mine@3x.png"></image>  
+                <text>我的</text>  
+            </navigator>  
+        </block>  
+    </view>   -->
+
+
+
+</view>

@@ -1,0 +1,164 @@
+/* pages/single/single.wxss */
+.main {
+  padding: 24rpx;
+}
+.Uintengbox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+}
+.Uinleft{
+  display: flex;
+  flex-direction: row;
+}
+.Uininfo{
+  margin-left: 26rpx;
+}
+.Uinimg{
+  width:120rpx;
+  height: 120rpx;
+}
+.Uinimg image{
+  width:100%;
+  height: 100%;
+}
+.Uinright{
+ width:160rpx;
+height:115rpx;
+align-items:center;
+text-align:center;
+line-height:98rpx;
+ 
+
+}
+.Uinright image{
+  width:40rpx;
+height:17rpx; 
+}
+.lebicon{
+  width:28rpx;
+  height: 28rpx;
+  vertical-align: sub;
+}
+.lebwrap{
+  width:120rpx;
+  height: 36rpx;
+  border: 2rpx solid #0094FD ;
+  border-radius: 122rpx;
+  padding: 0 10rpx;
+}
+.Uinlabel {
+  margin-top:10rpx;
+}
+.Uinlabel text{
+  margin-left: 10rpx;
+}
+.Uniteng{
+  height:92vh;
+ 
+}
+.bottom{
+  width:100%;
+  height: 20vh;
+}
+.placeholder {
+  margin:6px 2rpx; 
+    padding: 0;
+    text-align: center; 
+    height: 40vw; 
+    color: #cfcfcf;
+    position:relative;
+
+}
+.w_30{
+  width:30vw;
+}
+.weui-flex{
+ flex-wrap: wrap;
+  justify-content:space-between; 
+}
+.cont{
+  height:30vw; 
+border-radius:16rpx;
+position:relative; 
+}
+.close{
+  width:8vw;
+position:absolute; 
+height:8vw;
+line-height:8vw;
+
+top:8rpx;
+right:0; 
+z-index:10;
+
+}
+.close image{ 
+ 
+
+  width:60%;
+height:60%;
+
+}
+.topimg{
+  height:30vw; 
+}
+.timg{
+  width:100%;
+height:100%;
+border-radius:16rpx;
+
+
+}
+.mc{
+position:absolute;
+width:100%;
+bottom:0;
+height:60rpx;
+
+
+}
+.bg{
+background:#37ace1;
+width:100%;
+height:100%;
+position:absolute;
+z-index:1;
+opacity:0.9;
+border-bottom-left-radius:16rpx;
+border-bottom-right-radius:16rpx;
+bottom:0;
+
+}
+.cs{
+  position:absolute;
+width:100%;
+z-index:10;
+font-size:22rpx;
+color:#fff;
+line-height:29rpx;
+
+}
+.stitle{
+  margin-top:10rpx;
+font-size:28rpx;
+text-align:center;
+color: #333; 
+}
+.msg{
+position:absolute;
+border-radius:50%;
+height:38rpx;
+width:38rpx;
+background:#ff5a4a;
+line-height:38rpx;
+font-size:22rpx;
+color:#fff;
+top:14rpx;
+left:14rpx;
+text-align:center;
+
+
+}

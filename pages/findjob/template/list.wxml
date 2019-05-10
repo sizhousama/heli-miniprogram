@@ -1,0 +1,41 @@
+<!-- 招聘首页的工作列表模板 -->
+<template name="list"> 
+ <view class="mewrap">
+        <view class="meboxA">
+          <view class="metop">
+              <text class="m_A">资料员</text>
+              <text class="m_B">面议</text>
+          </view>
+        </view>
+          <view class="melabel">
+              <text>熟手</text>
+              <text>包吃住</text>
+          </view>
+          <view class="metitle">
+              <view class="metA">
+                <view class="meleft">
+                   <view><image src="/pages/image/zhaogogn-qiye@3x.png"></image></view>
+                  <text>深圳建工集团有限公司</text>
+                </view>
+                <view class="meright">
+                  <view><image src="/pages/image/zhaogong-weizhi1@3x.png"></image></view>
+                  <view><text>广东 </text><text>深圳 </text><text>宝安 </text></view>
+                </view>
+              </view>
+          </view>
+           <view class="mehr">
+              <view class="metB">
+                <view class="meleft">
+                   <view class="meuser">
+                     <view class="userpic"><image src="http://www.yh31.com/UploadFiles/NSTX/201707162258094941.jpg"></image></view>
+                     <view class="vrz" ><image src="/pages/image/zhaogong-renzheng@3x.png"></image></view>
+                   </view>
+                  <text class="username">王小花·hr</text>
+                </view>
+                <view class="meright">
+                  <text class="time">05-22 12:34</text>
+                </view>
+              </view>
+           </view>
+        </view>
+</template>  

@@ -1,0 +1,31 @@
+<view class="wdpage">
+<view class="wdtitle"><text>{{YS_lista.data.city}}同条养护温度列表</text></view>
+<view class="buwei"><text>{{YS_lista.data.tyinfo.bybuwei}}</text></view>
+<view class="wdtable">
+  <view class="wdhead">
+    
+    <view class="fx2"><text>日期</text></view>
+    <view class="fx1"><text>最高</text></view>
+    <view class="fx1"><text>最低</text></view>
+    <view class="fx1"><text>平均</text></view>
+    <view class="fx1"><text>累计</text></view>
+    <view class="fx1"><text>龄期</text></view>
+  </view>
+  <block wx:for="{{YS_lista.data.datalist}}" wx:Key="" wx:for-item="value">
+  <view class="wdbody">
+  <image wx:if="{{value.tip=='浇'}}" class="wdimg" src="../../pages/image/jiao.png"></image>
+  <image wx:if="{{value.tip=='今'}}" class="wdimg" src="../../pages/image/jin.png"></image>
+  <image wx:if="{{value.tip=='预'}}" class="wdimg" src="../../pages/image/yu.png"></image>
+   <view class="fx2"><text>{{value.wdatestr}}</text></view>
+    <view class="fx1"><text>{{value.htem}}</text></view>
+    <view class="fx1"><text>{{value.ltem}}</text></view>
+    <view class="fx1"><text>{{value.vtem}}</text></view>
+    <view class="fx1"><text>{{value.leiji}}</text></view>
+    <view class="fx1"><text>{{index}}</text></view>
+  </view>
+  </block>
+ 
+</view>
+
+<view class="wdfoot"><text>该温度记录由：2345天气预报网提供；</text></view>
+</view>

@@ -1,0 +1,8 @@
+<template name="itemb"> 
+  <view class="expect">
+      <view class="ebox">
+          <text class="etop">【深圳】资料员</text>
+          <text class="ebot">3-5k</text>
+      </view>
+  </view>
+</template>  

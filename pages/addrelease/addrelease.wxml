@@ -1,0 +1,390 @@
+
+<view class="addschedule" style="">
+
+
+        
+            
+       <view class="tag-title">标签<text style='font-size:24rpx;color:#666;'> 设置后可以只看相关的动态</text></view>
+       <view class="jtag" wx:if="{{YS_obja.params.noticestr}}">
+                    <image class="wh_24" src="/pages/image/bq.png"></image>
+                  <text>{{YS_obja.params.noticestr}}-{{YS_obja.params.workstr}}</text>
+        </view>
+        <view class="weui-flex">
+         <block wx:for="{{YS_lista.data}}" wx:key="" wx:for-item="value" >
+          <view class="worklist {{YS_obja.params.noticetype==value.noticetype?'act':''}}" bindtap="ch_notice" data-id="{{value.noticetype}}" data-name="{{value.name}}" data-child="{{value.child}}" data-ctl="{{value.child_type_list}}">{{value.name}}</view>
+        </block>
+         </view>
+        <view class="scrbody" wx:if="{{YS_obja.params.noticetype}}"> 
+
+        <scroll-view scroll-y="true">
+        <!-- <block wx:for="{{YS_lista.data}}" wx:key="" wx:for-item="val0"> -->
+        <block wx:for="{{cltemobj}}" wx:key="" wx:for-item="val" >
+        <view class="tagfl"><text>{{val.typename}}</text></view>
+        <view class="weui-flex" >
+        
+ <block wx:for="{{ctemobj}}" wx:key="" wx:for-item="value" wx:if="{{val.type==value.type}}">
+               
+   <view class="chlist {{YS_obja.params.worktype==value.id?'act':''}}" bindtap="ch_work" data-id="{{value.id}}" data-name="{{value.name}}">
+ <image wx:if="{{YS_obja.params.worktype==value.id}}" class="stag" src="../../pages/image/s_tag.png"></image>
+ <view class="chname overep">{{value.name}}</view>
+ </view>
+          </block>
+        </view>
+        </block>
+        <!-- </block> -->
+        </scroll-view>
+
+
+        </view>
+
+    <!-- <view class=" weui-cell_select" style="margin-top:40rpx;">
+               <view class="weui-cell__bd" style="line-height:85rpx;"><text style="margin-left:20rpx">标签</text></view>
+                <view class="weui-cell__bd">
+                    <picker  mode="multiSelector" range="{{tworangearr}}" range-key="name" bindchange="mchange" bindcolumnchange="colchange"  >
+                        <view class="weui-select weui-select_in-select-after" style="color:#999;font-size:32rpx;text-align:right" wx:if="{{YS_obja.params.noticetype==''}}">请选择</view>
+                        <view class="weui-select weui-select_in-select-after" style="color:#999;font-size:32rpx;text-align:right" wx:else>{{YS_obja.params.noticestr}}-{{YS_obja.params.workstr}}</view>
+                    </picker>
+                </view>
+            </view> -->
+
+
+ <view class="weui-cell" style="height:0"></view>
+              <view class=" weui-cell_select">
+                 <view class="weui-cell__bd" style="line-height:85rpx;"><text style="margin-left:20rpx">地区</text><text style='font-size:24rpx;color:#666;'> （选填）</text></view>
+                <view class="weui-cell__bd" style="flex:2">
+                    <picker mode="multiSelector" range="{{cityrangearr}}" range-key="name" bindchange="citymchange" bindcolumnchange="citycolchange"  >
+                        <view class="weui-select weui-select_in-select-after" style="color:#999;font-size:32rpx;text-align:right" wx:if="{{YS_obja.params.province_id==''}}">请选择</view>
+                        <view class="weui-select weui-select_in-select-after overep" style="color:#999;font-size:32rpx;text-align:right" wx:else>{{YS_obja.params.province_str}}-{{YS_obja.params.city_str}}</view>
+                    </picker>
+                </view>
+            </view>
+
+              
+
+           <view class="weui-cell" ></view>
+
+         <view>  
+          <form bindsubmit="formSubmit" report-submit="true"> 
+            <button class="setbtn" bindtap="tapfetch" data-key='YS_obja' formType="submit">确定</button>
+          </form>
+       </view>
+       <view class="bot"></view>
+</view>
+
+
+
+<view class="dpn">
+  <view class="winbody">
+        <view >
+<view >选择你喜欢的建筑圈动态</view>
+ <view class="closeimg" bindtap="ystapshow" data-value='0'><image class="search" src='/pages/image/close.png'></image></view>       
+
+        </view>
+        <view class="weui-flex">
+          <view class="worklist act">招工</view>
+          <view  class="worklist">找活</view>
+          <view class="worklist" >服务</view>
+         </view>
+        <view class="scrbody"> 
+          <scroll-view scroll-y="true">
+           <view class="weui-flex">
+        <view class="chlist">招工</view>
+        <view class="chlist act">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">圈动态类</view>
+        <view class="chlist">招工</view>
+        </view>
+          </scroll-view>
+        </view>
+
+        <view >
+ <view class=" weui-cell_select">
+                 <view class="weui-cell__bd" style="line-height:85rpx;"><text style="margin-left:20rpx">地区</text></view>
+                <view class="weui-cell__bd" style="flex:2">
+                    <picker mode="multiSelector" range="{{cityrangearr}}" range-key="name" bindchange="citymchange" bindcolumnchange="citycolchange"  >
+                        <view class="weui-select weui-select_in-select-after" style="color:#999;font-size:32rpx;text-align:right" wx:if="{{YS_obja.params.province_id==''}}">请选择</view>
+                        <view class="weui-select weui-select_in-select-after overep" style="color:#999;font-size:32rpx;text-align:right" wx:else>{{YS_obja.params.province_str}}-{{YS_obja.params.city_str}}</view>
+                    </picker>
+                </view>
+            </view>
+
+         </view>
+        <view  bindtap="tapfetch" data-key='YS_obja'> 确定</view>
+  </view>
+
+</view>
+
+
+
+<!--
+ <view class="belief">
+  <view class="top">
+      <text class="{{tapshow==0?'active':''}}" data-tap="0" bindtap="setTapshow">企业招聘</text>
+      <text class="line"></text>
+      <text class="{{tapshow==1?'active':''}}" data-tap="1" bindtap="setTapshow">工程招聘</text>
+  </view>
+
+<view class="Company" hidden="{{tapshow==0?'':'true'}}">
+
+  <view class="infolist">
+        <view class="listrow">
+          <text>公司名称</text>
+          <view class="rigthB">
+            <input bindinput="ysinput" data-name="YS_obja.params.companyName" placeholder='填写公司名称'></input>
+          </view>
+        </view>
+  </view>
+  <view class="infolist">
+        <view class="listrow">
+          <text>薪资范围</text>
+ <picker bindchange="bindSalaryChange"  range="{{salary}}" range-key="name">
+          <view class="rigth">
+            <text>{{salaryValue?salaryValue:'请选择'}}</text>
+            <image src="/pages/image/navbar-down@3x.png"></image>
+
+          </view>
+   </picker>
+        </view>
+  </view>
+  <view class="infolist">
+        <view class="listrow">
+          <text>岗位类别</text>
+            <picker bindchange="bindgongzhongChange" range="{{gongzhong}}" range-key="name">
+              <view class="rigth">
+                <text>{{gongzhongValue?gongzhongValue:'请选择'}}</text>
+                <image src="/pages/image/navbar-down@3x.png"></image>
+              </view>
+             </picker>
+        </view>
+  </view>
+
+  <view class="infolist" >
+        <view class="listrow">
+          <text>职位名称</text>
+          <view class="rigthB">
+            <input bindinput="ysinput" data-name="YS_obja.params.title" value="{{YS_obja.params.title}}"  placeholder='请填写职位名称'></input>
+          </view>
+        </view>
+  </view>
+ 
+
+
+<navigator hover-class="none"  url="../addlabel/addlabel?tagtype=job">
+  <view class="infolist">
+        <view class="listrow">
+          <text>标签</text>
+          <view class="rigth">
+            <text>{{tagarr?tagarr:'请选择'}}</text>
+            <image src="/pages/image/navbar-down@3x.png"></image>
+          </view>
+        </view>
+  </view>
+</navigator>
+
+  <view class="infolist">
+        <view class="listrow">
+          <text>工作所在省份</text>
+            <picker bindchange="bindProvinceChange" value="{{proidarr[YS_obja.data.pid]}}" range="{{YS_listb.data}}" range-key="province">
+              <view class="rigth">
+                <text>{{YS_obja.data.province?YS_obja.data.province:'请选择'}}</text>
+                <image src="/pages/image/navbar-down@3x.png"></image>
+              </view>
+             </picker>
+        </view>
+  </view>
+
+  <view class="infolist">
+        <view class="listrow">
+          <text>工作所在城市</text>
+            <picker bindchange="bindCountryChange" value="{{cityidarr[YS_obja.data.cityid]}}" range="{{YS_listc.data}}" range-key="city">
+              <view class="rigth">
+                <text>{{YS_obja.data.city?YS_obja.data.city:'请选择'}}</text>
+                <image src="/pages/image/navbar-down@3x.png"></image>
+              </view>
+             </picker>
+        </view>
+  </view>
+  <view class="infolist">
+        <view class="listrow">
+          <text>联系人</text>
+          <view class="rigthB">
+            <input bindinput="ysinput" data-name="YS_obja.params.contact"  placeholder='填写联系人'></input>
+          </view>
+        </view>
+  </view>
+    <view class="infolist">
+        <view class="listrow">
+          <text>电话号码</text>
+          <view class="rigthB">
+            <input bindinput="ysinput" data-name="YS_obja.params.tel"  placeholder='填写联系电话'></input>
+          </view>
+        </view>
+  </view>
+
+<form bindsubmit="">
+    <view class="content">
+    <text class="title">项目描述</text>
+    <textarea style='height:170rpx;' class="des" bindinput="ysinput" data-name="YS_obja.params.description"  placeholder="请填写描述"></textarea>
+  </view>
+ </form>
+
+ </view>
+ 
+
+
+<view class="Step" hidden="{{tapshow==1?'':'true'}}">
+
+
+  <view class="infolist">
+        <view class="listrow">
+          <text>项目名称</text>
+          <view class="rigthB">
+            <input bindinput="ysinput" data-name="YS_obja.params.prname" placeholder='填写工程名称'></input>
+          </view>
+        </view>
+  </view>
+
+  <view class="infolist">
+        <view class="listrow">
+          <text>薪资范围</text>
+ <picker bindchange="bindSalaryChange"  range="{{salary}}" range-key="name">
+          <view class="rigth">
+            <text>{{salaryValue?salaryValue:'请选择'}}</text>
+            <image src="/pages/image/navbar-down@3x.png"></image>
+
+          </view>
+   </picker>
+        </view>
+  </view>
+  <view class="infolist">
+        <view class="listrow">
+          <text>岗位类别</text>
+            <picker bindchange="bindgongzhongChange" range="{{gongzhong}}" range-key="name">
+              <view class="rigth">
+                <text>{{gongzhongValue?gongzhongValue:'请选择'}}</text>
+                <image src="/pages/image/navbar-down@3x.png"></image>
+              </view>
+             </picker>
+        </view>
+  </view>
+  <view class="infolist" >
+        <view class="listrow">
+          <text>职位名称</text>
+          <view class="rigthB">
+            <input bindinput="ysinput" data-name="YS_obja.params.title" value="{{YS_obja.params.title}}"  placeholder='请填写职位名称'></input>
+          </view>
+        </view>
+  </view>
+ 
+
+<navigator hover-class="none"  url="../addlabel/addlabel?tagtype=job">
+  <view class="infolist">
+        <view class="listrow">
+          <text>标签</text>
+          <view class="rigth">
+            <text>{{tagarr?tagarr:'请选择'}}</text>
+            <image src="/pages/image/navbar-down@3x.png"></image>
+          </view>
+        </view>
+  </view>
+</navigator>
+
+  <view class="infolist">
+        <view class="listrow">
+          <text>工作所在省份</text>
+            <picker bindchange="bindProvinceChange" value="{{proidarr[YS_obja.data.pid]}}" range="{{YS_listb.data}}" range-key="province">
+              <view class="rigth">
+                <text>{{YS_obja.data.province?YS_obja.data.province:'请选择'}}</text>
+                <image src="/pages/image/navbar-down@3x.png"></image>
+              </view>
+             </picker>
+        </view>
+  </view>
+
+  <view class="infolist">
+        <view class="listrow">
+          <text>工作所在城市</text>
+            <picker bindchange="bindCountryChange" value="{{cityidarr[YS_obja.data.cityid]}}" range="{{YS_listc.data}}" range-key="city">
+              <view class="rigth">
+                <text>{{YS_obja.data.city?YS_obja.data.city:'请选择'}}</text>
+                <image src="/pages/image/navbar-down@3x.png"></image>
+              </view>
+             </picker>
+        </view>
+  </view>
+  <view class="infolist">
+        <view class="listrow">
+          <text>联系人</text>
+          <view class="rigthB">
+            <input bindinput="ysinput" data-name="YS_obja.params.contact"  placeholder='填写联系人'></input>
+          </view>
+        </view>
+  </view>
+    <view class="infolist">
+        <view class="listrow">
+          <text>电话号码</text>
+          <view class="rigthB">
+            <input bindinput="ysinput" data-name="YS_obja.params.tel"  placeholder='填写联系电话'></input>
+          </view>
+        </view>
+  </view>
+<form bindsubmit="">
+    <view class="content">
+    <text class="title">岗位描述</text>
+    <textarea style='height:170rpx;' class="des" bindinput="ysinput" data-name="YS_obja.params.description"  placeholder="请填写描述"></textarea>
+  </view>
+ </form>
+ 
+ </view>
+
+  <view class="btnbox" bindtap="add_job">
+    <view class="center"><button>添加</button></view>
+  </view>
+
+
+</view> -->

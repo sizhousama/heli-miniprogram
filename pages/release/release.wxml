@@ -1,0 +1,39 @@
+ <view class="page">  
+  
+ 
+  
+  
+  <!--内容主体wx:for="{{YS_listb.data}}" wx:key="idx" wx:for-item="value"--> 
+     <view class="main">
+  
+<view wx:if="{{favorite.length==0}}" class="tagnone">
+   <image src="../../pages/image/tag_none.png" ></image>
+    <view style="text-align:center;width:105%;font-size:32rpx;margin:20rpx 0;color:#666">还没设置动态标签</view>
+    <view style="text-align:center;width:105%;font-size:32rpx;margin:20rpx 0;color:#666">设置后可以更快找到你想看的建筑圈动态!</view>
+  </view> 
+
+        <scroll-view scroll-y style="height: 100vh;" bindscrolltolower="lower">
+          <block wx:for="{{favorite}}" wx:key="idx" wx:for-item="value"> 
+              <view class="expect">
+                  <view class="ebox">
+                  <view class="close">
+                   <image src="/pages/image/close.png" style="" data-id="{{value.id}}" bindtap="del_favorite"></image>
+                   </view> 
+                      <text class="etop">{{value.name}}</text>
+                      <text class="ebot" wx:if="{{value.city}}">{{value.city}}</text>
+                  </view>
+              </view> 
+          </block>
+
+        </scroll-view>
+
+
+
+
+        <view class="prbot">
+         <navigator url="/pages/addrelease/addrelease">
+                <button  class="prbtn">去设置标签</button> 
+                </navigator>
+              </view>
+      </view>  
+</view>  

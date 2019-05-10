@@ -1,0 +1,7 @@
+<template name="editphone"> 
+  <!-- <view class="ename">
+    <text class="namecolor">旧手机号</text>
+    <input class="ephone" placeholder='请输入' placeholder-class='phc' style='padding-left: 280rpx;text-align:right;'></input>
+  </view> -->
+  
+</template>  

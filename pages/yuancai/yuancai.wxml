@@ -1,0 +1,128 @@
+<view class="page">
+    <!-- 顶部菜单栏-->
+    <view class="nav">
+    <view class="swiper-tab"> 
+  <scroll-view scroll-x style="width:95%">
+    <view class="tab-item">
+    <text data-field="qb" class=" btn {{YS_listb.params.field=='qb'?'on':''}}" bindtap="changeyc">全部</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="gj" class="btn {{YS_listb.params.field=='gj'?'on':''}}" bindtap="changeyc">钢筋</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="sn" class="btn {{YS_listb.params.field=='sn'?'on':''}}" bindtap="changeyc">水泥</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="s" class="btn {{YS_listb.params.field=='s'?'on':''}}" bindtap="changeyc">砂</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="z" class="btn {{YS_listb.params.field=='z'?'on':''}}" bindtap="changeyc">砖</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="zs" class="btn {{YS_listb.params.field=='zs'?'on':''}}" bindtap="changeyc">装饰</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="jn" class="btn {{YS_listb.params.field=='jn'?'on':''}}" bindtap="changeyc">节能</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="fs" class="btn {{YS_listb.params.field=='fs'?'on':''}}" bindtap="changeyc">防水</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="sd" class="btn {{YS_listb.params.field=='sd'?'on':''}}" bindtap="changeyc">水电</text>
+    </view> 
+     <view class="tab-item">
+    <text data-field="aq" class="btn {{YS_listb.params.field=='aq'?'on':''}}" bindtap="changeyc">安全</text>
+    </view> 
+   </scroll-view> 
+  </view>  
+    </view>
+ 
+  <view style="margin-top:80rpx;">
+            <scroll-view scroll-y style="height:94vh;margin-bottom:200rpx">
+             <!--原材-->
+             <block wx:for="{{YS_listb.data.datalist}}" wx:key="" wx:for-item="value">
+                <view class="weui-cell weui-check__label" data-codeid="{{value.codeid}}">
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox gram_1box">
+                    <view class="leftinfo">
+                      <!--1 -->
+                      <view class="gram_top">
+                      <view class="gleft">
+                       <label class="checkbox" bindtap="ycchk" data-index="{{index}}">
+                             <checkbox checked="{{value.ischk}}"></checkbox> 
+                          </label>
+              <view class="weui-cell__bd"><text style='font-size: 26rpx;color: #999999;margin-left:16rpx;'> </text>{{value.mname}}</view>
+                        </view>
+                      <view class="weui-cell__ft" style="position: relative;">
+                      <text style="margin-right:20rpx;font-size:24rpx;color:#0094fd" wx:if='{{value.ycys==1}}'>已送</text>
+                       <text style="margin-right:20rpx;font-size:24rpx;" wx:if="{{value.ycys==0}}">未送</text>
+                          <switch checked="{{value.ycys==1}}" bindchange="comchk" data-codeid="{{value.codeid}}" data-key="ycys"/>
+                      </view>
+                      </view>
+
+                    <!--2-->
+                    <view class="clssinfo">
+                      <!-- <view  class="info_1">型号: <text>{{value.xinghao}}</text></view>
+                      <view  class="info_1" style='margin-left:7rpx'>部位: <text>{{value.buwei}}</text></view>
+                      <view  class="info_1">组数: <text>{{value.yczushu}}</text></view> -->
+                    </view>
+
+                    <!--3-->
+                    <view class="clssinfo">
+                      <view  class="info_1">型号: <text>{{value.xinghao}}</text></view>
+                      <view  class="info_1" style='margin-left:7rpx'>部位: <text>{{value.buwei}}</text></view>
+                      <view  class="info_1">组数: <text>{{value.yczushu}}</text></view>
+                    </view>
+
+                    <!--4-->
+                    <view class="clssinfo">
+                      <view  class="info_1">进场: <text style='color:#0098FF'>{{value.stime}}</text></view>
+                      <view  class="info_1">送检: <text style='color:#07bf42'>{{value.intime}}</text></view>
+                    </view>
+
+                    </view>
+                    <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=qb'>
+                      <view class="nextright" hover-class='changebg' >
+                        <image src="/pages/image/next@3x.png"></image>                     
+                      </view>
+                      </navigator>
+                  </view>
+                </view> 
+            </block>
+
+
+  <view class="weui-cell weui-check__label" style="margin-bottom:100rpx;border-bottom:0px;height:150rpx;">
+
+           </view>
+
+              </scroll-view> 
+         
+
+
+             <view class="prbot"> 
+                <button bindtap="addyc" class="prbtn">添加</button> 
+              </view>
+             </view> 
+   
+
+
+    
+ 
+  
+    <view class="fullbg {{isfull ?'fullopacity':''}}" bindtap="hidebg"></view>
+
+     
+          
+
+
+    <!-- 原材送检 -->
+    <view class="planbot" wx:if="{{yccount>0}}">
+        <view class="plleft">
+            <checkbox checked="{{YS_listb.data.datalist.length==yccount}}" bindtap="ycall" ></checkbox> 
+            <text>全选</text>
+        </view>
+        <view class="plright">
+          <button class="plbtn"  bindtap="comdel" data-key="YS_listb">删除({{yccount}})</button>
+        </view>
+    </view>
+    <!-- 原材送检 -->
+</view>

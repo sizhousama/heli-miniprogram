@@ -1,0 +1,22 @@
+<view class="container" style="padding:102rpx 0;">
+<view class="add-avrtext fc4" >
+<view class="t_c">
+<image src='/pages/image/sq1.png' class="authimg"/></view>
+	<!--
+	<view class="t_c" style='padding-top:30rpx;font-size:32rpx;padding-bottom:5rpx;'>
+	<text style="margin-top:6rpx;">未得到您的授权</text></view>-->
+
+
+
+	<view class="t_c"  style='font-size:30rpx;padding-bottom:5rpx;text-align:center;color:#999'><text style="margin-top:6rpx;">暂时无法为您提供服务</text></view>
+	 
+</view>
+  <view class="t_c fc5 mt_270"  style='font-size:30rpx;padding-bottom:5rpx;color:#999'><text style="margin-top:6rpx;">需要授权才能使用</text></view>
+
+
+	 
+ 
+<button class="gotoset"  open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权并登录</button>
+<button class="qr_bt" bindtap="back">取消</button>
+
+</view>

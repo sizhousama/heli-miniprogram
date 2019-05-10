@@ -1,0 +1,28 @@
+<view class="loginwrap">
+  <view class="logtop">
+        <view class="logobox">
+          <image class="hlpic" src='/pages/image/logo@3x.png'></image>
+          <view class="hltext"></view>
+        </view>
+    </view>
+    <view class="regwrap">
+    <view class="regbox">
+        <view class="ivtop">
+    <text>接受<text style="font-weight:bold;margin:0 20rpx">{{YS_obja.data.realname}}</text>的邀请,加入工程</text>
+    <view class="">
+    <image class="proimg" src='{{YS_obja.data.proimg?YS_obja.data.proimg:"http://img3.imgtn.bdimg.com/it/u=1173563063,2699290336&fm=200&gp=0.jpg"}}'></image>
+    <view class="proname"><text>{{YS_obja.data.prname}}</text></view>
+    </view>
+    </view>
+<!--         <view class="rlab" style="margin-top:80rpx" wx:if="{{!islogin}}">
+          <label>手机号</label>
+          <input class="input" bindinput="ysinput" data-name="YS_objd.params.phone"  placeholder="请输入手机号" />
+        </view> -->
+      
+    </view>
+    </view>
+     <!-- <button class="regbtn" data-inter="YS_objd" bindtap="fetchInter" wx:if="{{!islogin}}">下一步</button> -->
+     <button class="regbtn" data-inter="YS_objc" bindtap="fetchInter" wx:if="{{islogin}}" >加入</button>
+    
+</view>
+

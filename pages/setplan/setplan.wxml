@@ -1,0 +1,1808 @@
+<!-- 原材 -->
+
+<view class="addsing_1" wx:if="{{littab=='qb'||littab=='gj'||littab=='sn'||littab=='s'||littab=='z'||littab=='zs'||littab=='jn'||littab=='fs'||littab=='sd'||littab=='aq'}}" catchtouchmove='true'>
+<scroll-view scroll-y style="height:100vh">
+     <view class="weui-cells weui-cells_after-title">   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">原材料名称</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.mname}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.mname" />
+                </view>
+            </view>
+            
+             <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">使用部位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.buwei}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.buwei"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">排序</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.myorder}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.myorder"/>
+                </view>
+            </view>
+ 
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">类型</view>
+                </view>
+                <view class="weui-cell__bd">
+                        <picker mode="selector" range="{{yctypelist}}" range-key="title" bindchange="picker" class="add-picker" value="YS_obja.params.yctype">
+                <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;text-align:right" >
+                    <text style=";color:#888;">{{yctypelist[YS_obja.params.yctype].title?yctypelist[YS_obja.params.yctype].title:'yctypelist[ycindex].title'}}</text> 
+               </view>
+        </picker>
+                </view>
+            </view>
+  
+           <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">组数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.yczushu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.yczushu"/>
+                </view>
+            </view>
+
+             <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">使用数量</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.number}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.number"/>
+                </view>
+            </view>
+
+            
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">型号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.xinghao}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.xinghao"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">规格</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.guige}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.guige"/>
+                </view>
+            </view>
+
+ 
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">品种</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.pinzhong}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.pinzhong"/>
+                </view>
+            </view>
+
+              <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">强度</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.qiangdu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.qiangdu"/>
+                </view>
+            </view>
+  <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">进场日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.intime}}"  bindchange="setdate" data-key="YS_obja.params.intime">
+                        <view class="weui-input">{{YS_obja.params.intime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">送检日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{YS_obja.params.stime}}"  bindchange="setdate" data-key="YS_obja.params.stime">
+                        <view class="weui-input ">{{YS_obja.params.stime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">复检项目</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.fujian}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.fujian"/>
+                </view>
+            </view>
+            
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">报告名称</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.baogao}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.baogao"/>
+                </view>
+            </view>
+
+           <!-- <view class="line-2">出厂编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' placeholder-class="phcolor" value='{{YS_obja.params.ccph}}' bindinput="ysinput" data-name="YS_obja.params.ccph"></textarea>
+            </view>
+            <view class="line-2">样品编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' placeholder-class="phcolor" value="{{YS_obja.params.ypbh}}" bindinput="ysinput"  data-name="YS_obja.params.ypbh"></textarea>
+            </view>
+            <view class="line-2">检测结果</view>
+
+            <view class="reason">
+              <textarea class="textbox" value="{{YS_obja.params.jieguo}}" bindinput="ysinput" data-name="YS_obja.params.jieguo"></textarea>
+            </view>
+            <view class="line-2">备注</view>
+
+            <view class="reason">
+              <textarea class="textbox" value="{{YS_obja.params.beizhu}}" bindinput="ysinput" data-name="YS_obja.params.beizhu"></textarea>
+            </view> -->
+        </view>
+        <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="出厂编号" data-params="YS_obja.params.ccph">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">出厂编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.ccph?YS_objb.data.ccph:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="样品编号" data-params="YS_obja.params.ypbh">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">样品编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.ypbh?YS_objb.data.ypbh:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="检测结果" data-params="YS_obja.params.jieguo">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">检测结果</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.jieguo?YS_objb.data.jieguo:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+               <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="备注" data-params="YS_obja.params.beizhu">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">备注</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.beizhu?YS_objb.data.beizhu:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+                <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upweituo/upweituo">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">委托单上传</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{weituoarr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+          <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upjiance/upjiance">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">检测报告上传</view>
+          </view>
+          <view class="weui-cell__bd" >
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{jiancearr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+         <view class="weui-cell"></view>
+         <view class="tcbox"></view>
+          <view class="botbox " style=''>
+             <button type='button' class="nextbtn" bindtap="tapfetch" data-key='YS_obja'>保存</button>
+          </view>
+</scroll-view>        
+</view>
+
+
+<!-- 标养 -->
+<view class="addsing_1" wx:if="{{littab=='by'}}">
+<scroll-view scroll-y style="height:100vh">
+     <view class="weui-cells weui-cells_after-title">   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">工程部位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.bybuwei}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.bybuwei" />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">排序</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.myorder}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.myorder"/>
+                </view>
+            </view>
+ 
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">强度等级</view>
+                </view>
+                <view class="weui-cell__bd">
+                        <picker mode="selector" range="{{qdtypelist}}" range-key="title" bindchange="picker" class="add-picker">
+                <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+                    <text style=";color:#888;">C{{YS_obja.params.byqiangdu}}</text> 
+               </view>
+        </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">用量</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.byyl}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.byyl"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">浇筑日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.byriqi}}"  bindchange="setdateby" data-key="YS_obja.params.byriqi">
+                        <view class="weui-input">{{YS_obja.params.byriqi||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">标养送检日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{YS_obja.params.bytime}}"  bindchange="setdate" data-key="YS_obja.params.bytime">
+                        <view class="weui-input ">{{YS_obja.params.bytime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+ 
+            
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">组数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.byzushu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.byzushu"/>
+                </view>
+            </view>
+    
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">标养是否已送</view>
+                </view>
+                <view class="weui-cell__bd t_r">
+                   <switch checked="{{YS_obja.params.byys==1}}" bindchange="setchk" data-codeid="{{YS_obja.params.codeid}}" data-key="byys"/>  
+                </view>
+            </view>
+
+           <!-- <view class="line-2">标养芯片编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.xinpian}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.xinpian"></textarea>
+            </view>
+
+            <view class="line-2">标养样品编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行'  value="{{YS_obja.params.bybh}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.bybh"></textarea>
+            </view>
+            <view class="line-2">标养检测结果</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行'  value="{{YS_obja.params.byjg}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.byjg"></textarea>
+            </view> -->
+        </view>
+        
+        <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="标养芯片编号" data-params="YS_obja.params.xinpian">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">标养芯片编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.xinpian?YS_objb.data.xinpian:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="标养样品编号" data-params="YS_obja.params.bybh">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">标养样品编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.bybh?YS_objb.data.bybh:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="标养检测结果" data-params="YS_obja.params.byjg">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">标养检测结果</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.byjg?YS_objb.data.byjg:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+        <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upweituo/upweituo?field={{littab}}">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">委托单上传</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{weituoarr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+          <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upjiance/upjiance?field={{littab}}">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">检测报告上传</view>
+          </view>
+          <view class="weui-cell__bd" >
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{jiancearr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+
+
+<view class="weui-cell"></view>
+<view class="tcbox"></view>
+    <view class="botbox " style=''>
+        <button type='button' class="nextbtn" bindtap="tapfetch" data-key='YS_obja'>保存</button>
+    </view>
+
+
+
+
+
+  </scroll-view>
+</view>
+
+<!-- 同养 -->
+<view class="addsing_1" wx:if="{{littab=='ty'}}">
+<scroll-view scroll-y style="height:100vh">
+     <view class="weui-cells weui-cells_after-title">   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">工程部位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.bybuwei}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.bybuwei" />
+                </view>
+            </view>
+
+ 
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">强度等级</view>
+                </view>
+                <view class="weui-cell__bd">
+                        <picker mode="selector" range="{{qdtypelist}}" range-key="title" bindchange="picker" class="add-picker">
+                <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+                    <text style=";color:#888;">C{{YS_obja.params.byqiangdu}}</text> 
+               </view>
+        </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">浇筑日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.byriqi}}"  bindchange="setdateby" data-key="YS_obja.params.byriqi">
+                        <view class="weui-input">{{YS_obja.params.byriqi||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+          
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">同养送检日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{YS_obja.params.tytime}}"  bindchange="setdate" data-key="YS_obja.params.tytime">
+                        <view class="weui-input ">{{YS_obja.params.tytime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+             <view class="weui-cell" style="height:0"></view>
+           <navigator url="../../pages/tywendu/tywendu?codeid={{YS_objb.data.codeid}}">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label" style="color:#0094fd">同养温度</view>
+                </view>
+                <view class="weui-cell__bd">
+                   
+                        <view class="weui-select weui-select_in-select-after"><text class="wd" wx:if="{{YS_obja.params.byriqi}}">{{YS_obja.params.wtem}}℃</text></view>
+                   
+                </view>
+            </view>
+            </navigator>
+            
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">组数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.tyzushu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.tyzushu"/>
+                </view>
+            </view>
+    
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">同养是否已送</view>
+                </view>
+                <view class="weui-cell__bd t_r">
+                   <switch checked="{{YS_obja.params.tyys==1}}" data-key="tyys" bindchange="setchk" data-codeid="{{YS_obja.params.codeid}}"/>  
+                </view>
+            </view>
+
+           <!-- <view class="line-2">同养芯片编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.tyxinpian}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.tyxinpian"></textarea>
+            </view>
+            <view class="line-2">同养样品编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.tybh}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.tybh"></textarea>
+            </view>
+
+            <view class="line-2">同养检测结果</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.tyjg}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.tyjg"></textarea>
+            </view>
+
+          -->
+        </view>
+
+            <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="同养芯片编号" data-params="YS_obja.params.tyxinpian">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">同养芯片编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.tyxinpian?YS_objb.data.tyxinpian:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="同养样品编号" data-params="YS_obja.params.tybh">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">同养样品编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.tybh?YS_objb.data.tybh:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="同养检测结果" data-params="YS_obja.params.tyjg">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">同养检测结果</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.tyjg?YS_objb.data.tyjg:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+                <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upweituo/upweituo">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">委托单上传</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{weituoarr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+          <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upjiance/upjiance">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">检测报告上传</view>
+          </view>
+          <view class="weui-cell__bd" >
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{jiancearr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+       <view class="weui-cell"></view>
+        <view class="tcbox"></view>
+          <view class="botbox " style=''>
+             <button type='button' class="nextbtn" bindtap="tapfetch" data-key='YS_obja'>保存</button>
+          </view>
+</scroll-view>
+</view>
+
+
+
+
+
+
+<!-- 抗渗 -->
+<view class="addsing_1" wx:if="{{littab=='ks'}}">
+<scroll-view scroll-y style="height:100vh">
+     <view class="weui-cells weui-cells_after-title">   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">工程部位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.bybuwei}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.bybuwei" />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">排序</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.myorder}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.myorder"/>
+                </view>
+            </view>
+ 
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">强度等级</view>
+                </view>
+                <view class="weui-cell__bd">
+                        <picker mode="selector" range="{{qdtypelist}}" range-key="title" bindchange="picker" class="add-picker">
+                <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+                    <text style=";color:#888;">C{{YS_obja.params.byqiangdu}}</text> 
+               </view>
+        </picker>
+                </view>
+            </view>
+
+             <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label" style="margin:0">抗渗等级</view>
+                </view>
+                <view class="weui-cell__bd">
+                        <picker mode="selector" range="{{kstypelist}}" range-key="title" bindchange="picker" class="add-picker">
+                <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+                    <text style=";color:#888;">P{{YS_obja.params.ksdengji}}</text> 
+               </view>
+        </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">浇筑日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.byriqi}}"  bindchange="setdateby" data-key="YS_obja.params.byriqi">
+                        <view class="weui-input">{{YS_obja.params.byriqi||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">抗渗送检日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{YS_obja.params.kstime}}"  bindchange="setdate" data-key="YS_obja.params.kstime">
+                        <view class="weui-input ">{{YS_obja.params.kstime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+            
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">组数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.kszushu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.kszushu"/>
+                </view>
+            </view>
+   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">抗渗是否已送</view>
+                </view>
+                <view class="weui-cell__bd t_r">
+                   <switch checked="{{YS_obja.params.ksys==1}}" data-key="ksys" bindchange="setchk" data-codeid="{{YS_obja.params.codeid}}"/>  
+                </view>
+            </view>
+
+           <!-- <view class="line-2">抗渗芯片编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.ksxinpian}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.ksxinpian"></textarea>
+            </view> -->
+            <!-- <view class="line-2">抗渗样品编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.ksbh}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.ksbh"></textarea>
+            </view>
+            <view class="line-2">抗渗结果</view>
+
+            <view class="reason">
+              <textarea class="textbox" value="{{YS_obja.params.ksjg}}" bindinput="ysinput" data-name="YS_obja.params.ksjg"></textarea>
+            </view> -->
+
+         
+        </view>
+
+                 <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="抗渗样品编号" data-params="YS_obja.params.ksbh">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">抗渗样品编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.ksbh?YS_objb.data.ksbh:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="抗渗检测结果" data-params="YS_obja.params.ksjg">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">抗渗检测结果</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.ksjg?YS_objb.data.ksjg:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+                <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upweituo/upweituo">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">委托单上传</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{weituoarr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+          <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upjiance/upjiance">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">检测报告上传</view>
+          </view>
+          <view class="weui-cell__bd" >
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{jiancearr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+       <view class="weui-cell"></view>
+        <view class="tcbox"></view>
+          <view class="botbox " style=''>
+             <button type='button' class="nextbtn" bindtap="tapfetch" data-key='YS_obja'>保存</button>
+          </view>
+
+</scroll-view>
+</view>
+
+<!-- 柱头 -->
+<view class="addsing_1" wx:if="{{littab=='zt'}}">
+<scroll-view scroll-y style="height:100vh">
+     <view class="weui-cells weui-cells_after-title">   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">工程部位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.bybuwei}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.bybuwei" />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">排序</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.myorder}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.myorder"/>
+                </view>
+            </view>
+ 
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">强度等级</view>
+                </view>
+                <view class="weui-cell__bd">
+                        <picker mode="selector" range="{{qdtypelist}}" range-key="title" bindchange="picker" class="add-picker">
+                <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;text-align:right" >
+                    <text style=";color:#888;">C{{YS_obja.params.byqiangdu}}</text> 
+               </view>
+        </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">浇筑日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.byriqi}}"  bindchange="setdateby" data-key="YS_obja.params.byriqi">
+                        <view class="weui-input">{{YS_obja.params.byriqi||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">柱头送检日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{YS_obja.params.zttime}}"  bindchange="setdate" data-key="YS_obja.params.zttime">
+                        <view class="weui-input ">{{YS_obja.params.zttime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">组数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.ztzushu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.ztzushu"/>
+                </view>
+            </view>
+   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">柱头是否已送</view>
+                </view>
+                <view class="weui-cell__bd t_r">
+                   <switch checked="{{YS_obja.params.ztys==1}}" data-key="ztys" bindchange="setchk" data-codeid="{{YS_obja.params.codeid}}"/>  
+                </view>
+            </view>
+           <!-- <view class="line-2">柱头芯片编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.ztxinpian}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.ztxinpian"></textarea>
+            </view>
+            <view class="line-2">柱头样品编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.ztbh}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.ztbh"></textarea>
+            </view>
+            <view class="line-2">柱头检测结果</view>
+
+            <view class="reason">
+              <textarea class="textbox" value="{{YS_obja.params.ztjg}}" bindinput="ysinput" data-name="YS_obja.params.ztjg"></textarea>
+            </view> -->
+
+         
+        </view>
+
+        <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="柱头芯片编号" data-params="YS_obja.params.ztxinpian">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">柱头芯片编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.ztxinpian?YS_objb.data.ztxinpian:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="柱头样品编号" data-params="YS_obja.params.ztbh">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">柱头样品编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.ztbh?YS_objb.data.ztbh:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="柱头检测结果" data-params="YS_obja.params.ztjg">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">柱头检测结果</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.ztjg?YS_objb.data.ztjg:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+                <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upweituo/upweituo">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">委托单上传</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{weituoarr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+          <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upjiance/upjiance">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">检测报告上传</view>
+          </view>
+          <view class="weui-cell__bd" >
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{jiancearr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+         <view class="weui-cell"></view>
+        <view class="tcbox"></view>
+          <view class="botbox " style=''>
+             <button type='button' class="nextbtn" bindtap="tapfetch" data-key='YS_obja'>保存</button>
+          </view>
+
+</scroll-view>
+</view>
+
+
+<!-- 拆模 -->
+<view class="addsing_1" wx:if="{{littab=='cm'}}">
+<scroll-view scroll-y style="height:100vh">
+     <view class="weui-cells weui-cells_after-title">   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">工程部位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.bybuwei}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.bybuwei" />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">排序</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.myorder}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.myorder"/>
+                </view>
+            </view>
+ 
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">强度等级</view>
+                </view>
+                <view class="weui-cell__bd">
+                        <picker mode="selector" range="{{qdtypelist}}" range-key="title" bindchange="picker" class="add-picker">
+                <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;text-align:right" >
+                    <text style=";color:#888;">C{{YS_obja.params.byqiangdu}}</text> 
+               </view>
+        </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">浇筑日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.byriqi}}"  bindchange="setdateby" data-key="YS_obja.params.byriqi">
+                        <view class="weui-input">{{YS_obja.params.byriqi||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">送检日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{YS_obja.params.cmtime}}"  bindchange="setdate" data-key="YS_obja.params.cmtime">
+                        <view class="weui-input ">{{YS_obja.params.cmtime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">组数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.cmzushu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.cmzushu"/>
+                </view>
+            </view>
+   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">拆模是否已送</view>
+                </view>
+                <view class="weui-cell__bd t_r">
+                   <switch checked="{{YS_obja.params.cmys==1}}" data-key="cmys" bindchange="setchk" data-codeid="{{YS_obja.params.codeid}}"/>  
+                </view>
+            </view>
+            <!-- <view class="line-2">拆模样品编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.cmbh}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.cmbh"></textarea>
+            </view>
+            <view class="line-2">拆模检测结果</view>
+
+            <view class="reason">
+              <textarea class="textbox" value="{{YS_obja.params.cmjg}}" bindinput="ysinput" data-name="YS_obja.params.cmjg"></textarea>
+            </view> -->
+        </view>
+        
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="拆模样品编号" data-params="YS_obja.params.cmbh">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">拆模样品编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.cmbh?YS_objb.data.cmbh:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="拆模检测结果" data-params="YS_obja.params.cmjg">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">拆模检测结果</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.cmjg?YS_objb.data.cmjg:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+                <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upweituo/upweituo">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">委托单上传</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{weituoarr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+          <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upjiance/upjiance">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">检测报告上传</view>
+          </view>
+          <view class="weui-cell__bd" >
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{jiancearr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+         <view class="weui-cell"></view>
+        <view class="tcbox"></view>
+          <view class="botbox " style=''>
+             <button type='button' class="nextbtn" bindtap="tapfetch" data-key='YS_obja'>保存</button>
+          </view>
+
+</scroll-view>
+</view>
+
+<!-- 焊接 -->
+<view class="addsing_1" wx:if="{{littab=='dz'}}">
+<scroll-view scroll-y style="height:100vh">
+     <view class="weui-cells weui-cells_after-title">   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">工程部位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.bybuwei}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.bybuwei" />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">排序</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.myorder}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.myorder"/>
+                </view>
+            </view>
+ 
+
+            
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">部位浇筑日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.byriqi}}"  bindchange="setdateby" data-key="YS_obja.params.byriqi">
+                        <view class="weui-input">{{YS_obja.params.byriqi||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+           
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">焊接制作日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.dzriqi}}"  bindchange="setdate" data-key="YS_obja.params.dzriqi">
+                        <view class="weui-input">{{YS_obja.params.dzriqi||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">焊接送检日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{YS_obja.params.dztime}}"  bindchange="setdate" data-key="YS_obja.params.dztime">
+                        <view class="weui-input ">{{YS_obja.params.dztime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">组数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.dzzushu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.dzzushu"/>
+                </view>
+            </view>
+   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">焊接是否已送</view>
+                </view>
+                <view class="weui-cell__bd t_r">
+                   <switch checked="{{YS_obja.params.dzys==1}}" data-key="dzys" bindchange="setchk" data-codeid="{{YS_obja.params.codeid}}"/>  
+                </view>
+            </view>
+           <!-- <view class="line-2">钢筋牌号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.dzpaihao}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.dzpaihao"></textarea>
+            </view>
+            <view class="line-2">焊接规格</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.dzguige}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.dzguige"></textarea>
+            </view>
+            <view class="line-2">焊接厂家</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.dzchangjia}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.dzchangjia"></textarea>
+            </view>
+            <view class="line-2">焊接样品编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.dzbh}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.dzbh"></textarea>
+            </view>
+            <view class="line-2">焊接检测结果</view>
+
+            <view class="reason">
+              <textarea class="textbox" value="{{YS_obja.params.dzjg}}" bindinput="ysinput" data-name="YS_obja.params.dzjg"></textarea>
+            </view> -->
+        </view>
+       <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="钢筋牌号" data-params="YS_obja.params.dzpaihao">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">钢筋牌号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.dzpaihao?YS_objb.data.dzpaihao:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+       <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="焊接规格" data-params="YS_obja.params.dzguige">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">焊接规格</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.dzguige?YS_objb.data.dzguige:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="焊接厂家" data-params="YS_obja.params.dzchangjia">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">焊接厂家</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.dzchangjia?YS_objb.data.dzchangjia:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+          <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="焊接样品编号" data-params="YS_obja.params.dzbh">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">焊接样品编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.dzbh?YS_objb.data.dzbh:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="焊接检测结果" data-params="YS_obja.params.dzjg">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">焊接检测结果</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.dzjg?YS_objb.data.dzjg:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+                <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upweituo/upweituo">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">委托单上传</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{weituoarr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+          <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upjiance/upjiance">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">检测报告上传</view>
+          </view>
+          <view class="weui-cell__bd" >
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{jiancearr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+         <view class="weui-cell"></view>
+        <view class="tcbox"></view>
+          <view class="botbox " style=''>
+             <button type='button' class="nextbtn" bindtap="tapfetch" data-key='YS_obja'>保存</button>
+          </view>
+
+</scroll-view>
+</view>
+
+<!-- 砌筑 -->
+<view class="addsing_1" wx:if="{{littab=='qz'}}">
+<scroll-view scroll-y style="height:100vh">
+     <view class="weui-cells weui-cells_after-title">   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">工程部位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.bybuwei}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.bybuwei" />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">排序</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.myorder}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.myorder"/>
+                </view>
+            </view>
+ 
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">强度/配比</view>
+                </view>
+                <view class="weui-cell__bd">
+                         <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.qzqiangdu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.qzqiangdu"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">制作日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.qzriqi}}"  bindchange="setdateby" data-key="YS_obja.params.qzriqi">
+                        <view class="weui-input">{{YS_obja.params.qzriqi||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">砌筑送检日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{YS_obja.params.qztime}}"  bindchange="setdate" data-key="YS_obja.params.qztime">
+                        <view class="weui-input ">{{YS_obja.params.qztime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">组数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.qzzushu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.qzzushu"/>
+                </view>
+            </view>
+   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">砌筑是否已送</view>
+                </view>
+                <view class="weui-cell__bd t_r">
+                   <switch checked="{{YS_obja.params.qzys==1}}" data-key="qzys" bindchange="setchk" data-codeid="{{YS_obja.params.codeid}}"/>  
+                </view>
+            </view>
+            <!-- <view class="line-2">砌筑样品编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.qzbh}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.qzbh"></textarea>
+            </view>
+            <view class="line-2">砌筑检测结果</view>
+
+            <view class="reason">
+              <textarea class="textbox" value="{{YS_obja.params.qzjg}}" bindinput="ysinput" data-name="YS_obja.params.qzjg"></textarea>
+            </view>          -->
+        </view>
+
+                  <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="砌筑样品编号" data-params="YS_obja.params.qzbh">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">砌筑样品编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.qzbh?YS_objb.data.qzbh:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="砌筑检测结果" data-params="YS_obja.params.qzjg">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">砌筑检测结果</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.qzjg?YS_objb.data.qzjg:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+                <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upweituo/upweituo">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">委托单上传</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{weituoarr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+          <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upjiance/upjiance">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">检测报告上传</view>
+          </view>
+          <view class="weui-cell__bd" >
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{jiancearr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+         <view class="weui-cell"></view>
+        <view class="tcbox"></view>
+          <view class="botbox " style=''>
+             <button type='button' class="nextbtn" bindtap="tapfetch" data-key='YS_obja'>保存</button>
+          </view>
+
+</scroll-view>
+</view>
+
+<!-- 外抹灰 -->
+<view class="addsing_1"  wx:if="{{littab=='wq'}}">
+<scroll-view scroll-y style="height:100vh">
+     <view class="weui-cells weui-cells_after-title">   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">工程部位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.bybuwei}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.bybuwei" />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">排序</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.myorder}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.myorder"/>
+                </view>
+            </view>
+ 
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">强度/配比</view>
+                </view>
+                <view class="weui-cell__bd">
+                       <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.wqqiangdu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.wqqiangdu"/>
+               </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">外抹灰日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.wqriqi}}"  bindchange="setdateby" data-key="YS_obja.params.wqriqi">
+                        <view class="weui-input">{{YS_obja.params.wqriqi||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">外墙送检日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{YS_obja.params.wqtime}}"  bindchange="setdate" data-key="YS_obja.params.wqtime">
+                        <view class="weui-input ">{{YS_obja.params.wqtime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+            
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">组数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.wqzushu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.wqzushu"/>
+                </view>
+            </view>
+   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">外墙是否已送</view>
+                </view>
+                <view class="weui-cell__bd t_r">
+                   <switch checked="{{YS_obja.params.wqys==1}}" data-key="wqys" bindchange="setchk" data-codeid="{{YS_obja.params.codeid}}"/>  
+                </view>
+            </view>
+            <!-- <view class="line-2">外墙样品编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.wqbh}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.wqbh"></textarea>
+            </view>
+            <view class="line-2">外墙检测结果</view>
+
+            <view class="reason">
+              <textarea class="textbox" value="{{YS_obja.params.wqjg}}" bindinput="ysinput" data-name="YS_obja.params.wqjg"></textarea>
+            </view> -->
+
+         
+        </view>
+        <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="外墙样品编号" data-params="YS_obja.params.wqbh">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">外墙样品编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.wqbh?YS_objb.data.wqbh:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="外墙检测结果" data-params="YS_obja.params.wqjg">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">外墙检测结果</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.wqjg?YS_objb.data.wqjg:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+                <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upweituo/upweituo">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">委托单上传</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{weituoarr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+          <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upjiance/upjiance">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">检测报告上传</view>
+          </view>
+          <view class="weui-cell__bd" >
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{jiancearr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+         <view class="weui-cell"></view>
+        <view class="tcbox"></view>
+          <view class="botbox " style=''>
+             <button type='button' class="nextbtn" bindtap="tapfetch" data-key='YS_obja'>保存</button>
+          </view>
+</scroll-view>
+</view>
+
+<!-- 内抹灰 -->
+<view class="addsing_1"  wx:if="{{littab=='nq'}}">
+<scroll-view scroll-y style="height:100vh">
+     <view class="weui-cells weui-cells_after-title">   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">工程部位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.bybuwei}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.bybuwei" />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">排序</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.myorder}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.myorder"/>
+                </view>
+            </view>
+ 
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">强度/配比</view>
+                </view>
+                <view class="weui-cell__bd">
+                       <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.nqqiangdu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.nqqiangdu"/>
+               </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">内抹灰日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.nqriqi}}"  bindchange="setdateby" data-key="YS_obja.params.nqriqi">
+                        <view class="weui-input">{{YS_obja.params.nqriqi||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">内墙送检日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{YS_obja.params.nqtime}}"  bindchange="setdate" data-key="YS_obja.params.nqtime">
+                        <view class="weui-input ">{{YS_obja.params.nqtime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+        
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">组数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.nqzushu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.nqzushu"/>
+                </view>
+            </view>
+   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">内墙是否已送</view>
+                </view>
+                <view class="weui-cell__bd t_r">
+                   <switch checked="{{YS_obja.params.nqys==1}}" data-key="nqys" bindchange="setchk" data-codeid="{{YS_obja.params.codeid}}"/>  
+                </view>
+            </view>
+            <!-- <view class="line-2">内墙样品编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.nqbh}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.nqbh"></textarea>
+            </view>
+            <view class="line-2">内墙检测结果</view>
+
+            <view class="reason">
+              <textarea class="textbox" value="{{YS_obja.params.nqjg}}" bindinput="ysinput" data-name="YS_obja.params.nqjg"></textarea>
+            </view> -->
+        </view>
+           <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="内墙样品编号" data-params="YS_obja.params.nqbh">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">内墙样品编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.nqbh?YS_objb.data.nqbh:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="内墙检测结果" data-params="YS_obja.params.nqjg">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">内墙检测结果</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.nqjg?YS_objb.data.nqjg:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+                <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upweituo/upweituo">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">委托单上传</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{weituoarr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+          <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upjiance/upjiance">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">检测报告上传</view>
+          </view>
+          <view class="weui-cell__bd" >
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{jiancearr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+         <view class="weui-cell"></view>
+        <view class="tcbox"></view>
+          <view class="botbox " style=''>
+             <button type='button' class="nextbtn" bindtap="tapfetch" data-key='YS_obja'>保存</button>
+          </view>
+
+</scroll-view>
+</view>
+
+<!-- 找平 -->
+<view class="addsing_1" wx:if="{{littab=='zp'}}">
+<scroll-view scroll-y style="height:100vh">
+     <view class="weui-cells weui-cells_after-title">   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">工程部位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.bybuwei}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.bybuwei" />
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">排序</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.myorder}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.myorder"/>
+                </view>
+            </view>
+ 
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">强度/配比</view>
+                </view>
+                <view class="weui-cell__bd">
+                      <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.zpqiangdu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.zpqiangdu"/>
+               </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">找平日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker mode="date" value="{{YS_obja.params.zpriqi}}"  bindchange="setdateby" data-key="YS_obja.params.zpriqi">
+                        <view class="weui-input">{{YS_obja.params.zpriqi||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">送检日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{YS_obja.params.zptime}}"  bindchange="setdate" data-key="YS_obja.params.zptime">
+                        <view class="weui-input ">{{YS_obja.params.zptime||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+            
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">组数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder-class="phcolor" value='{{YS_obja.params.zpzushu}}' placeholder="请输入" bindinput="ysinput" data-name="YS_obja.params.zpzushu"/>
+                </view>
+            </view>
+   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">找平是否已送</view>
+                </view>
+                <view class="weui-cell__bd t_r">
+                   <switch checked="{{YS_obja.params.zpys==1}}" data-key="zpys" bindchange="setchk" data-codeid="{{YS_obja.params.codeid}}"/>  
+                </view>
+            </view>
+            <!-- <view class="line-2">找平样品编号</view>
+
+            <view class="reason">
+              <textarea class="textbox" placeholder='多个结果，请换行' value="{{YS_obja.params.zpbh}}" placeholder-class="phcolor" bindinput="ysinput" data-name="YS_obja.params.zpbh"></textarea>
+            </view>
+            <view class="line-2">找平检测结果</view>
+
+            <view class="reason">
+              <textarea class="textbox" bindinput="ysinput" data-name="YS_obja.params.zpjg">{{YS_obja.params.zpjg}}</textarea>
+            </view> -->
+        </view>
+
+        <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="找平样品编号" data-params="YS_obja.params.zpbh">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">找平样品编号</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.zpbh?YS_objb.data.zpbh:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+         <view class="weui-cell weui-cell_select" bindtap="editbh" data-bhtitle="找平检测结果" data-params="YS_obja.params.zpqjg">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">找平检测结果</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{YS_objb.data.zpqjg?YS_objb.data.zpqjg:'请设置'}}</text> 
+            </view>
+          </view>
+        </view>
+
+                <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upweituo/upweituo">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">委托单上传</view>
+          </view>
+          <view class="weui-cell__bd">
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{weituoarr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+          <view class="weui-cell weui-cell_select" bindtap="nav" data-to="/pages/upjiance/upjiance">
+          <view class="weui-cell__hd ">
+              <view class="weui-label">检测报告上传</view>
+          </view>
+          <view class="weui-cell__bd" >
+            <view class="buyer-center-title weui-select" style="padding-left: 0;border: none;" >
+              <text style=";color:#888;">{{jiancearr.length}}</text> 
+            </view>
+          </view>
+        </view>
+
+
+         <view class="weui-cell"></view>
+        <view class="tcbox"></view>
+          <view class="botbox " style=''>
+             <button type='button' class="nextbtn" bindtap="tapfetch" data-key='YS_obja'>保存</button>
+          </view>
+</scroll-view>
+</view>
+
+<view class="setwin" wx:if="{{tapshow==1}}">
+  <view class="authbody">
+  
+    <view class="bhtitle"><text>{{bhtitle}}</text><image bindtap="setTapshow" data-tap="0" class="closebh" src="/pages/image/close.png"></image></view>
+    <view class="bhhh"><text>多个结果，请换行</text></view>
+    <view class="bhcontent"><textarea placeholder='请输入' value='{{bhvalue}}' bindinput="ysinput" data-name="{{bhparams}}"></textarea></view>
+
+  <view  class="bhconf" bindtap="setTapshow" data-tap="0">
+    <button>确定</button>
+  </view>
+
+</view>
+</view>
+
+
+
+
+

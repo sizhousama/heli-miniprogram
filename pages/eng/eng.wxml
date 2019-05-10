@@ -1,0 +1,591 @@
+  <view class="{{ysq?'':'stopscroll'}}">
+  <view class="engtop">
+  <image src="../../pages/image/img-bg.png" class="topbg"></image>
+  <view class="engnav">
+  <navigator url='/pages/changepro/changepro'>
+      <view class="t_left">
+          
+          <view class="englogo" style="flex:1">
+            <image src="{{YS_obja.proimg||'http://img2.imgtn.bdimg.com/it/u=1986495797,438215067&fm=27&gp=0.jpg'}}"></image>
+            
+          </view>
+          <view style="flex:2">
+          <view class="f_32 f_white prname">
+           <text>{{YS_obja.prname}}</text>
+           </view>
+           <view style="margin-top:-10rpx">
+           <image class="qhimg" src="../../pages/image/qiehuan.png"></image><text class="f_white qhtext">切换</text>
+           </view>
+          </view>
+         
+      </view>
+      </navigator>
+      <view class="t_right">
+            <navigator url='/pages/myprogram/myprogram'>
+            <view class="rigicon"><image src="/pages/image/all.png"></image>
+            </view>
+            <text class="" style="color:#fff;font-size:26rpx">所有项目</text>
+            </navigator>
+      </view>
+    </view>
+  </view>
+
+
+<view class="eng">
+  <view class="enginfo" style='position: relative;top:-40rpx'>
+
+    <view class="infodes2">
+      <image src="/pages/image/home-date@3x.png"></image>
+      <text class="f_30" style='margin-right:144rpx' wx:if="{{!editdate}}" >工程日期:{{YS_obja.kaigong}}~{{YS_obja.jungong}}</text>
+    </view>
+
+    <view class="infodes2">
+      <image src="/pages/image/home-mianji@3x.png"></image>
+      <text class="f_30">面积：{{YS_obja.mianji}}</text>
+    </view>
+
+    <view class="infodes2">
+      <image src="/pages/image/home-jiage@3x.png"></image>
+      <text class="f_30">造价：{{YS_obja.zaojia}}</text>
+    </view>
+
+    <view class="infodes2">
+      <image src="/pages/image/home-chengshi@3x.png"></image>
+      <text class="f_30">城市：{{YS_obja.city}}</text>
+    </view>
+
+    <view class="infodes2">
+      <image src="/pages/image/home-dizhi@3x.png"></image>
+      <text class="f_30" style="width:">地址：{{YS_obja.gcdizhi}}</text>
+    </view>
+
+    <view class="infodes1">
+      <view>
+        <image src="/pages/image/home-duanxin@3x.png"></image>
+        <text class="f_30">短信通知 </text>
+        <switch color="#44DB5E" name="switch" checked="{{YS_obja.message?true:false}}" data-change="YS_obja.message" data-key="YS_objb.params.message" data-inter="YS_objb" bindchange="switchFetch"/>
+      </view>
+
+      <view>
+        <image src="/pages/image/home-weixin@3x.png"></image>
+        <text class="f_30">微信通知 </text>
+        <switch color="#44DB5E" name="switch" checked="{{YS_obja.weixin?true:false}}" data-change="YS_obja.weixin" data-key="YS_objb.params.weixin" data-inter="YS_objb" bindchange="switchFetch"/>
+      </view>
+    
+      <navigator url="/pages/invite/invite" hover-class="navigator-hover">
+            <button class="yqcybtn share ps_a" id="shareBtn"hover-class="other-button-hover" wx:if="{{YS_obja.ismine&&YS_obja.prid!='828'}}">
+      邀请成员
+      </button>
+      </navigator>
+
+      <button class="yqcybtn share ps_a" hover-class="other-button-hover" wx:if="{{!YS_obja.ismine}}">
+       角色：浏览用户
+      </button>
+
+    </view>
+  </view>
+
+  <view class="engc">
+
+  <view class="enginfo" style='margin-top:-15rpx;padding:0 20rpx 20rpx 20rpx;'>
+      <view class="engline">工程</view>
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="placeholder">
+            <navigator url='/pages/editprogram/editprogram?editprcodeid={{YS_obja.codeid}}'>
+              <view class="engbox">
+                <view class="engtype">
+                  <image src="/pages/image/menu-gongchenggk@3x.png"></image>
+                  <text>工程概况</text>
+                </view>
+              </view>
+              </navigator>
+            </view></view>
+
+            <view class="weui-flex__item"><view class="placeholder">
+            <navigator url='/pages/single/single?codeid={{YS_obja.codeid}}'>
+              <view class="engbox">
+                <view class="engtype">
+                  <image src="/pages/image/menu-danweigc@3x.png"></image>
+                  <text>单位工程</text>
+                </view>
+              </view>
+              </navigator>
+            </view></view>
+
+
+             <view class="weui-flex__item"><view class="placeholder">
+            <navigator url='/pages/sinjixie/sinjixie?codeid={{YS_obja.codeid}}'>
+              <view class="engbox">
+                <view class="engtype">
+                  <image src="/pages/image/jixie.png"></image>
+                  <text>施工机械</text>
+                </view>
+              </view>
+              </navigator>
+            </view>
+            </view>
+            
+            <view class="weui-flex__item"><view class="placeholder">
+            <navigator url='/pages/schedule/schedule?codeid={{YS_obja.codeid}}'>
+              <view class="engbox">
+                <view class="engtype">
+                  <image src="/pages/image/jindu.png"></image>
+                  <text>现场进度</text>
+                </view>
+              </view>
+              </navigator>
+            </view></view>
+
+          <!-- <view class="weui-flex__item"><view class="placeholder">
+            <navigator url='/pages/photo/photo?codeid={{YS_obja.codeid}}'>
+              <view class="engbox">
+                <view class="engtype">
+                  <image src="/pages/image/menu-shuishoup@3x.png"></image>
+                  <text>随手拍</text>
+                </view>
+              </view>
+              </navigator>
+            </view>
+            </view> -->
+
+
+  
+<!-- <view class="weui-flex__item"><view class="placeholder">
+            <navigator url='/pages/schedulebf/schedulebf?codeid={{YS_obja.codeid}}'>
+              <view class="engbox">
+                <view class="engtype">
+                  <image src="/pages/image/menu-chengyuangl@3x.png"></image>
+                  <text>施工进度22</text>
+                </view>
+              </view>
+              </navigator>
+            </view></view> -->
+
+
+           <!-- <view class="weui-flex__item"><view class="placeholder">
+            <navigator url='/pages/member/member?codeid={{YS_obja.codeid}}'>
+              <view class="engbox">
+                <view class="engtype">
+                  <image src="/pages/image/menu-chengyuangl@3x.png"></image>
+                  <text>成员管理</text>
+                </view>
+              </view>
+              </navigator>
+            </view></view>-->
+            
+        </view>
+
+  <!--<view class="weui-flex">
+            
+            <view class="weui-flex__item"><view class="placeholder">
+            <navigator url='../../pages/backpc/backpc'>
+              <view class="engbox">
+                <view class="engtype">
+                  <image src="/pages/image/menu-tujianzl@3x.png"></image>
+                  <text>土建资料</text>
+                </view>
+              </view>
+            </navigator>
+            </view></view>
+            <view class="weui-flex__item"><view class="placeholder">
+            <navigator url='../../pages/backpc/backpc'>
+                <view class="engbox">
+                  <view class="engtype">
+                    <image src="/pages/image/menu-xiangmuwp@3x.png"></image>
+                    <text>项目网盘</text>
+                  </view>
+                </view>
+              </navigator>
+            </view></view>
+
+            <view class="weui-flex__item"><view class="placeholder">
+            
+                <view class="engbox">
+                  <view class="engtype">
+
+                  </view>
+                </view>
+            </view></view>
+
+        </view>-->
+    </view>
+
+      <view class="enginfo"  style='padding:0;padding:0 20rpx 20rpx 20rpx;' wx:if="{{sjtzModule||sjhzModule||hlwsModule||sjkzModule}}">
+       <view class="engline">送检</view>
+        <view class="weui-flex">
+        
+            <view class="weui-flex__item"><view class="placeholder" wx:if="{{sjtzModule}}">
+            <navigator url='/pages/planpre/planpre?codeid={{YS_obja.codeid}}'>
+              <view class="engbox">
+                      <view class="engtype">
+                        <image src="/pages/image/menu-songjiantz@3x.png"></image>
+                        <text>送检台账</text>
+                      </view>
+                    </view>
+              </navigator>      
+            </view></view>
+            <view class="weui-flex__item"><view class="placeholder" wx:if="{{sjhzModule}}">
+            <navigator url='../../pages/gether/gether'>
+                <view class="engbox">
+                  <view class="engtype">
+                    <image src="/pages/image/menu-songjianhz@3x.png"></image>
+                    <text>送检汇总</text>
+                  </view>
+                </view>
+            </navigator>     
+            </view></view>
+            <view class="weui-flex__item"><view class="placeholder" wx:if="{{hlwsModule}}">
+            <navigator url='../../pages/protect/protect'>
+              <view class="engbox">
+                <view class="engtype">
+                  <image src="/pages/image/menu-heliws@3x.png"></image>
+                  <text>送检卫士</text>
+                </view>
+              </view>
+             </navigator>  
+            </view></view>
+            <view class="weui-flex__item"><view class="placeholder" wx:if="{{sjkzModule}}">
+            <navigator url='../../pages/backpc/backpc'>
+              <view class="engbox">
+                <view class="engtype">
+                  <image src="/pages/image/menu-songjiankz@3x.png"></image>
+                  <text>送检快照</text>
+                </view>
+              </view>
+             </navigator>   
+            </view></view>
+        </view>
+      
+      </view>
+  </view>
+  
+    <view class="enginfo" style='padding:0 20rpx 20rpx 20rpx;' wx:if="{{sjtzModule}}">
+      <view class="engline">
+      <text>七天送检预报<text style="color:orange" wx:if="ext>0">•{{ext}}组</text></text>
+      <text style="float:right;color:#0094fd;" bindtap="nav" data-to="../../pages/gether/gether">更多</text>
+      </view>
+       <scroll-view scroll-y style="height:26vh;padding:0">
+       <block wx:for="{{YS_listb.data.yc.lslist}}" wx:key="" wx:for-item="value">
+       <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=qb'> 
+
+        <view class="weui-flex2" hover-class='changebg'>
+           <view class="engline1" > 
+              <view class="buwei" style="display:inline-block;width:100%;vertical-align:bottom">
+               <text style="color:orange">[<text>原材</text>]</text>
+               <text>{{value.mname}}</text>
+            </view> 
+           </view>   
+           <view class="lsdown">
+           <view class="lssin overep"><text>{{value.buwei}}</text></view>
+             <view class="engline1" style="flex:2">    
+             <view class="mltext"><text>送检：<text style="color:#4cd177" >{{value.stime}}</text></text></view>
+           </view>
+           </view>       
+        </view>
+        </navigator>
+        </block>
+         <block wx:for="{{YS_listb.data.by.lslist}}" wx:key="" wx:for-item="value">
+          <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=by'>
+                  
+                     
+         <view class="weui-flex2">
+           <view class="engline1" style="flex:3">
+               
+               <view class="buwei" style="display:inline-block;width:100%;vertical-align:bottom">
+               <text style="color:orange">[<text>标养</text>]</text>
+               <text>{{value.bybuwei}}</text></view>
+           </view>        
+       <view class="lsdown">
+           <view class="lssin overep"><text>{{value.sname}}</text></view>
+             <view class="engline1" style="flex:2">    
+             <view class="mltext"><text>送检：<text style="color:#4cd177" >{{value.bytime}}</text></text></view>
+           </view>
+           </view>  
+        </view></navigator>   
+        </block>
+         <block wx:for="{{YS_listb.data.ty.lslist}}" wx:key="" wx:for-item="value">
+           <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=ty'>
+                  
+                      
+          <view class="weui-flex2">
+           <view class="engline1" style="flex:3">
+               
+               <view class="buwei" style="display:inline-block;width:100%;vertical-align:bottom">
+              <text style="color:orange">[<text>同养</text>]</text>  
+               <text>{{value.bybuwei}}</text></view>
+           </view>        
+        <view class="lsdown">
+           <view class="lssin overep"><text>{{value.sname}}</text></view>
+             <view class="engline1" style="flex:2">    
+             <view class="mltext"><text>送检：<text style="color:#4cd177" >{{value.tytime}}</text></text></view>
+           </view>
+           </view>    
+        </view></navigator>
+        </block>
+ <block wx:for="{{YS_listb.data.ks.lslist}}" wx:key="" wx:for-item="value">
+        <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=ks'>
+                  
+                     
+       <view class="weui-flex2">
+           <view class="engline1" style="flex:3">
+              
+               <view class="buwei" style="display:inline-block;width:100%;vertical-align:bottom">
+               <text style="color:orange">[<text>抗渗</text>]</text>
+               <text>{{value.bybuwei}}</text></view>
+           </view>        
+        <view class="lsdown">
+           <view class="lssin overep"><text>{{value.sname}}</text></view>
+             <view class="engline1" style="flex:2">    
+             <view class="mltext"><text>送检：<text style="color:#4cd177" >{{value.kstime}}</text></text></view>
+           </view>
+           </view>      
+        </view> </navigator>
+        </block>
+      <block wx:for="{{YS_listb.data.zt.lslist}}" wx:key="" wx:for-item="value">
+         <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=zt'>
+                  
+                     
+        <view class="weui-flex2">
+           <view class="engline1" style="flex:3">
+               
+               <view class="buwei" style="display:inline-block;width:100%;vertical-align:bottom">
+               <text style="color:orange">[<text>柱头</text>]</text>
+               <text>{{value.bybuwei}}</text></view>
+           </view>        
+        <view class="lsdown">
+           <view class="lssin overep"><text>{{value.sname}}</text></view>
+             <view class="engline1" style="flex:2">    
+             <view class="mltext"><text>送检：<text style="color:#4cd177" >{{value.zttime}}</text></text></view>
+           </view>
+           </view>      
+        </view> </navigator>
+        </block>
+ <block wx:for="{{YS_listb.data.cm.lslist}}" wx:key="" wx:for-item="value">
+         <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=cm'>
+                  
+                      
+        <view class="weui-flex2">
+           <view class="engline1" style="flex:3">
+               
+               <view class="buwei" style="display:inline-block;width:100%;vertical-align:bottom">
+               <text style="color:orange">[<text>拆模</text>]</text>
+               <text>{{value.bybuwei}}</text></view>
+           </view>        
+        <view class="lsdown">
+           <view class="lssin overep"><text>{{value.sname}}</text></view>
+             <view class="engline1" style="flex:2">    
+             <view class="mltext"><text>送检：<text style="color:#4cd177" >{{value.cmtime}}</text></text></view>
+           </view>
+           </view>
+     
+        </view></navigator>
+        </block>
+ <block wx:for="{{YS_listb.data.dz.lslist}}" wx:key="" wx:for-item="value">
+        <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=dz'>
+                  
+                      
+        <view class="weui-flex2">
+           <view class="engline1" style="flex:3">
+             
+               <view class="buwei" style="display:inline-block;width:100%;vertical-align:bottom">
+                 <text style="color:orange">[<text>焊接</text>]</text>
+               <text>{{value.bybuwei}}</text></view>
+           </view>        
+    <view class="lsdown">
+           <view class="lssin overep"><text>{{value.sname}}</text></view>
+             <view class="engline1" style="flex:2">    
+             <view class="mltext"><text>送检：<text style="color:#4cd177" >{{value.dztime}}</text></text></view>
+           </view>
+           </view>      
+        </view></navigator>
+        </block>
+  <block wx:for="{{YS_listb.data.qz.lslist}}" wx:key="" wx:for-item="value">
+         <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=qz'>
+                  
+                      
+        <view class="weui-flex2">
+           <view class="engline1" style="flex:3">
+               
+               <view class="buwei" style="display:inline-block;width:100%;vertical-align:bottom">
+               <text style="color:orange">[<text>砌筑</text>]</text>
+               <text>{{value.bybuwei}}</text></view>
+           </view>        
+        <view class="lsdown">
+           <view class="lssin overep"><text>{{value.sname}}</text></view>
+             <view class="engline1" style="flex:2">    
+             <view class="mltext"><text>送检：<text style="color:#4cd177" >{{value.qztime}}</text></text></view>
+           </view>
+           </view>    
+        </view></navigator>
+        </block>
+ <block wx:for="{{YS_listb.data.wq.lslist}}" wx:key="" wx:for-item="value">
+        
+         <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=wq'>
+                  
+                     <view class="weui-flex2">
+           <view class="engline1" style="flex:3">
+              
+               <view class="buwei" style="display:inline-block;width:100%;vertical-align:bottom">
+                <text style="color:orange">[<text>外墙</text>]</text>
+               <text>{{value.bybuwei}}</text></view>
+           </view>        
+        <view class="lsdown">
+           <view class="lssin overep"><text>{{value.sname}}</text></view>
+             <view class="engline1" style="flex:2">    
+             <view class="mltext"><text>送检：<text style="color:#4cd177" >{{value.wqtime}}</text></text></view>
+           </view>
+           </view>      
+        </view> </navigator>
+        </block>
+ <block wx:for="{{YS_listb.data.nq.lslist}}" wx:key="" wx:for-item="value">
+       
+        <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=nq'>
+                  
+      <view class="weui-flex2">
+           <view class="engline1">
+               
+               <view class="buwei" style="display:inline-block;width:100%;vertical-align:bottom">
+               <text style="color:orange">[<text>内墙</text>]</text>
+               <text>{{value.bybuwei}}</text></view>
+           </view>        
+       <view class="lsdown">
+           <view class="lssin overep"><text>{{value.snme}}</text></view>
+             <view class="engline1" style="flex:2">    
+             <view class="mltext"><text>送检：<text style="color:#4cd177" >{{value.nqtime}}</text></text></view>
+           </view>
+           </view>      
+        </view></navigator>
+        </block>
+ <block wx:for="{{YS_listb.data.zp.lslist}}" wx:key="" wx:for-item="value">
+         <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=zp'>
+                  
+                      
+        <view class="weui-flex2">
+           <view class="engline1">
+               
+               <view class="buwei" style="display:inline-block;width:100%;vertical-align:bottom">
+               <text style="color:orange">[<text>找平</text>]</text>
+               <text>{{value.bybuwei}}</text></view>
+           </view>        
+        <view class="lsdown">
+           <view class="lssin overep"><text>{{value.sname}}</text></view>
+             <view class="engline1" style="flex:2">    
+             <view class="mltext"><text>送检：<text style="color:#4cd177" >{{value.zptime}}</text></text></view>
+           </view>
+           </view>       
+        </view></navigator>
+  </block>
+    <view wx:if='{{ext == 0}}'>
+    <image src="../../pages/image/tixing.png" style="width:150rpx;height:190rpx;margin-left:40%;margin-top:40rpx"></image>
+    <view style="text-align:center;width:105%;font-size:30rpx;color:#999">最近7天没有要送检的数据哦！</view>
+    </view>
+    </scroll-view>
+    </view>
+
+      <view class="enginfo" style='padding:0 20rpx 20rpx 20rpx;' wx:if="{{sjtzModule}}">
+      <view class="engline">
+      <text>同养温度提醒<text style="color:orange" wx:if="YS_lista.data.length>0">•500℃以上未送有{{YS_lista.data.length}}组</text></text>
+      </view>
+      <scroll-view scroll-y style="height:26vh;padding:0">
+      <block wx:for="{{YS_lista.data}}" wx:key="" wx:for-item="value">
+        <navigator url='/pages/setplan/setplan?codeid={{value.codeid}}&field=ty'>
+                  
+                      
+        <view class="weather" hover-class='changebg'>
+           <view class="engline1">
+             <view> 
+               <view class="buwei" style="display:inline-block;vertical-align:bottom;width:100%;">
+               <text><text style="color:orange">[{{value.sname}}]</text></text>
+               <text>{{value.bybuwei}}</text></view>
+            </view>
+        </view>
+         <view class="lsdown">
+           <view class="overep" style="flex:2"><text style="font-size:28rpx">龄期：</text>
+           <text class="tyday">{{value.day}}</text></view>
+             <view class="engline1" style="flex:2">    
+             <view class="mltext" wx:if="{{value.tem[0].vtem < 580}}"><text class="wdtx">{{value.tem[0].vtem}}℃</text></view>
+             <view class="mltext" wx:if="{{value.tem[0].vtem >=580&&value.tem[0].vtem < 620}}"><text class="wdtx1">{{value.tem[0].vtem}}℃</text></view>
+             <view class="mltext" wx:if="{{value.tem[0].vtem > 620}}"><text class="wdtx2">{{value.tem[0].vtem}}℃</text></view>
+           </view>
+           </view>
+        <!-- <view class="engline1">
+             <view wx:if="{{value.tem[0].vtem < 580}}">
+               <view style="display:inline-block;width:31vw;text-align:right;font-size:26rpx;"><text><text style="color:#0094fd">{{value.day}}</text><text class="wdtx">{{value.tem[0].vtem}}℃</text></text></view>
+            </view>
+            <view wx:if="{{value.tem[0].vtem >=580&&value.tem[0].vtem < 620}}">
+               <view style="display:inline-block;width:31vw;text-align:right;font-size:26rpx;"><text><text style="color:#0094fd">{{value.day}}</text><text class="wdtx1">{{value.tem[0].vtem}}℃</text></text></view>
+            </view>
+            <view wx:if="{{value.tem[0].vtem > 620}}">
+               <view style="display:inline-block;width:31vw;text-align:right;font-size:26rpx;"><text><text style="color:#0094fd">{{value.day}}</text><text class="wdtx2">{{value.tem[0].vtem}}℃</text></text></view>
+            </view>
+            </view> -->
+        </view>
+        </navigator>
+        </block>
+         <view wx:if="{{YS_lista.data.length == 0||YS_lista.data== null}}">
+    <image src="../../pages/image/tixing.png" style="width:150rpx;height:190rpx;margin-left:40%;margin-top:40rpx"></image>
+    <view style="text-align:center;width:105%;font-size:30rpx;color:#999">没有查到500℃以上的同养部位！</view>
+    </view>
+      
+    </scroll-view>
+
+    </view>
+
+  <!-- 授权弹窗 -->
+ 
+
+  <!-- 授权弹窗 -->
+  
+
+<!--底部导航-->
+<!--    <view class="tabbar_box" style="background-color:{{tabbar.backgroundColor}}; border-top:2rpx solid {{tabbar.borderStyle}}; {{tabbar.position == 'top' ? 'top:0' : 'bottom:0'}};color:#666" >  
+        <block>  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/index/index"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-shequ@3x.png"></image>  
+                <text>发现</text>  
+            </navigator>  
+        </block> 
+        <block >  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/findjob/findjob"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-zhaogz@3x.png"></image>  
+                <text>建筑圈</text>  
+            </navigator>  
+        </block>  
+        <block>  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/eng/eng"  open-type="switchTab"> 
+            <view class="engcls">
+                <view class="beng">
+                <image class="tabbar_icon engicon" src="/pages/image/tabbar-center@3x.png"></image>  
+                </view>
+                <text style='color:#0094FD'>工程</text>  
+            </view> 
+            </navigator>  
+        </block> 
+        <block wx:if="{{showwork}}">  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/findace/findace"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-zhaorc@3x.png"></image>  
+                <text>建材市场</text>  
+            </navigator>  
+        </block> 
+        <block>  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/my/my"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-mine@3x.png"></image>  
+                <text>我的</text>  
+            </navigator>  
+        </block>  
+    </view>   -->
+
+</view>
+</view>
+
+ <view class="sqtcbg {{ysq?'dpn':''}}">
+   <view class="sqtc">
+       <view class="sqtitle">
+        <text style="font-size:30rpx;color:#888">本模块功能需要登陆授权才能使用</text>
+       </view>
+       
+         <!-- <view class="sqbtn"><button>拒绝</button></view> -->
+         <view class="sqbtn"><button bindtap="nav" data-to="../../pages/auth/auth">去登陆授权</button></view>
+       
+   </view>
+  </view>

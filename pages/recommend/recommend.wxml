@@ -1,0 +1,56 @@
+<!--pages/recommend/recommend.wxml-->
+<template name="recommend">
+<!--推荐列表图文-->
+<navigator url='/pages/recomdetail/recomdetail'>
+        <view class="newbox">      
+            <view class="newlist">
+                <view class="ncontent">深圳楼市调控取得阶段性成果专家建议加快推荐深莞惠一体化调控</view>
+                  <view class="newbot">
+                      <view class="ftime">10分钟前</view>
+                      <view class="rnum"><image src='/pages/image/faxian-yuedu@3x.png'></image> 211</view>
+                      <view class="rnum" style='margin-left:30rpx'><image src='/pages/image/faixan-pinglun@3x.png'></image> 211</view>
+                  </view>
+            </view>
+                <view class="newright"><image class="newimg" src="http://www.qqw21.com/article/UploadPic/2016-5/201651723425017769.jpg"></image></view>
+           <text class="line"></text>
+          </view>
+</navigator>
+
+<!--推荐列表视频-->
+<navigator url='/pages/videodetail/videodetail'>
+        <view class="newbox">      
+            <view class="newlist">
+                <view class="ncontent">深圳楼市调控取得阶段性成果专家建议加快推荐深莞惠一体化调控</view>
+                  <view class="newbot">
+                      <view class="ftime">10分钟前</view>
+                      <view class="rnum"><image src='/pages/image/faxian-yuedu@3x.png'></image> 211</view>
+                      <view class="rnum" style='margin-left:30rpx'><image src='/pages/image/faixan-pinglun@3x.png'></image> 211</view>
+                  </view>
+            </view>
+                <view class="newright">
+                <video class="videomax"></video>
+                </view>
+           <text class="line"></text>
+          </view>
+</navigator>
+
+<!--推荐列表多图文-->
+<navigator url='/pages/recomdetail/recomdetail'>
+        <view class="newbox">      
+            <view class="newlists">
+                <view class="ncontent">深圳楼市调控取得阶段性成果专家建议加快推荐深莞惠一体化调控!!!!!!</view>
+                   <view class="newrights" >
+                   <image class="newimg" src="http://www.qqw21.com/article/UploadPic/2016-5/201651723424886689.jpg"></image>
+                   <image style='margin:10rpx 12rpx' class="newimg" src="http://www.qqw21.com/article/UploadPic/2016-5/201651723425135122.jpg"></image>
+                   <image class="newimg" src="http://www.qqw21.com/article/UploadPic/2016-5/201651723424919914.jpg"></image>
+                   </view>
+                  <view class="newbot">
+                      <view class="ftime">2018-05-12</view>
+                      <view class="rnum" style='margin-right:60rpx'><image src='/pages/image/faxian-yuedu@3x.png'></image> 211</view>
+                      <view class="rnum" ><image src='/pages/image/faixan-pinglun@3x.png'></image> 211</view>
+                  </view>
+            </view>
+            <text class="line"></text>
+          </view> 
+</navigator> 
+</template>

@@ -1,0 +1,133 @@
+/* pages/my/integral/Shop/details/details.wxss */
+page{
+  background: #F5F5F5;
+}
+.dtop{
+  width:100vw;
+  height: 304rpx;
+  padding: 22rpx;
+  box-sizing: border-box;
+  background: url("http://chuantu.biz/t6/330/1529391156x-1404793124.png");
+  background-size:cover;
+}
+.D_A{
+  margin-top:50rpx;
+  display: inline-block;
+}
+.dmiddle{
+  padding: 32rpx 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: #FFF;
+  margin-bottom: 20rpx;
+}
+.D_B{
+  font-size: 40rpx;
+  color: #333333;
+  height: 56rpx;
+  line-height: 56rpx;
+}
+.D_C{
+  font-size: 60rpx;
+  color: #0094FD;
+  height: 84rpx;
+  line-height: 84rpx;
+  margin-top: 15rpx;
+}
+.D_D{
+  font-size: 28rpx;
+  color: #0094FD;
+}
+
+.dlist{
+  padding: 20rpx 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: #FFF;
+  margin-bottom: 20rpx;
+}
+.D_E{
+  font-size: 26rpx;
+  color: #666666;
+  margin-bottom: 20rpx;
+}
+.D_F{
+  font-size: 30rpx;
+  color: #333333;
+}
+.dbot{
+  padding: 20rpx 24rpx;
+  display: flex;
+  flex-direction: column;
+  background: #FFF;
+  padding-bottom: 114rpx;
+}
+.D_G{
+  font-size: 26rpx;
+  line-height:50rpx; 
+  color: #333333;
+}
+.bcont{
+  width:100%;
+  height: 128rpx;
+  background: #FFF;
+  display: flex;
+  align-items:center;
+  position: fixed;
+  bottom: 0;
+  border-top: 1rpx solid  #E5E5E5;
+}
+.allow{
+  width:446rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  background: #0094FD;
+  border-radius: 4px;
+  color: #FFF;
+  font-size: 32rpx;
+}
+.prohibit{
+  width:446rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  background: #E5E5E5;
+  border-radius: 4px;
+  font-size: 32rpx;
+  color: #999999;
+}
+
+/** 弹窗 **/
+
+.modal-dialog {
+ background-image: linear-gradient(90deg, #FF6E56 0%, #FFA751 100%);
+border-radius: 2px;
+  
+}
+.tsconten{
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top: 104rpx;
+}
+.ts{
+  font-size: 40rpx;
+  color: #FFFFFF;
+  height: 56rpx;
+}
+.tsb{
+  font-size: 28rpx;
+  color: #FFFFFF;
+  height: 40rpx;
+}
+.okbtn{
+  width:446rpx;
+  height: 92rpx;
+  background: #FFE8A7;
+  border-radius: 4px;
+  font-size: 32rpx;
+  color: #FF5A49;
+  border: none;
+  margin-top: 68rpx;
+}

@@ -1,0 +1,394 @@
+/* pages/recruit/addbelief/addbelief.wxss */
+.Company{
+  /* margin-left: 24rpx; */
+}
+.belief{
+  display: flex;
+  flex-direction: column;
+}
+.top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.top text{
+  display:inline-block;
+  width:105rpx;
+  height: 105rpx;
+  line-height: 105rpx;
+  text-align: center;
+  border-radius:50%;
+  background: #CCCCCC; 
+  font-size: 25rpx;
+  color: #FFFFFF; 
+}
+.top .line{
+  width:260rpx;
+  height: 1rpx;
+  margin-top:0;
+}
+.top .active{
+  background: #0094FD;
+}
+
+.weui-cells {
+background-color:#fff;
+line-height:1.41176471;
+font-size:32rpx;
+display:initial;
+}
+.weui-cell{
+  height: 90rpx;
+  line-height: 90rpx;
+  padding:0 24rpx;
+}
+
+.weui-cell_access {
+  position:relative;
+  display:flex;
+  font-size:36rpx;
+
+}
+.gcicon{
+  width:92rpx;
+  height: 50rpx;
+  border-radius: 8rpx;
+  margin-right: 14rpx;
+  
+}
+.weui-cell__bd{
+  margin-left: 10rpx;
+}
+.weui-label{
+  margin-left: 10rpx;
+}
+.weui-input{
+  text-align: right;
+  font-size:32rpx;
+}
+.weui-cell_select{
+  font-size:36rpx;
+  display: flex;
+}
+.phcolor{
+  color:#999;
+}
+
+/**slet信息**/
+.listrow{
+  height: 83rpx;
+  line-height: 83rpx;
+  padding: 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #E5E5E5;
+  align-items: center;
+}
+.listrow text{
+  font-size: 32rpx;
+  color: #333333;
+}
+.userimg{
+  width:80rpx;
+  height: 80rpx;
+  border: 1px solid #EEE;
+  border-radius:50%; 
+}
+.listrow .gray{
+  font-size: 32rpx;
+  color: #999999;
+}
+.rigth text{
+  font-size: 30rpx;
+  color: #999999;
+  margin-right: 10rpx;
+}
+.rigthA text{
+  color: #333333;
+}
+.rigthB input{
+  font-size: 30rpx;
+  text-align: right;
+}
+.rigth image{
+  width:23rpx;
+  height: 15rpx;
+}
+
+.content{
+  box-sizing: border-box;
+}
+.title{
+  font-size: 32rpx;
+  color: #333333;
+  padding: 0 20rpx;
+}
+.des{
+  width:100%;
+  margin-top: 28rpx;
+  border-bottom: 1px solid #E5E5E5;
+  padding: 0 20rpx;
+  font-size: 32rpx;
+}
+
+.btnbox{
+ 
+  width:100vw;
+ margin-top:80rpx;
+ margin-bottom: 80rpx;
+}
+.center{
+  width:100%;
+  text-align: center;
+ 
+}
+.center button{
+  width:446rpx;
+  height: 92rxp;
+  background: #0094FD;
+  border-radius: 4px;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  z-index:99999;
+  background-image:linear-gradient(90deg, #00C9FF 0%, #0098FF 100%);
+
+
+}
+
+
+.duletop{
+  background: #fff;
+  border-bottom: 2rpx solid #E5E5E5;
+}
+.dulenav{
+  width:100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #FFFFFF;
+  border-bottom: 2rpx solid #E5E5E5;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333333;
+}
+.duletext{
+  width:100%;
+  padding: 40rpx 24rpx;
+  height: 256rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+.off{
+  width:29rpx;
+  height: 30rpx;
+  position: absolute;
+  top: -13rpx;
+  right: 0;
+}
+.off image{
+  width:100%;
+  height: 100%;
+}
+.weui-uploader__input {
+  background:#F5F5F5;
+}
+
+
+.upbox{
+  float:left;
+  position:relative;
+  margin-right:9px;
+  margin-bottom:9px;
+  width:160rpx;
+  height:160rpx;
+  border:1px solid #d9d9d9;
+  background:#F5F5F5;
+  padding-top: 32rpx;
+  box-sizing: border-box;
+}
+
+.upicon{
+  width:48rpx;
+  height: 48rpx;
+}
+.upbj{
+  font-size: 30rpx;
+  color: #999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.biaoqian{
+width:40rpx;
+height:40rpx;
+margin-bottom:-3px;
+margin-left:10rpx;
+}
+.setbtn{
+  width:500rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-image: linear-gradient(90deg, #00C9FF 0%, #0098FF 100%);
+  box-shadow: 0 4px 6px 0 #BEE1FA;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center
+ 
+
+
+}
+.botbtn-hover{
+  opacity:0.9;
+  pointer-events: none;
+}
+.piker{
+  margin-left:610rpx;
+
+}
+.upimg{
+  width:156rpx;
+  height:156rpx;
+  margin-top:-32rpx;
+  border-radius: 1px;
+}
+.midline{
+  width:100%;
+  height: 20rpx;
+  background: #eee
+}
+.winbody{
+  width:80%;
+  background:#fff;
+margin:auto auto;
+top:13%;
+position:relative;
+border-radius:18rpx;
+
+}
+.tag-title{
+  margin-left:20rpx;
+  font-size: 32rpx;
+  margin-top:20rpx;
+ display: inline-block;  
+}
+.worklist{
+width:110rpx;
+text-align:center;
+background-color:#ddd;
+font-size:26rpx;
+border-radius:6rpx;
+padding:9rpx;
+margin:15rpx 10rpx;
+color: #666;
+
+
+}
+.jobtag{
+ flex:2;
+ text-align: right;
+ 
+ 
+}
+.wh_24{
+  width:22rpx; 
+  height:22rpx; 
+  margin-right:5rpx;
+}
+.jtag{
+  display:inline-block;
+margin-left:20rpx;
+
+}
+.jtag text{  
+  font-size:26rpx;
+  color: orange;
+   
+}
+.flex{
+  display:flex;
+}
+.scrbody{
+width:94%;
+height:450rpx;
+border:1px solid #ddd;
+margin-left:2vw;
+border-radius: 4rpx;
+margin-bottom:20rpx;
+padding-left:5rpx 
+
+}
+.chlist{
+text-align: center;
+width:200rpx;
+border:1px solid #ddd;
+margin:15rpx 8rpx 20rpx;
+padding:0rpx 6rpx;
+border-radius:4rpx;
+height:60rpx;
+line-height:60rpx;
+font-size:26rpx;
+display:flex;
+justify-content:center;
+color: #666
+}
+.chname{
+  width:200rpx
+}
+.tagfl{
+  font-size: 26rpx;
+  color:#0094FD;
+  margin:15rpx;
+  margin-bottom: -1rpx
+  
+
+}
+.stag{
+ width:35rpx;
+height:35rpx;
+position:absolute;
+margin-left:90rpx;
+margin-top:-2rpx;
+
+
+}
+.weui-flex {
+  flex-wrap:wrap;
+justify-content:flex-start;
+
+}
+.weui-cell_select{
+  font-size:36rpx;
+  display: flex;
+}
+.worklist.act{
+  color:#fff;
+background:#0094fd; 
+}
+
+.chlist.act{
+color:#0094fd;
+border-color: #0094fd;
+}
+.closeimg{
+  position:absolute;
+right:0rpx;
+width:80rpx;
+text-align:center;
+top:0rpx;
+
+}
+.bot{
+  height: 100rpx
+}
+.example{
+  font-size:30rpx;
+  line-height:40rpx;
+  color:#999;
+
+}
+.botbtn{
+  display: flex;
+  justify-content: center;
+}

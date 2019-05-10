@@ -1,0 +1,54 @@
+
+<!-- 无发布时页面 ----开始-->
+<view class='page dpn'>
+  <view class='none_add'>
+    <image src='/static/images/none_ads.png'></image>
+  </view>
+  <view class='none_dic'>
+    还没有发布广告
+  </view>
+</view>
+
+<!-- 我发布的广告列表页 -->
+<view class='page'>
+    <navigator open-type="navigate"  wx:for="{{adlist}}" wx:if="{{adlist.length>0}}" url="/pages/myads/myaddetail/index?id={{item.id}}&openid={{openid}}">
+  <view class='weui-flex ads_list' >
+
+    <view class='list_l '>
+      <image src='{{item.picture}}'></image>
+    </view>
+    <view class='list_r'>
+      <view class='adlist_tit'>
+        <text>{{item.title}}</text>
+      </view>
+      <view class='adlist_dic'>
+        <text>{{item.content}}</text>
+      </view>
+
+            <view class='editad'>
+    <view>
+    <button wx:if="{{item.status==1}}"  catchtap="isup" data-value="1" data-id="{{item.id}}" type="primary" size="mini" >已上架 </button>
+        <button catchtap="isup" data-value="0" wx:elif="{{item.status!=1}}" data-id="{{item.id}}" type="default" size="mini" >已下架 </button>
+    
+     </view>
+
+    <view><button data-id="{{item.id}}" type="default"  type="warn" size="mini" catchtap="delad">删除</button></view>
+
+
+      </view>
+
+      
+
+    </view>
+
+  </view>
+    </navigator>
+
+
+  <view class='weui-flex ads_list'   wx:if="{{adlist.length==0}}">
+  <view class='nodata'><text>暂无数据~~</text></view>
+       
+  </view>
+
+
+</view>

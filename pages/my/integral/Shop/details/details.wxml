@@ -1,0 +1,37 @@
+<!--pages/my/integral/Shop/details/details.wxml-->
+<view class="detalis">
+    <view class="dtop">
+        <text class="D_A">5元话费券一张</text>
+    </view>
+    <view class="dmiddle">
+        <text class="D_B">5元话费充值</text>
+        <text class="D_C">500<text class="D_D">积分</text></text>
+    </view>
+    <view class="dlist">
+        <text class="D_E">商品详情</text>
+        <text class="D_F">5元话费充值，全国通用</text>
+    </view>
+    <view class="dbot">
+        <text class="D_E">重要声明</text>
+        <text class="D_G">1、商品一经兑换，一律不退换积分</text>
+        <text class="D_G">2、每位用户仅限兑换一次的商品，若发现多个账号使用相同手机号兑换同一商品，则自动取消订单，被扣除的积分不退还</text>
+        <text class="D_G">3、通过非法途径获得的积分，平台有权利收回积分</text>
+    </view>
+</view>
+
+
+    <view class="bcont">
+      <button wx:if="true" class="allow"> 500积分兑换</button>
+      <button wx:else class="prohibit">积分不足</button>
+    </view>
+
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="tsconten">
+      <image style='width:274rpx;height:180rpx;margin-bottom:76.2rpx' src="/pages/image/pop-duihuan@3x.png"></image>
+      <text class="ts">兑换成功</text>
+      <text class="tsb">恭喜您兑换商品成功</text>
+      <button class="okbtn" bindtap="onCancel">我知道了</button>
+    </view>
+</view>

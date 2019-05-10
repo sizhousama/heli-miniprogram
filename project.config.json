@@ -1,0 +1,59 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.94",
+	"appid": "wx5a011b4beaed429a",
+	"projectname": "%E6%B2%B3%E7%8B%B8%E5%BB%BA%E7%AD%91",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": 0,
+					"name": "1",
+					"pathName": "pages/findjob/findjob",
+					"query": "scene=u/1263",
+					"scene": "1011"
+				},
+				{
+					"id": 1,
+					"name": "job",
+					"pathName": "pages/jobdetail/jobdetail",
+					"query": "scene=j/ZVtrw2_bGn8LstYCLoOE",
+					"scene": "1011"
+				},
+				{
+					"id": 2,
+					"name": "1",
+					"pathName": "pages/invitenext/invitenext",
+					"query": "invitePrcodeid=MQ9skjmFz5fvqJuKrOw&from=1114&rid=4050",
+					"scene": "1011"
+				}
+			]
+		}
+	}
+}

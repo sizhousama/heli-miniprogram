@@ -1,0 +1,29 @@
+  <!--编辑子单位3-->  
+<view class="addsing_2">
+     <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access" >
+            <view class="weui-cell__hd">
+                <view class="weui-label">部位名称</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input"  bindinput="ysinput" data-name="YS_obja.params.bybuwei" placeholder-class="phcolor" placeholder="请填写" value="{{YS_objb.data.bybuwei}}" />
+            </view>
+        </view>
+           <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">强度</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindqiangduChange" range-key="title" range="{{qdtypelist}}" >
+                        <view class="weui-select weui-select_in-select-after">C{{YS_objb.data.byqiangdu}}</view>
+                    </picker>
+                </view>
+            </view>
+         </view>
+          <view class="weui-cell weui-cell_access" style='height:0'>
+          </view>
+          <view class="gram2-bot" style='position:initial;margin-top:80rpx;'>
+              <button type='button' class="btn_2" bindtap="tapfetch" data-key="YS_obja">保存</button> 
+              <button type='button' class="del_2">删除</button>  
+          </view>
+</view> 

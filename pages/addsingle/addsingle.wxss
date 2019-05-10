@@ -1,0 +1,105 @@
+/* pages/addprogram/addprogram.wxss */
+page{
+  font-size: 32rpx;
+}
+.engtop{
+  width:100%;
+  height: 140rpx;
+  background: url('http://chuantu.biz/t6/343/1531652018x-1404817659.png');
+  background-size: 100% 100%;
+}
+.nextbtn{
+  background-image: linear-gradient(90deg, #00C9FF 0%, #0098FF 100%);
+  border-radius: 4px;
+  width:446rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+.nextbtn2{
+  background-image: linear-gradient(90deg, #00C9FF 0%, #0098FF 100%);
+  border-radius: 4px;
+  width:300rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+.botbtn{
+  display: flex;
+  margin-top:80rpx;
+margin-bottom:80rpx;
+
+}
+.botbox{
+  margin:62rpx 0 60rpx 0;
+  display: flex;
+  justify-content: center;
+}
+.weui-select{
+  text-align: right
+}
+.weui-cells {
+background-color:#fff;
+line-height:1.41176471;
+font-size:32rpx;
+display:initial;
+}
+.weui-cell{
+  height: 90rpx;
+  line-height: 90rpx;
+  padding:0 24rpx;
+}
+.weui-cell__ft_in-access {
+  padding-right:13px;
+  position:relative;
+  display:flex;
+  margin-right:12rpx;
+}
+.gcicon{
+  width:92rpx;
+  height: 50rpx;
+  border-radius: 8rpx;
+  margin-right: 14rpx;
+  
+}
+.weui-cell__bd{
+  margin-left: 10rpx;
+}
+.weui-label{
+  margin-left: 10rpx;
+}
+.weui-input{
+  text-align: right;
+  margin-right: 36rpx;
+}
+.phcolor{
+  color:#999;
+}
+.weui-line{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #F5F5F5;
+  padding: 0 32rpx;
+  font-size: 28rpx;
+  color: #999999;
+
+}
+
+.addsing_2{
+  padding: 12rpx 24rpx;
+}
+.sing_title{
+  margin-bottom: 18rpx;
+}
+.textbox{
+  width:702rpx;
+  height: 348rpx;
+  border: 2rpx solid #CCCCCC;
+  border-radius: 8rpx;
+}
+.dpn{
+  display: none;
+}

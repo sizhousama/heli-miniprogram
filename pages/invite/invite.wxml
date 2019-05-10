@@ -1,0 +1,69 @@
+<view class="invitebox">
+<view class="ititle"><text>相关单位</text></view>
+<view class="tagbox">
+<!-- <view class="onetagbox">
+<button open-type="share" data-rid="123"><view class="itag"><text>甲方</text></view></button>
+<view class="itag"><text>设计院</text></view>
+<view class="itag"><text>勘察院</text></view>
+</view> -->
+	<view class="onetagbox">
+	<button open-type="share" data-rid="{{value.id}}" data-url="pages/invitenext/invitenext" wx:for="{{YS_lista.data.related}}" wx:key="idx" wx:for-item="value">
+	<view class="itag">
+		<text>{{value.name}}</text>
+	</view>
+	</button>
+<!-- 	<view class="itag"><text>施工单位方</text></view>
+	<view class="itag"><text>其他单位</text></view> -->
+	</view>
+
+</view>
+<view class="tips"><text>以上的人员仅浏览（无编辑权限） 工程概况、现场进度、施工动态、晴雨表</text></view>
+</view>
+
+
+<view class="invitebox">
+<view class="ititle"><text>工程项目部</text></view>
+<view class="tagbox">
+<view class="onetagbox">
+<button open-type="share" data-rid="{{value.id}}" data-url="pages/invitenext/invitenext" wx:for="{{YS_lista.data.program}}" wx:key="idx" wx:for-item="value" wx:if="{{value.level==0}}">
+<view class="itag">
+	<text>{{value.name}}</text>
+</view>
+</button>
+<!-- <view class="itag"><text>技术负责人</text></view>
+<view class="itag"><text>施工员</text></view> -->
+</view>
+<!-- <view class="onetagbox">
+<view class="itag"><text>安全员</text></view>
+<view class="itag"><text>测量员</text></view>
+<view class="itag itag-e"><text></text></view>
+</view>
+ -->
+</view>
+<view class="tips"><text>以上的人员：可以看工程概况、现场进度、施工动态、晴雨表</text></view>
+
+<view class="midline"></view>
+
+<view class="onetagbox">
+<button open-type="share" data-rid="{{value.id}}" data-url="pages/invitenext/invitenext" wx:for="{{YS_lista.data.program}}" wx:key="idx" wx:for-item="value" wx:if="{{value.level==1}}">
+<view class="itag">
+	<text>{{value.name}}</text>
+</view>
+</button>
+</view>
+
+<view class="tips"><text>以上的人员：可以看工程概况、现场进度、施工动态、材料管理</text></view>
+
+<view class="midline"></view>
+
+<view class="onetagbox">
+<button open-type="share" data-rid="{{value.id}}" data-url="pages/invitenext/invitenext" wx:for="{{YS_lista.data.program}}" wx:key="idx" wx:for-item="value" wx:if="{{value.level==1}}">
+<view class="itag" wx:for="{{YS_lista.data.program}}" wx:key="idx" wx:for-item="value" wx:if="{{value.level==2}}">
+	<text>{{value.name}}</text>
+</view>
+</button>
+
+</view>
+
+<view class="tips"><text>以上的人员：看所有、操作日志、成员管理，通知</text></view>
+</view>

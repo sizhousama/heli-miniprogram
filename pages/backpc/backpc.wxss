@@ -1,0 +1,18 @@
+.heli{
+  width:100%;
+
+  text-align: center
+}
+.backpc{
+  width:50vw;
+height:40vw;
+
+margin-top:30%;
+
+}
+.tot{
+  text-align: center;
+  font-size: 32rpx;
+  color:#999;
+  margin:20rpx 0;
+}

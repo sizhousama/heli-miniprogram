@@ -1,0 +1,28 @@
+<view class='page'>
+  <view class='top_logo'>
+    <image src='{{info.about_us_logo?info.about_us_logo:"/static/images/logo.jpg"}}'></image>
+  </view>
+
+  <view class='about_cont'>
+
+  
+  <rich-text nodes="{{info.about_us}}"></rich-text>
+<!--     <view class='jianjie_tit'>公司简介：</view>
+    <view class='jianjie_cont'>深圳市微客儿网络科技有限公司成立于2016年12月12日，总部设在深圳，是一家致力为企业，商家，个人提供物与物交换的 服务平台。随着互联网与传统行业的激烈竞争，越来越多的传统行业面临企业发展的困境，货品滞销， 等问题层出不穷。为了改变市场货品过剩现状，公司致力引领物联时代，共享全球资源。</view>
+    <view class='jianjie_tit'>网站详情：</view>
+    <view class='jianjie_cont'>1.个人可将闲置全新或者二手商品放置换趣宝平台内，换己需商品，减少现金开支，放大产品价值.
+      2.企业及商家可将库存积压产品上传至平台并与其它商家达成合作交易。
+      3.农户也可使用积压蔬菜水果换取大众商品。减少社会资源浪费
+      4.解决广大微商囤货难题。</view>
+    <view class='jianjie_tit'>联系方式：</view>
+    <view class='jianjie_cont'>
+      公司:深圳市微客儿网络科技有限公司
+      电话:0755-32929828
+      邮箱:hx@1yhhw.com‍
+      地址:广东省深圳市龙岗区万科第五园
+      ©CopyRight 2017  www.1yhhw.com版权所有
+      备案号:粤ICP备17018014号-1
+    </view> -->
+    
+  </view>
+</view>

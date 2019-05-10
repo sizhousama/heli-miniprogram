@@ -1,0 +1,355 @@
+<!--引用tabbar-->  
+
+<view class="mybox">
+  <!-- <view class="mytop">
+    <view class="uinfo">
+      <view>
+      <navigator hover-class="none" url='../../pages/myinfo/myinfo'>
+         <image class="userpic"  src="{{YS_obja.data.photourl}}"></image>
+         <text class="username">{{YS_obja.data.nicheng}}</text>
+      </navigator>   
+      </view>
+       <navigator hover-class="none"  url="../../pages/mySign/mySign">
+         <span class="qdao">签到</span>
+        </navigator>
+    </view> -->
+ <view style="width:100%;height:10vh;margin-top:7vh;">
+      <navigator hover-class="none" url='../../pages/myinfo/myinfo' style="display:flex">
+        <view style="width:94vw">
+         <image class="userpic"  src="{{YS_obja.data.photourl}}"></image>
+         <text class="username">{{YS_obja.data.realname}}</text>
+         </view>
+         <view  style="width:5vw;margin-top:20rpx;margin-bottom:20rpx">
+         <image style='width:20rpx;height:20rpx;' src="/pages/image/white_next.png"></image>
+         </view>
+      </navigator>   
+      </view>
+    <!--<view class="jifen">
+      <view class="jfleft">
+         <text class="jnum">{{YS_obja.data.score}}</text>
+         <text class="jfwz">积分</text>
+      </view>
+    
+         <view class="jshop">
+            <navigator hover-class="none"  url="integral/Shop/Shop">
+            <image src="/pages/image/mine-shangcheng@3x.png"></image><text class="jshopwz">河狸商城</text>
+             </navigator>
+            </view>
+    </view>-->
+    
+  <!-- </view> -->
+</view>
+
+<view class="mybot">
+
+<!--<view class="myAbox">
+ 积分任务
+<navigator url="integral/integral">
+    <view class="myA" >
+      <view class="myAleft">
+    <image src="/pages/image/mine-jifen@3x.png"></image>
+      <text>积分任务</text>
+      </view>
+      <view class="myAright">
+          <text style='color: #0094FD;'>去完成</text>
+        <image src="/pages/image/icon-next@3x.png"></image>
+      </view>
+    </view> 
+ </navigator> -->
+<!-- 何狸商城 
+ <navigator url="integral/Shop/Shop">
+  <view class="myA">
+    <view class="myAleft">
+   <image src="/pages/image/mine-heliistore@3x.png"></image>
+    <text>河狸商城</text>
+    </view>
+    <view class="myAright">
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+ </navigator>
+   <text class="line2"></text>
+</view>-->
+
+<!-- 评论回复 -->
+<view class="myAbox" style='padding-top:0'>
+ <navigator url="../../pages/mycomment/mycomment">
+  <view class="myA">
+    <view class="myAleft">
+   <image src="/pages/image/mine-pinglun@3x.png"></image>
+    <text>评论 / 回复</text>
+    </view>
+    <view class="myAright">
+        <text wx:if="{{YS_obja.data.hasweidu>0}}" class="spot">●</text>
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+</navigator>
+
+<!-- 我的收藏 -->
+ <navigator url="../../pages/mycollection/mycollection">
+  <view class="myA">
+    <view class="myAleft">
+   <image src="/pages/image/mine-shoucnag@3x.png"></image>
+    <text>我的收藏</text>
+    </view>
+    <view class="myAright">
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+</navigator>
+<!-- 我的招聘 -->
+<!--  <navigator url="../../pages/myRelease/myRelease">
+  <view class="myA">
+    <view class="myAleft">
+   <image src="/pages/image/mime-zhaopin@3x.png"></image>
+    <text>我的招聘</text>
+    </view>
+    <view class="myAright">
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+  </navigator> -->
+<!-- 我的学习 
+  <view class="myA">
+    <view class="myAleft">
+   <image src="/pages/image/mine-xuexi@3x.png"></image>
+    <text>我的学习</text>
+    </view>
+    <view class="myAright">
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+     <text class="line2"></text>-->
+</view>
+
+<view class="myAbox"  style='padding-top:0'>
+
+  <!-- 切换角色 
+    <view class="myA"  bindtap="setModal" data-modal="1">
+    <view class="myAleft">
+   <image src="/pages/image/mine-qiehuan@3x.png"></image>
+    <text>切换角色</text>
+    </view>
+    <view class="myAright">
+        <text style='color: #0094FD;' wx:if="{{YS_obja.data.roletype>0}}">boss</text>
+        <text style='color: #0094FD;' wx:else>牛人</text>
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>-->
+     <text class="line2"></text>
+</view>
+<!-- 实名认证 -->
+<view class="myAbox" style='padding-bottom: 100rpx;border:0;padding-top:0;' >
+<!-- 身份认证 -->
+ <!-- <navigator url="../../pages/myidentity/myidentity">
+  <view class="myA">
+    <view class="myAleft">
+   <image src="/pages/image/mine-shiming@3x.png"></image>
+    <text>实名认证</text>
+    </view>
+    <view class="myAright">
+        <text  wx:if="{{YS_obja.data.name_auth_status==1}}" class="rzcolor" style="color:#C0C0C0">已认证</text>
+        <text  wx:elif="{{YS_obja.data.name_auth_status==3}}" class="rzcolor" style="color:#C0C0C0">认证中</text>
+        <text  wx:elif="{{YS_obja.data.name_auth_status==2}}" class="rzcolor" style="color:#C0C0C0">认证不通过</text>
+        <text  wx:else class="rzcolor">去认证</text>
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+  </navigator> -->
+<!-- 公司认证 -->
+  <!-- <navigator url="../../pages/mycompany/mycompany">
+  <view class="myA">
+    <view class="myAleft">
+   <image src="/pages/image/mine-qiye@3x.png"></image>
+    <text>企业认证</text>
+    </view>
+    <view class="myAright">
+        <text  wx:if="{{YS_obja.data.com_auth_status==1}}" class="rzcolor" style="color:#C0C0C0">已认证</text>
+        <text  wx:elif="{{YS_obja.data.com_auth_status==3}}" class="rzcolor" style="color:#C0C0C0">认证中</text>
+        <text  wx:elif="{{YS_obja.data.com_auth_status==2}}" class="rzcolor" style="color:#C0C0C0">认证不通过</text>
+        <text  wx:else class="rzcolor">去认证</text>
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+  </navigator> -->
+
+<!--  
+   <navigator url="../../pages/myengineering/myengineering">
+    <view class="myA">
+    <view class="myAleft">
+   <image src="/pages/image/mine-gongcheng@3x.png"></image>
+    <text>工程认证</text>
+    </view>
+    <view class="myAright">
+        <text  wx:if="{{YS_obja.data.pro_auth_status==1}}" class="rzcolor" style="color:#C0C0C0">已认证</text>
+        <text  wx:elif="{{YS_obja.data.pro_auth_status==3}}" class="rzcolor" style="color:#C0C0C0">认证中</text>
+        <text  wx:elif="{{YS_obja.data.pro_auth_status==2}}" class="rzcolor" style="color:#C0C0C0">认证不通过</text>
+        <text  wx:else class="rzcolor">去认证</text>
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+  </navigator>-->
+
+<!-- 邀请好友 -->
+   <!-- <navigator url="../../pages/myInvitation/myInvitation">
+    <view class="myA">
+    <view class="myAleft">
+   <image src="/pages/image/mine-yaoqing@3x.png"></image>
+    <text>邀请好友</text>
+    </view>
+    <view class="myAright">
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+  </navigator> -->
+
+    <!-- <view class="myA" bindtap="logout">
+    <view class="myAleft">
+   <image src="/pages/image/mine-yaoqing@3x.png"></image>
+    <text>解除小程序绑定</text>
+    </view>
+    <view class="myAright">
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view> -->
+
+   <!-- <button open-type="contact"  class="myA">
+      <view>
+      <view class="myAleft">
+     <image src="/pages/image/kefu@2x.png"></image>
+      <text>联系客服</text>
+      </view>
+      <view class="myAright">
+        <image src="/pages/image/icon-next@3x.png"></image>
+      </view>
+    </view>
+   </button> -->
+    <button class="myA kefu" open-type="contact" style="margin-left:0;margin-bottom:25rpx;">
+    <view class="myAleft" >
+   <image src="/pages/image/kefu@2x.png"></image>
+    <text>联系客服</text>
+    </view>
+    <view class="myAright">
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </button>
+
+    <navigator url="">
+<view class="myA">
+    <view class="myAleft">
+   <image src="/pages/image/mine-yaoqing@3x.png"></image>
+    <text>关于我们</text>
+    </view>
+    <view class="myAright">
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+      </navigator>  
+
+<!-- <form bindsubmit="formSubmit" report-submit="true"> 
+  <button formType="submit">Submit</button> 
+</form> -->
+
+<!-- 代理商 
+   <navigator url="Invitation/Invitation">
+    <view class="myA">
+    <view class="myAleft">
+   <image src="/pages/image/mine-daili@3x.png"></image>
+    <text>代理商</text>
+    </view>
+    <view class="myAright">
+      <image src="/pages/image/icon-next@3x.png"></image>
+    </view>
+  </view>
+  </navigator>-->
+</view>
+
+</view>
+
+
+<!-- 角色切换弹窗 -->
+<view class="modal-mask"  bindtap="setModal" data-modal="false" catchtouchmove="preventTouchMove" wx:if="{{false}}"></view>
+<view class="modal-dialog" wx:if="{{false}}">
+    <view class="tsconten">
+      <image style='width:215rpx;height:215rpx;margin-top:60rpx;' src="/pages/image/pop-qiehuan@3x.png"></image>
+      <text wx:if="{{YS_obja.data.roletype>0}}" style='margin-top:100rpx;font-size: 40rpx'>您当前的身份是“boss”</text>
+      <text wx:else style='margin-top:100rpx;font-size: 40rpx'>您当前的身份是“牛人”</text>
+      <button wx:if="{{YS_obja.data.roletype>0}}" class="okbtn" bindtap="switchRole" data-roletype="1">切换“牛人”</button>
+      <button wx:else class="okbtn" bindtap="switchRole" data-roletype="0">切换“boss”</button>
+      <view class="modalbot">
+        <image  bindtap="setModal" data-modal="false" src="/pages/image/cancel-white@3x.png"></image>
+      </view>
+    </view>
+</view>
+
+<!--底部导航-->
+<!--    <view class="tabbar_box" style="background-color:{{tabbar.backgroundColor}};  border-top:2rpx solid {{tabbar.borderStyle}}; {{tabbar.position == 'top' ? 'top:0' : 'bottom:0'}};color:#666" >  
+        <block>  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/index/index"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-shequ@3x.png"></image>  
+                <text>发现</text>  
+            </navigator>  
+        </block> 
+        <block wx:if="{{showwork}}">  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/findjob/findjob"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-zhaogz@3x.png"></image>  
+                <text>建筑圈</text>  
+            </navigator>  
+        </block>  
+        <block>  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/eng/eng"  open-type="switchTab"> 
+            <view class="engcls">
+                <view class="beng">
+                <image class="tabbar_icon engicon" src="/pages/image/tabbar-center@3x.png"></image>  
+                </view>
+                <text>项目</text>  
+            </view> 
+            </navigator>  
+        </block> 
+        <block wx:if="{{showwork}}">  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/findace/findace"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-zhaorc@3x.png"></image>  
+                <text>建材市场</text>  
+            </navigator>  
+        </block> 
+        <block>  
+            <navigator  hover-class="none" class="tabbar_nav" url="/pages/my/my"  open-type="switchTab">  
+                <image class="tabbar_icon" src="/pages/image/tabbar-mine-select@3x.png"></image>  
+                <text style='color:#0094FD'>我的</text>  
+            </navigator>  
+        </block>  
+    </view>  --> 
+<view class="setwin" wx:if="{{tapshow==1}}">
+  <view class="authbody">
+  
+    <view class="bhtitle"><text>输入邀请码</text><image bindtap="setTapshow" data-tap="0" class="closebh" src="/pages/image/close.png"></image></view>
+  
+    <view class="bhcontent">
+    <input placeholder='填写好友的邀请码' placeholder-class='i-plc'></input>
+    </view>
+    <view class="itips"><text>邀请码填写后不可修改</text></view>
+   
+
+  <view  class="bhconf" bindtap="setTapshow" data-tap="0" style="margin:190rpx 0 0">
+    <button>确定</button>
+  </view>
+
+</view>
+</view>
+
+
+<view class="setwin" wx:if="{{tapshow==1}}">
+  <view class="authbody">
+  
+    <view class="bhtitle"><text>请输入邀请码</text><image bindtap="setTapshow" data-tap="0" class="closebh" src="/pages/image/close.png"></image></view>
+  
+    <view class="bhcontent"><image class="o-invimg"></image></view>
+    <view><text>邀请人：船长</text></view>
+
+  <view  class="bhconf" bindtap="setTapshow" data-tap="0">
+    <button>确定</button>
+  </view>
+
+</view>
+</view>

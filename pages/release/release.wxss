@@ -1,0 +1,278 @@
+/* pages/my/Release/Release.wxss */
+.mewrap{
+ border-bottom: 1px solid  #F5F5F5;
+ padding: 30rpx 0 52rpx 0;
+ box-sizing: border-box;
+}
+.meboxA{
+  display: flex;
+  flex-direction: columnl;
+
+}
+.metop{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 23rpx;
+}
+.m_A{
+  font-size: 34rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.m_B{
+  font-size: 34rpx;
+  color: #0094FD;
+  font-weight: 600;
+}
+.melabel{
+  display: flex;
+  flex-direction: row;
+  margin-top:20px;
+ margin-bottom:-10px;
+
+}
+.melabel text{
+ height: 40rpx;
+ line-height: 40rpx;
+ padding: 0 14rpx;
+ font-size: 24rpx;
+ color: #808080;
+ border: 1px solid #E5E5E5;
+ border-radius: 2px;
+ margin-right: 20rpx;
+}
+.metA{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+.metB{
+  display: flex;
+  justify-content: space-between;
+}
+.meleft{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+.meleft image{
+  width:50rpx;
+  height: 45rpx;
+}
+.meleft text{
+  font-size: 30rpx;
+  color: #333333;
+  display: inline-block;
+}
+.meright{
+  display: flex;
+  flex-direction: row;
+}
+.meright image{
+  width:22rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.meright text{
+  font-size: 26rpx;
+  color: #999999;
+}
+.meuser{
+  position: relative;
+}
+.userpic{
+  width:60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.userpic image{
+  width:100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.vrz{
+  width:27rpx;
+  height: 27rpx;
+  position: absolute;
+  bottom: 5rpx;
+  right: 0rpx;
+}
+.vrz image{
+  width:100%;
+  height: 100%;
+}
+.meleft .username{
+  font-size: 26rpx;
+  color: #333333;
+  margin-top: 17rpx;
+  margin-left: 18rpx;
+}
+.meright .time{
+  font-size: 28rpx;
+  margin-top: 27rpx;
+}
+
+/** 我期望的 **/
+.expect{
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx 0;
+  border-bottom: 1px solid #F5F5F5;
+}
+.ebox{
+  display: flex;
+  flex-direction: column;
+}
+.etop{
+  font-size: 32rpx;
+  color: #666666;
+  
+}
+.ebot{
+  margin-top: 12rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+
+.hunter{
+  background: #FFf;
+  margin-bottom: 20rpx;
+}
+.hunA ,.hunB ,.hunC{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction:row;
+  align-items: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.hunA {
+  padding-top: 40rpx;
+}
+.hunB{
+  padding:0 20rpx;
+}
+.hunC{
+  padding:5rpx 20rpx 40rpx 20rpx;
+}
+
+.userpicB{
+  width:100rpx;
+  height: 100rpx;
+  position: relative;
+  margin-right: 20rpx;
+}
+.userpicB image{
+  width:100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #eee;
+}
+.usernameB{
+  font-size: 36rpx;
+  color: #333333;
+}
+.rzicon{
+  width:30rpx;
+  height: 30rpx;
+  position: absolute;
+  bottom: 10rpx;
+  right: 0;
+}
+.rzicon image{
+ width:100%;
+ height: 100%;
+
+}
+.renzicon{
+  width:128rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #FF5A49;
+  border-radius: 100px;
+  font-size: 24rpx;
+  color: #FF5A49;
+  margin-top: 8rpx;
+}
+.rolinfo{
+  font-size: 34rpx;
+  color: #333333;
+}
+.label text{
+  border: 1px solid #E5E5E5;
+  border-radius: 2px;
+  font-size: 24rpx;
+  color: #808080;
+  padding:0 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  display: inline-block;
+}
+
+
+.hunright{
+  font-size: 34rpx;
+  color: #0094FD;
+}
+.hcleft{
+  display: flex;
+  flex-flow: wrap;
+}
+.mapicon{
+  width:24rpx;
+  height:26rpx;
+  margin-right:10rpx;
+  vertical-align:middle;
+
+}
+.mapicon image{
+  width:100%;
+  height: 100%;
+}
+.addressC text{
+  font-size: 26rpx;
+  color: #999999;
+}
+.hcright text{
+  font-size: 28rpx;
+  color: #999999;
+}
+
+
+.huntop{
+  display: flex;
+  flex-direction: row;
+}
+.hleft{
+  display: flex;
+  flex-direction: column;
+}
+.label text{
+  margin-right: 20rpx;
+}
+.close{
+ width:40px;
+height:30px;
+position:absolute;
+right:0;
+text-align:center;
+
+}
+
+.close image{
+  width:15px;
+height:17px; 
+}
+.tagnone image{
+  width:80%;
+height:220px;
+margin-top:50px;
+margin-left:9vw;
+
+}

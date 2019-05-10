@@ -1,0 +1,65 @@
+<view class='page'>
+  <view class="top">
+    <view class="head">
+      <image class="headimg" src='{{userinfo.avatar}}'></image>
+    </view>
+    <view class="userinfo">
+      <text class="name">{{userinfo.nickname}}</text>
+      <text class="tag" wx:if="{{userinfo.level==5}}">换客</text>
+      <text class='tag' wx:if="{{userinfo.level==6}}">旗舰店</text>
+      <text class='tag' wx:if="{{userinfo.level!=6&&userinfo.level!=5}}">游客</text>
+
+    </view>
+
+<view class='userinfo' wx:if="{{userinfo.levelendtime}}" style='font-size:13px;color:#fff'>
+到期时间：{{userinfo.levelendtime}}
+</view>
+
+  </view>
+  <view class="midline"></view>
+
+  <view class="bot">
+    <view class='vipdec'>
+      <text>换客</text>
+      <navigator url="" hover-class="navigator-hover">
+        <button type="primary" size='mini' bindtap="create" data-vip="1" data-price="99" hover-class="other-button-hover" wx:if="{{userinfo.level!=5&&userinfo.level<4}}">支付99/年</button>
+        <button type="primary" size='mini' hover-class="other-button-hover" wx:if="{{userinfo.level==5}}">已是换客</button>        
+      </navigator>
+    </view>
+
+    <view class='vipdec2'>
+      换客可享受推荐商家置换成功直接奖励50%,并成为平台商家,赠予99豆作为奖励
+    </view>
+
+  </view>
+
+  <view class='vipline' style=''></view>
+  <view class="bot">
+    <view class='vipdec'>
+      <text>旗舰店</text>
+      <navigator url="" hover-class="navigator-hover">
+
+        <button type="primary" size='mini' bindtap="create" data-vip="2" data-price="699" hover-class="other-button-hover" wx:if="{{userinfo.level<6}}">支付699/年</button>
+
+        <button type="primary" size='mini' hover-class="other-button-hover" wx:if="{{userinfo.level==6}}">已是旗舰店</button>   
+      </navigator>
+    </view>
+
+    <view class='vipdec2'>
+      旗舰店可享受直推置换收益50%,并成为平台商家,赠予699豆作为奖励
+    </view>
+  </view>
+  <view class='vipline'></view>
+
+  <view class="bot">
+    <view class=''  style="text-align:center;">
+      区域合伙人
+    </view>
+
+    <view class='vipdec2'>
+     区域合伙人，可享受当地区域总置换总营收额百分之30,有意者请联系客服。
+    </view>
+  </view>
+  <view class='vipline'></view>
+
+</view>

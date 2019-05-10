@@ -1,0 +1,122 @@
+.myinfo{
+  width:100vw;
+  display: flex;
+  flex-direction:column;
+}
+.myline{
+  width:100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding: 0 24rpx;
+  border-bottom: 1px solid #E5E5E5;
+  display: flex;
+  justify-content:space-between;
+  font-size: 32rpx;
+  box-sizing: border-box;
+}
+.userpic{
+  width:80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.lineright image{
+  width:15rpx;
+  height: 20rpx;
+  padding: 20rpx 5rpx;
+  vertical-align: middle;
+}
+.lineright text{
+  color: #999999;
+  font-size: 32rpx;
+  margin-right: 10rpx;
+}
+.ename{
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid #E5E5E5;
+  position: relative;
+}
+.ename input{
+  height: 90rpx;
+  line-height: 90rpx;
+  position: absolute;
+  bottom: 0;
+  padding-left: 100rpx;
+}
+.namecolor{
+  font-size: 32rpx;
+  color: #666666;
+  position: absolute;
+  left: 24rpx;
+  bottom: 0;
+}
+.ename image{
+  width:36rpx;
+  height: 36rpx;
+  position: absolute;
+  bottom: 24rpx;
+  right: 24rpx;
+}
+.bcbtn{
+  width:93%;
+  background: #0098FF;
+  border: 1px solid #0098FF;
+  border-radius: 4px;
+  color: #FFF;
+  margin-top:40rpx;
+  font-size: 32rpx;
+}
+.ename .ephone{
+     padding-left: 280rpx;
+     text-align: right;
+}
+.ename .pcode{
+  position: absolute;
+  bottom: 0;
+  right: 24rpx;
+  font-size: 28rpx;
+  color: #0094FD;
+}
+.pho{
+  text-align:right;
+  margin-left:100rpx
+}
+.listrow{
+  height: 83rpx;
+  line-height: 83rpx;
+  padding: 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #E5E5E5;
+  align-items: center;
+}
+.listrow text{
+  font-size: 32rpx;
+  color: #333333;
+}
+.userimg{
+  width:80rpx;
+  height: 80rpx;
+  border: 1px solid #EEE;
+  border-radius:50%; 
+}
+.listrow .gray{
+  font-size: 32rpx;
+  color: #999999;
+}
+.rigth text{
+  font-size: 30rpx;
+  color: #999999;
+  margin-right: 10rpx;
+}
+.rigthA text{
+  color: #333333;
+}
+.rigthB input{
+  font-size: 30rpx;
+  text-align: right;
+}
+.rigth image{
+  width:23rpx;
+  height: 15rpx;
+}

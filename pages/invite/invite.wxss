@@ -1,0 +1,54 @@
+/* pages/invite/invite.wxss */
+page{
+
+}
+.invitebox{
+  border:1px solid #ddd;
+margin:25px 20rpx 40px;
+
+  justify-content: center;
+
+}
+.ititle{
+  width:98%;
+  font-size: 32rpx;
+  color:#0094fd;
+  margin:10rpx 35rpx ;
+
+}
+.tagbox{
+  width:100%;
+}
+.onetagbox{
+  display: flex;
+  justify-content: center
+  
+}
+.itag{
+  width:180rpx;
+  height:56rpx;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 56rpx;
+  background:#0094fd;
+  color:#fff;
+  border-radius: 3px;
+  /* float:left; */
+  margin:14rpx 35rpx;
+}
+.tips{
+  width:94%;
+  color:#666;
+  font-size: 30rpx;
+  margin:20rpx 35rpx ;
+
+}
+.itag-e{
+  background:rgba(0,0,0,0);
+}
+.midline{
+  width:90%;
+  height:1px;
+  background:#ddd;
+  margin:20rpx 35rpx
+}

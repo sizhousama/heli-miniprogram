@@ -1,0 +1,64 @@
+/* pages/my/comment/comment.wxss */
+.comwrap{
+    border-bottom: 1px solid #F5F5F5;
+    padding: 42rpx 0 28rpx 0;
+}
+.comlist{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.userimg{
+  width:80rpx;
+  height: 80rpx;
+}
+.userimg image{
+  width:100%;
+  height:100%;
+  border-radius: 50%; 
+}
+.comuser{
+  display: flex;
+  flex-wrap:nowrap;
+}
+.userinfo{
+  display:flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+.uname{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.usname{
+  font-size: 24rpx;
+  color: #999999;
+}
+.ctime text{
+  font-size: 32rpx;
+  color: #999999;
+}
+.deslist{
+  width:604rpx;
+  margin-left: 100rpx;
+}
+.comdes{
+  font-size: 30rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.hcomdes{
+  width:604rpx;
+  background: #F5F5F5;
+  font-size: 26rpx;
+  color: #666666;
+  padding: 20rpx 16rpx;
+  box-sizing: border-box;
+  margin-top: 24rpx;
+}
+.hcomdes text{
+  line-height: 40rpx;
+}

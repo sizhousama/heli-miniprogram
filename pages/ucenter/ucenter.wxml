@@ -1,0 +1,192 @@
+<view class='all_mian'>
+  <view class='uce_head'>
+    <view class='head_pic'>
+      <image src="{{YS_obja.data.photourl?YS_obja.data.photourl:'../../pages/image/pop-qiehuan@3x.png'}}"></image>
+    </view>
+    <view class='head_name'>
+      <text>{{YS_obja.data.realname?YS_obja.data.realname:YS_obja.data.wechatnickname}}</text>
+    </view>
+    <view class='head_detail'>
+      <view class='det_box'>
+        <text class='det_num'>{{YS_obja.data.articleNum}}</text>
+        <text class='det_words'>文章</text>
+      </view>
+      <view class='det_solid'></view>
+      <view class='det_box'>
+        <text class='det_num'>{{YS_obja.data.articleView + YS_obja.data.jobView}}</text>
+        <text class='det_words'>阅读量</text>
+      </view>
+      <view class='det_solid'></view>
+      <view class='det_box'>
+        <text class='det_num'>{{YS_obja.data.jobNum}}</text>
+        <text class='det_words'>建筑圈</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 顶部导航栏 -->
+    <view class='contant_nav'>  
+      <view class="nav_btn"><text data-value='0' bindtap="ystapshow" class=" btn {{tapshow==0 ? 'on' : ''}}">建筑圈</text>
+      <text data-value='1' bindtap="ystapshow" class=" btn {{tapshow==1 ? 'on' : ''}}">文章</text></view> 
+    </view> 
+
+<!-- 建筑圈页面 -->
+  <view class='uer_new1' wx:if="{{tapshow == 0}}">
+    
+    <scroll-view scroll-y enable-back-to-top="true"   bindscrolltolower="lower" data-inter="YS_plistb" bindscroll="alert" style="margin-top:2rpx;padding-bottom:0;height:63vh;" >
+            <block wx:for="{{YS_listb.data}}" wx:key="idx" wx:for-item="value">
+            
+              <view class="comwrap" style="margin-bottom:20rpx">
+                <view class="comlist">
+                    <view class="comuser">
+                          <view class="userimg" style="position:absolute"><image src="{{value.photourl?value.photourl:'../../pages/image/pop-qiehuan@3x.png'}}"></image></view>
+                          <view class="userinfo">
+                            <text class="uname">{{value.realname?value.realname:'用户'}}</text>
+                          <!--  <text class="time">{{value.createtime}}</text>-->
+                          </view>
+                    </view>
+                   <view class="jobtag">
+                  <view class="jtag">
+                    <image class="wh_24" src="/pages/image/bq.png"></image>
+                  <text>{{value.biaoqian}}</text></view>
+                  </view>
+                </view>
+                <navigator url="/pages/jobdetail/jobdetail?jobcodeid={{value.codeid}}">
+                 <view class="jobdes">
+                 <text>{{value.description}}</text>
+                 </view>
+                </navigator>
+                 <view class="relimg relimg1" wx:if="{{value.picture}}">
+                 <image wx:if="{{index<3}}" wx:for="{{value.picturearr}}" wx:key="i" wx:for-item="val" src="{{val}}" data-src="{{val}}" bindtap="previewImage"> </image> 
+                 </view>
+                 <view class="jobbot">
+                  <view class="jdr">
+                  <view style="height:36rpx;">
+                    <image wx:if="{{value.city}}" src="../../pages/image/zhaogong-weizhi1@3x.png"></image>
+                    <text>{{value.city}}</text>
+                  </view>
+                  <view ><text style="font-size:22rpx">{{value.createtime}}</text></view>
+                  
+                  </view>
+                
+                  <view class='area-delete' wx:if="{{ismine>0}}" bindtap="detearictl" data-id='{{value.id}}' data-prname="{{value.prname}}">
+                    <image src='../../pages/image/user-dele.png' class='u_delete'></image>
+                  </view>
+
+                  <view class="rnum text_view {{value.view==0?'dpn':''}}">
+                  <image src='../../pages/image/faxian-yuedu@3x.png'></image> {{value.view}}</view>
+
+                  <view class="jobadr" catchtap='tel' data-tel="{{value.tel}}">
+                  <text class="lianxi">联系</text>
+                  
+                  </view>
+                 </view>
+              </view>
+              
+               </block>
+
+              <view class="weui-loadmore" wx:if="{{showload}}" style="margin-bottom:0rpx">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+        </view>
+        <view class="weui-loadmore weui-loadmore_line"  wx:if="{{YS_listb.data.length==YS_plistb.total}}">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line" style="margin-bottom:100rpx">喂喂，你碰到我的底线了</view>
+        </view>
+
+              
+        </scroll-view>
+
+
+  </view>
+
+  <!-- 文章页面 -->
+  <view class='uer_new2' wx:if="{{tapshow == 1}}">
+  
+            <scroll-view scroll-y   bindscrolltolower="lower" data-inter="YS_plista"  style='padding-bottom:0;height:65vh;'>
+      <view class="main">
+   <block wx:for="{{YS_lista.data}}" wx:key="idx" wx:for-item="value">
+                
+                <!-- 无图/单图 -->
+                        <view class="newbox" wx:if="{{value.is_video==0&&value.picturearr.length<=1}}">      
+                            <view class="newlist " style="width:{{value.picture==''?'95%':'63%'}}">
+                              <navigator url='../../pages/recomdetail/recomdetail?discodeid={{value.codeid}}'>
+                                <view class="ncontent">{{value.title}}</view>
+                              </navigator>
+                                  <view class="newbot" style="height:{{value.title==''?'180rpx':''}}">
+                                      <view class="ftime">{{value.createtime}}</view>
+          <view class='area-delete' wx:if="{{ismine>0}}" bindtap="detearictl_a" data-id='{{value.id}}' data-prname="{{value.prname}}">
+              <image src='../../pages/image/user-dele.png' class='u_delete_aricl u_delete'></image>
+          </view>
+          <view class="rnum {{value.view==0?'dpn':''}}">
+          <image src='../../pages/image/faxian-yuedu@3x.png'></image> {{value.view}}</view>
+                                  </view>
+                            </view>
+                            <view class="newright {{value.picture==''?'dpn':''}}" style="" >
+                            
+                           <image class="newimg" src="{{value.picture}}"></image>
+                           </view>
+                        </view>
+                   <!-- 无图/单图 -->     
+                   <!-- 多图 -->
+                        <view class="newbox" wx:if="{{value.is_video==0&&value.picturearr.length>1&&value.picturearr.length<=3}}">      
+                            <view class="newlist2" style="width:100%">
+                                <view class="ncontent" style="width:100%">{{value.title}}</view>
+                                 <view class="newright " style="width:32%;" wx:for="{{value.picturearr}}" wx:key="" wx:for-item="pic">
+                                 <image class="newimg2" src="{{pic}}"></image>
+                                 </view>
+                                  <view class="newbot" style="height:{{value.title==''?'180rpx':''}}">
+                                      <view class="ftime">{{value.createtime}}</view>
+                                  <view class='area-delete' wx:if="{{ismine>0}}"  bindtap="detearictl_a" data-id='{{value.id}}' data-prname="{{value.prname}}">
+                                      <image src='../../pages/image/user-dele.png' class='u_delete_aricl u_delete'></image>
+                                  </view>
+                                    <view class="rnum {{value.view==0?'dpn':''}}">
+          <image src='../../pages/image/faxian-yuedu@3x.png'></image> {{value.view}}</view>
+                                  </view>
+                            </view>
+                          
+                        </view>
+                   <!-- 多图 -->
+
+                    <!-- 视频 -->
+                        <view class="newbox" wx:if="{{value.is_video==1&&value.picturearr.length<=1}}">      
+                            <view class="newlist " style="width:{{value.picture==''?'95%':'63%'}}">
+                              <navigator url='../../pages/recomdetail/recomdetail?discodeid={{value.codeid}}'>
+                                <view class="ncontent">{{value.title}}</view>
+                              </navigator>
+                                  <view class="newbot" style="height:{{value.title==''?'180rpx':''}}">
+                                      <view class="ftime">{{value.createtime}}</view>
+                                  <view class='area-delete' wx:if="{{ismine>0}}"  bindtap="detearictl_a" data-id='{{value.id}}' data-prname="{{value.prname}}">
+                                      <image src='../../pages/image/user-dele.png' class='u_delete_aricl u_delete'></image>
+                                  </view>
+          <view class="rnum {{value.view==0?'dpn':''}}">
+          <image src='../../pages/image/faxian-yuedu@3x.png'></image> {{value.view}}</view>
+                                  </view>
+                            </view>
+                            <view class="newright {{value.picture==''?'dpn':''}}" style="" >
+                            <view></view>
+                            <view class="video"><image src="../../pages/image/faxina-player@3x.png"></image></view>
+                           <image class="newimg" src="{{value.picture}}"></image>
+                           </view>
+                        </view>
+                   <!-- 视频 -->
+
+
+<!-- 视频 -->
+<!-- <view class="newright " style="width:30%;margin-right:10rpx;" wx:if="{{value.is_video==1}}">
+<video class="newimg" src="{{value.picture}}"></video>
+</view> -->
+                          
+          </block>
+<view class="weui-loadmore" wx:if="{{showload}}" style="">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips" >正在加载</view>
+        </view>
+        <view class="weui-loadmore weui-loadmore_line"  wx:if="{{YS_lista.data.length==YS_plista.total}}" style="margin-bottom:-100rpx">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">喂喂，你碰到我的底线了</view>
+        </view>
+
+      </view>
+  </scroll-view>
+ 
+  </view>
+</view>

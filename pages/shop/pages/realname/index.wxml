@@ -1,0 +1,51 @@
+<view class='page'>
+
+  <view class='weui-flex'>
+    <view class='weui-flex__item rz_tip'>
+      为了保障换货双方的权益，请提交同实名认证信息一致的身份证照片，证件审核通过后，可享受“实名认证特权”及标识。
+    </view>
+  </view>
+
+  <view class='weui-cells'>
+    <view class='weui-cell weui-cell_select bottom_line weui-flex'>
+      <view class='weui-cell__hd leb_l'>
+        <label class='weui-label leb_price'>真实姓名：</label>
+      </view>
+      <view class='leb_r'>
+        <input class='weui-input' type='text' placeholder='请输入您的真实姓名' bindinput='inputchange' data-type="name_auth_realname" value='{{name_auth_realname}}' name="name_auth_realname" ></input>
+      </view>
+    </view>
+
+    <view class='weui-cell_select bottom_line weui-flex'>
+      <view class='weui-cell__hd leb_l'>
+        <label class='weui-label leb_price'>身份证号：</label>
+      </view>
+      <view class='leb_r'>
+        <input class='weui-input' type='idcard' placeholder='请输入您的身份证号' bindinput='inputchange' data-type="name_auth_cert" value='{{name_auth_cert}}' name="name_auth_cert" ></input>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='weui-flex'>
+    <view class='weui-flex__item idcard_tit'>
+      上传身份证照片
+    </view>
+  </view>
+
+  <view class='weui-flex'>
+    <view class='weui-flex__item idcard_pic' bindtap='changeimg' data-name="image1">
+      <image src='{{image1?image1:"/static/images/coupon/zm.png"}}'></image>
+    </view>
+    <view class='weui-flex__item idcard_pic' bindtap='changeimg' data-name="image2">
+      <image src='{{image2?image2:"/static/images/coupon/fm.png"}}'></image>
+    </view>
+    <view class='weui-flex__item idcard_pic' bindtap='changeimg' data-name="image3">
+      <image src='{{image3?image3:"/static/images/coupon/sc.png"}}'></image>
+    </view>
+  </view>
+
+  <view class='weui-btn-area' bindtap='submitName' >
+    <button class='weui-btn weui-btn_primary fbpro_btn'>提交</button>
+  </view>
+</view>

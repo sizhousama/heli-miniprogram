@@ -1,0 +1,279 @@
+/* pages/recomdetail/recomdetail.wxss */
+page{
+  background: #F5F5F5;
+}
+.listbox{
+  padding: 38rpx 24rpx 0 24rpx;
+  background: #FFF;
+}
+.wzlist{
+  width:100%;
+  display: flex;
+  flex-direction:colum;
+  flex-wrap:wrap;
+  box-sizing: border-box;
+}
+.listwrap{
+  width:100%;
+  display: flex;
+  flex-direction:colum;
+  flex-wrap:wrap;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.btitle{
+  font-size: 32rpx;
+  font-weight: 600;
+  width:100vw;
+}
+.ltitle{
+  font-size: 40rpx;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+.tbot{
+  display: flex;
+  justify-content:space-between;  
+  width:100vw;
+  padding: 16rpx 0 16rpx 0;
+}
+.tbot view{
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.cten{
+  width:100%;
+}
+.dz{
+  display: flex;
+  justify-content: center;
+ 
+  padding: 60rpx 0;
+  margin-left:45%
+}
+.dz image{
+  width:88rpx;
+  height: 88rpx;
+}
+
+/**用户评论**/
+.userpl{
+  width:100vw;
+  display: flex;
+  flex-wrap:nowrap;
+  margin-top: 50rpx;
+}
+.userpic{
+  width:80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.rbox{
+  width:100%;
+  display: flex;
+  flex-wrap:wrap;
+  margin-left: 20rpx;
+  }
+.userplright{
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+}
+.plicon{
+  width:36rpx;
+  height: 36rpx;
+  vertical-align:sub;
+}
+.pldz{
+  font-size: 32rpx;
+  color: #999999;
+  margin-left: 42rpx;
+}
+.useinfo{
+  display: flex;
+  flex-direction:column;
+}
+.plright{
+  display: flex;
+  flex-direction: row;
+}
+.useinfo .name{
+  font-size: 28rpx;
+  color: #333333;
+}
+.useinfo .pltime{
+  font-size: 24rpx;
+  color: #999999;
+}
+
+rich-text{
+  line-height: 28px;
+}
+
+rich-text .rich-img{
+  width:100%!important;
+  height:auto!important;
+}
+
+/**回复**/
+.input_null{
+    color: #C9C9C9;
+    
+
+}
+.addcom{
+  width:160rpx;
+  height:60rpx;
+  background: #0094fd;
+  font-size: 34rpx;
+  color: #fff;
+  line-height: 60rpx
+  
+}
+.release{
+    display: flex;
+    align-items: flex-end; /*底部对齐*/
+    justify-content: space-between; /*两端对齐*/
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10rpx  24rpx 14rpx 24rpx;
+    background: #FFFFFF;
+    box-shadow: 0 -1px 0 0 #E5E5E5;
+    font-size: 28rpx;
+    z-index: 999;
+}
+.release .text{
+    width: 95%;
+    min-height: 76rpx;
+    
+    border-width: 15rpx 20rpx; /*使用padding与预期留白不一致，故使用border*/
+    border-color:  #ffffff;
+    font-size: 28rpx;
+    background-color: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    z-index: 10001;
+    line-height: 40rpx;
+    color:#999
+}
+.chf{
+  margin-bottom: 10rpx
+}
+.chf image{
+  width:48rpx;
+  height: 50rpx
+}
+.videobox {
+  padding: 40rpx 0 32rpx 0;
+}
+.newbox{
+  padding:33rpx 0 28rpx 0;
+}
+.shoucang {
+  animation: changeBiger 1s ease 1;
+  animation-delay: 0s;
+  /* transform: scale(1.2); */
+ }
+             
+@keyframes changeBiger {
+ 0% {
+   transform: scale(1.5);
+}
+ 100%{
+   transform: scale(1);
+ }
+ 
+}
+.plbg{
+height:1100rpx;
+width:100%;
+background:rgba(0,0,0,0.5);
+position:absolute;
+top:0;
+z-index:999999999999999;
+}
+.plbg2{
+height:904rpx;
+width:100%;
+position:absolute;
+top:0;
+z-index:999999;
+}
+
+.pltc{
+width:100%;
+height:300rpx;
+margin-top:904rpx;
+background: #fff;
+z-index:9999999;
+position:fixed;
+border-top:1px solid #eee
+
+
+}
+.plpc{
+  color:#ddd;
+  margin-left:20rpx;
+  font-size:30rpx;
+}
+.plinput{
+  width:100%;
+  margin-top:10rpx;
+}
+.tctop{
+  height:60rpx;
+  display: flex;
+  border-bottom:1px solid #eee;
+}
+
+.changebg{
+   background:rgb(198, 228, 250)
+ }
+
+@keyframes slidown{
+    from{
+        transform:  translateY(-100%);
+    }
+    to{
+        transform:  translateY(0%);
+    }
+}
+.slidown{
+    display: block;
+    animation: slidown .3s ease-in both;
+    position: absolute;
+    top:150vh;
+    
+    
+}
+@keyframes slidup{
+    from{
+        transform:  translateY(0%);
+    }
+    to{
+        transform:  translateY(-100%);
+    }
+}
+.slidup{
+    bottom:-302rpx;
+    animation: slidup .3s ease-in both;
+}
+.quxiao{
+  width:50vw;
+  padding-left:10rpx;
+  font-size:32rpx;
+}
+.tcfb{
+  font-size:32rpx;
+  width:50vw;
+  text-align: right;
+  padding-right:20rpx;
+  color: #0094fd;
+  max-height:500rpx
+}

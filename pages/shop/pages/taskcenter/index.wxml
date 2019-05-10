@@ -1,0 +1,146 @@
+<view class='page'>
+  <view class='task_head'>
+    <view class='head_tit weui-flex'>
+      <image src='/static/images/bin.png'></image>
+      我的豆豆
+    </view>
+    <view class='head_num'>
+      <text>{{userinfo.credit1}}</text>
+    </view>
+    <view class='head_cont'>
+      <view class='head_btn'>做任务赚豆豆</view>
+    </view>
+  </view>
+
+  <view class='task_cont' wx:for="{{mission}}">
+    <view class='weui-flex'>
+      <view class='cont_l'>
+        <image src='{{item.thumb}}'></image>
+      </view>
+      <view class='cont_c'>
+        <view class='dic-up'>
+          <text>{{item.name}}</text><image src="/static/images/dou.png"></image><text class="add">+{{item.credit1}}</text>
+        </view>
+        <view class='dic-down'>
+           <text class="mf">{{item.description}}</text>
+        </view>
+      </view>
+
+        <button class='cont_r' type="primary" wx:if="{{item.isdone!=1&&item.id!=5}}" bindtap="navto" data-url="{{item.url}}">
+         <text>去完成</text>
+        </button>
+
+<!--      <button class='' id="shareBtn" type="primary" open-type="share" data-type="article" data-url="pages/index/index" data-title="{{YS_obja.title}}" style="" wx:if="{{item.isdone!=1&&item.id==5}}">   
+        <text>去完成</text>
+    </button> -->
+
+     <button type="primary" bindtap="share" wx:if="{{item.isdone!=1&&item.id==5}}">   
+        <text>去完成</text>
+    </button>
+
+        <button class='cont_r'  type='default' disabled="{{true}}" wx:if="{{item.isdone==1}}" >
+         <text>已完成</text>
+        </button>
+
+
+
+    </view>
+  </view>
+
+<!-- 
+
+  <view class='task_cont'>
+    <view class='weui-flex'>
+      <view class='cont_l'>
+        <image src='/static/images/coupon/fab_act.png'></image>
+      </view>
+      <view class='cont_c'>
+        <view class='dic-up'>
+          <text>首次发布商品</text><image src="/static/images/dou.png"></image><text class="add">+10</text>
+        </view>
+        <view class='dic-down'>
+           <text class="mf">免费认证获得更多特权</text>
+        </view>
+      </view>
+      <view class='cont_r'>
+       <text>去完成</text>
+      </view>
+    </view>
+  </view>
+  <view class='task_cont'>
+    <view class='weui-flex'>
+      <view class='cont_l'>
+        <image src='/static/images/coupon/yaoq_act.png'></image>
+      </view>
+      <view class='cont_c'>
+        <view class='dic-up'>
+          <text>邀请好友</text><image src="/static/images/dou.png"></image><text class="add">+10</text>
+        </view>
+        <view class='dic-down'>
+           <text class="mf">免费认证获得更多特权</text>
+        </view>
+      </view>
+      <view class='cont_r'>
+       <text>去完成</text>
+      </view>
+    </view>
+  </view>
+  <view class='task_cont'>
+    <view class='weui-flex'>
+      <view class='cont_l'>
+        <image src='/static/images/coupon/baozhenj_act.png'></image>
+      </view>
+      <view class='cont_c'>
+        <view class='dic-up'>
+          <text>交纳保证金</text><image src="/static/images/dou.png"></image><text class="add">+20</text>
+        </view>
+        <view class='dic-down'>
+           <text class="mf">免费认证获得更多特权</text>
+        </view>
+      </view>
+      <view class='cont_r yi'>
+       <text>已完成</text>
+      </view>
+    </view>
+  </view>
+  <view class='task_cont'>
+    <view class='weui-flex'>
+      <view class='cont_l'>
+        <image src='/static/images/coupon/fenx_act.png'></image>
+      </view>
+      <view class='cont_c'>
+        <view class='dic-up'>
+          <text>分享朋友圈</text><image src="/static/images/dou.png"></image><text class="add">+5</text>
+        </view>
+        <view class='dic-down'>
+           <text class="mf">免费认证获得更多特权</text>
+        </view>
+      </view>
+      <view class='cont_r yi'>
+       <text>已完成</text>
+      </view>
+    </view>
+  </view>
+ -->
+
+
+  <!-- <view class='task_cont'>
+    <view class='weui-flex'>
+      <view class='cont_l'>
+        <image src='/static/images/coupon/renz_act.png'></image>
+      </view>
+      <view class='cont_c'>
+        <view class='dic-up'>
+          <text>实名认证</text><image src="/static/images/dou.png"></image><text class="add">+10</text>
+        </view>
+        <view class='dic-down'>
+           <text class="mf">免费认证获得更多特权</text>
+        </view>
+      </view>
+      <view class='cont_r'>
+       <text>去完成</text>
+      </view>
+    </view>
+  </view>
+   -->
+</view>

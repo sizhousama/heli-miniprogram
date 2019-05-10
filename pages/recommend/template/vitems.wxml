@@ -1,0 +1,13 @@
+<template name="vitems">
+ <view class="videobox">
+              <view class="vtitle">产品和价格双重错位，罗永浩到底能重新定义些什么？</view>
+              <video class="videocten"></video>
+                  <view class="newbot">
+                      <view class="ftime">10分钟前</view>
+                      <view class="rnum"><image src='/pages/image/faxian-yuedu@3x.png'></image> 211</view>
+                      <view class="rnum"><image src='/pages/image/faixan-pinglun@3x.png'></image> 211</view>
+                  </view>
+              <text class="line"></text>    
+          </view>
+          
+</template>

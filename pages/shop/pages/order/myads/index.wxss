@@ -1,0 +1,94 @@
+
+/* 无广告内容页面 */
+.none_add{
+  height: 400rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.none_add image{
+  width:328rpx;
+  height:266rpx;
+}
+.none_dic{
+  color: #999999;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+/* 我发布的广告列表页 */
+.ads_list{
+  height: 300rpx;
+  border-bottom:1rpx solid #e5e5e5; 
+align-items:flex-end;
+
+
+}
+.list_l{
+  /* width: 44%; */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:5px;
+
+}
+.list_l image{
+  width:38vw;
+  height:32vw;
+  border-radius:2vw;
+}
+.list_r{
+  /* width: 56%; */
+  flex: 2;
+      padding:0 20rpx;
+
+}
+.adlist_tit{
+  height:98rpx;
+  font-size: 34rpx;
+  font-weight: 600;
+  text-align: justify;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+
+}
+.adlist_dic{
+  height: 50rpx;
+  font-size: 28rpx;
+  color: #999999;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.adlist_dele{
+  height: 80rpx;
+  text-align: right;
+  padding: 0 20rpx;
+}
+.adlist_dele image{
+  width:32rpx;
+  height:38rpx;
+  display:inline-block;
+}
+
+.editad {
+  width:100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.editad view{
+  flex: 1;
+  text-align:center;
+
+}
+

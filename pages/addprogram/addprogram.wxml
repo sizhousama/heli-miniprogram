@@ -1,0 +1,146 @@
+<!--pages/addprogram/addprogram.wxml-->
+<!--新建工程-->
+<view class="addpro">
+        <view class="weui-cells weui-cells_after-title">
+
+              <view class="weui-cell weui-cell_access" >
+                  <view class="weui-cell__bd">项目图片</view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access">
+                  <image bindtap="chooseImage" data-key="YS_obja.params.proimg" class="gcicon" src="{{uploadPicUrl?uploadPicUrl:'http://img2.imgtn.bdimg.com/it/u=1986495797,438215067&fm=27&gp=0.jpg'}}"></image>
+                  </view>
+              </view>
+   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">项目名称</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="ysinput" data-name="YS_obja.params.prname" placeholder-class="phcolor" placeholder="填写项目名称"/>
+                </view>
+            </view>
+ 
+
+      <view class=" weui-cell_select" style="display:flex;">
+                 <view class="weui-cell__bd" style="line-height:85rpx;"><text style="margin-left:20rpx">省份城市</text></view>
+                <view class="weui-cell__bd" style="flex:2">
+                    <picker mode="multiSelector" range="{{cityrangearr}}" range-key="name" bindchange="citymchange" bindcolumnchange="citycolchange"  >
+                        <view class="weui-select weui-select_in-select-after" style="color:#999;font-size:32rpx;text-align:right" wx:if="{{YS_obja.params.province_id==''}}">请选择</view>
+                        <view class="weui-select weui-select_in-select-after overep" style="color:#999;font-size:32rpx;text-align:right" wx:else>{{YS_obja.params.province_str}}-{{YS_obja.params.city_str}}</view>
+                    </picker>
+                </view>
+            </view>
+
+
+
+
+
+           <!-- <view url="" class="weui-cell weui-cell_access" >
+                <view class="weui-cell__bd">所在省份</view>
+                <view class="weui-cell__bd f_r"> 
+                <picker bindchange="bindProvinceChange" value="{{proidarr[YS_obja.data.pid]}}" range="{{YS_listb.data}}" range-key="province">
+                   <view class="weui-select weui-select_in-select-after">{{YS_obja.data.province?YS_obja.data.province:'请选择'}}</view>
+                </picker>
+                </view>
+            </view>
+            <view url="" class="weui-cell weui-cell_access" >
+                <view class="weui-cell__bd">所在城市</view>
+                <view class="weui-cell__bd f_r">
+                <picker bindchange="bindCountryChange" value="{{cityidarr[YS_obja.data.cityid]}}" range="{{YS_listc.data}}" range-key="city">
+                   <view class="weui-select weui-select_in-select-after">{{YS_obja.data.city?YS_obja.data.city:'请选择'}}</view>
+                </picker>
+                </view>
+            </view>
+            -->
+
+
+            <view url="" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">开工日期</view>
+                 <view class="weui-cell__bd f_r">
+                    <picker bindchange="bindkgChange" mode="date" value="{{date}}" start="1978-01-01" end="2028-1-1" name="kaigong">  
+                         <view class="picker weui-select weui-select_in-select-after">{{kgtime||'请选择'}}</view>  
+                    </picker> 
+
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">竣工日期</view>
+                <view class="weui-cell__bd f_r">
+                     <picker bindchange="bindjgChange" mode="date" value="{{date}}" start="1978-01-01" end="2028-1-1" name="jungong">  
+                         <view class="weui-select weui-select_in-select-after piker">{{jgtime||'请选择'}}</view>  
+                    </picker> 
+                </view>
+            </view>
+            <view url="" class="weui-cell weui-cell_access" >
+                <view class="weui-cell__bd">结构类型</view>
+                <view class="weui-cell__bd f_r">
+                     <picker bindchange="bindprolxChange" value="{{prolxindex}}" range="{{prolx}}" name="jiegou">
+                        <view class="weui-select weui-select_in-select-after picker" >{{prolx[prolxindex]||'请选择'}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view  class="weui-cell weui-cell_access" >
+                <view class="weui-cell__bd">子单位数量</view>
+                 <view class="weui-cell__bd f_r">
+                <input class="weui-input" bindinput="ysinput" data-name="YS_obja.params.sinnum" placeholder-class="phcolor" placeholder="填写数量"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">建筑面积</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="ysinput" data-name="YS_obja.params.mianji" placeholder-class="phcolor" placeholder="如:2000㎡"/>
+                </view>
+            </view>
+             <view class="weui-cell weui-cell_access">
+               <view class="weui-cell__hd">
+                    <view class="weui-label">造价</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="ysinput" data-name="YS_obja.params.zaojia" placeholder-class="phcolor" placeholder="如:2000（万）"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access">
+               <view class="weui-cell__hd">
+                    <view class="weui-label">工程地址</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="ysinput" data-name="YS_obja.params.gcdizhi" placeholder-class="phcolor" placeholder="施工许可证上的地址"/>
+                </view>
+            </view>
+
+            <!-- <view class="weui-cell weui-cell_access">
+               <view class="weui-cell__hd">
+                    <view class="weui-label">建设单位</view>
+                </view>
+                 <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="ysinput" data-name="YS_obja.params.jsname" placeholder-class="phcolor" placeholder="建设单位名称"/>
+                </view>
+            </view> -->
+
+           <!-- <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">施工单位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="ysinput" data-name="YS_obja.params.sgname" placeholder-class="phcolor" placeholder="施工单位名称"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">监理单位</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="ysinput" data-name="YS_obja.params.jlname" placeholder-class="phcolor" placeholder="监理单位名称"/>
+                </view>
+            </view>  -->
+            <view class="weui-cell weui-cell_access" style='height:0'>
+            </view>
+           
+        </view>
+</view>
+ <view class="botbox ">
+             <button type='button' class="nextbtn"  bindtap="navAndSave" data-to='/pages/addprograms/addprograms' >下一步</button>
+          </view>

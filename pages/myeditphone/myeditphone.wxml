@@ -1,0 +1,36 @@
+
+<view class="myinfo">
+<view class="infolist">
+        <view class="listrow">
+          <view style="width:50%;">
+          <text>密码</text>
+          </view>
+          <view class="rigthB">
+            <input type="password" bindinput="ysinput" data-name="YS_obja.params.oldpasswd"  placeholder='请输入密码'></input>
+          </view>
+        </view>
+  </view>
+  <view class="ename">
+    <text class="namecolor">新手机号</text>
+    <!-- <text class="pcode" ></text> -->
+    <input class="ephone" style="padding-left: 150rpx" bindinput="ysinput" data-name="YS_obja.params.tel"></input>
+    <view class="getcode" disabled='{{1}}' code-id="2" bindtap="editphonecode">
+    {{time}}
+    </view>
+  </view>
+  <!-- <view class="ename">
+    <text class="namecolor">验证码</text>
+    <input class="ephone" placeholder='请输入验证码' placeholder-class='phc' style='padding-left: 280rpx;text-align:right;'></input>
+  </view> -->
+    <view class="infolist">
+        <view class="listrow">
+          <view style="width:50%;">
+          <text>验证码</text>
+          </view>
+          <view class="rigthB">
+            <input bindinput="ysinput" data-name="YS_obja.params.phcode"  placeholder="请输入验证码"></input>
+          </view>
+        </view>
+  </view>
+  <button class="bcbtn" type="button" bindtap="tapfetch" data-key="YS_obja">修改</button>
+</view>

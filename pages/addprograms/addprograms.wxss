@@ -1,0 +1,151 @@
+/* pages/addprograms/addprograms.wxss */
+page{
+  font-size: 32rpx;
+  color: #666666;
+}
+
+
+
+.gram_1{
+  background: #F5F5F5;
+  height: 100vh;
+
+}
+.gram_1box{
+  width:100%;
+  height: 180rpx;
+  background: #fff;
+  border-bottom:1px solid #ddd;
+  position: relative;
+  padding-top: 28rpx;
+  box-sizing: border-box;
+}
+.nextright{
+  width:20rpx;
+  height:25rpx;
+  position: absolute;
+  top:62rpx;
+  right: 48rpx ;
+}
+.nextright image{
+  width:100%;
+  height: 100%;
+}
+.gram_top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gleft{
+  margin-left:24rpx;
+}
+.gright{
+  margin-right: 98rpx;
+}
+.stcolor{
+  color: #999999;
+}
+.gram_bot{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 24rpx;
+}
+.ds{
+  margin-left: 25rpx;
+}
+.dx{
+  margin-right: 40rpx;
+}
+.addgc{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 28rpx;
+  margin-bottom:20vh;
+}
+.storage{
+   position: fixed;
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:85vh;
+  z-index:9;
+}
+
+.addicon{
+  width:120rpx;
+  height: 120rpx;
+}
+
+
+.weui-cell{
+  padding: 0;
+}
+
+.gram_2{
+  background: #fff;
+  height: 100vh;
+  color: #333333 ;
+  font-size: 32rpx;
+
+}
+
+
+
+
+
+.weui-cells {
+  background-color:#fff;
+  line-height:1.41176471;
+  font-size:32rpx;
+  display:initial;
+}
+.gram_2 .weui-cell{
+  height:90rpx;
+  line-height:90rpx;
+  margin:0 0 0 10px;
+  border-bottom:1px solid #E5E5E5;
+}
+.weui-cell__ft_in-access {
+  padding-right:13px;
+  position:relative;
+  display:flex;
+  margin-right:12rpx;
+}
+.gcicon{
+  width:92rpx;
+  height: 50rpx;
+  border-radius: 8rpx;
+  margin-right: 14rpx;
+  
+}
+.weui-cell__bd{
+  margin-left: 10rpx;
+}
+.weui-label{
+  margin-left: 10rpx;
+}
+.weui-input{
+  text-align: right;
+  margin-right: 36rpx;
+}
+.phcolor{
+  color:#999;
+}
+.weui-line{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #F5F5F5;
+  padding: 0 32rpx;
+  font-size: 28rpx;
+  color: #999999;
+
+}
+
+.weui-select{
+  border-right: none;
+  text-align: right;
+}

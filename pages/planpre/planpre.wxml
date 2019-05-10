@@ -1,0 +1,79 @@
+<!--pages/single/single.wxml-->
+<view class="page">   
+  
+  <!--内容主体-->  
+ 
+      <view class="main">
+ 
+        <scroll-view scroll-y style="height: 92vh;">
+            <!--单位工程-->
+            
+     <view class="page__bd page__bd_spacing">
+        
+        <view class="weui-flex">
+            <view class="w_30">
+            <view class="placeholder"> 
+             <navigator url="/pages/yuancai/yuancai?codeid={{options.codeid}}">  
+<view class="cont"> 
+<view class="topimg">
+ <view class="msg">2</view> 
+<image class='timg' src="/pages/image/timg.png"></image> 
+</view> 
+</view>
+  </navigator>
+
+<view class="stitle ysnowrap">原材 </view>
+
+            </view>
+            </view>
+                        
+
+  <view class="w_30"  wx:for="{{YS_lista.data}}" wx:key="idx" wx:for-item="value"> 
+    <view class="placeholder"> 
+      <view class="close dpn" bindtap="singletc" hover-class='changebg'> 
+      <image src="/pages/image/close2.png"></image> 
+      </view>
+
+             <navigator url="/pages/plan/plan?codeid={{value.codeid}}&sname={{value.sname}}">   
+            <view class="cont"> 
+            <view class="topimg">
+             <view class="msg">112</view> 
+            <image class='timg' src="{{value.sinimg?value.sinimg:'/pages/image/img-zidanwei@3x.png'}}"></image> 
+
+            </view>
+            <view class="mc">
+
+            <view class="bg"> </view>
+            <view class="cs">
+            <view class='t_l pl_10'>{{value.cengshu}}层*{{value.jiegou==1?'框架':'框剪'}} </view>
+            <view class='t_l pl_10' wx:if="{{value.dxcengshu}}">负{{value.dxcengshu}}层 </view>
+            </view>
+
+            </view>
+            </view> </navigator>  
+      <view class="stitle ysnowrap">{{value.sname}} </view>
+  
+            </view>
+   </view>
+
+ 
+
+
+                
+        </view> 
+         
+    </view>
+
+
+ <view style='margin-top:50rpx;font-size:30rpx;text-align:center;color:#666'>
+ 需要导入导出送检台帐的xls表格，请登录官网平台 <text style='font-weight:700;color:#0094fd;'>www.helii.cn</text> 进行操作
+ </view> 
+
+         <view class="bottom"></view> 
+             
+        </scroll-view>
+
+      </view>
+    
+  
+</view>  

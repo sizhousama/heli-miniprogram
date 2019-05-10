@@ -1,0 +1,330 @@
+<!--pages/editsingle/editsingle.wxml-->
+<view class="editpage">  
+ <view class="swiper-tab">  
+    <view class="tab-item"><text data-current="0" bindtap="swichNav" class=" btn {{currentTab==0 ? 'on' : ''}}">子单位部位</text></view> 
+    <view class="tab-item"><text data-current="1" bindtap="swichNav" class="btn {{currentTab==1 ? 'on' : ''}}">子单位信息</text></view>  
+  </view>  
+  
+  <!--基础信息-->  
+  <swiper class="editswiper" current="{{currentTab}}" duration="200" bindchange="swiperChange">  
+   <swiper-item>  
+      <view class="main" style='padding:0'>
+      <scroll-view scroll-y style="height:93vh">
+        <!--编辑子单位 - 2 部位详情  -->
+        <view class="addsing_2">
+          <block wx:for="{{YS_objc.data.datalist}}" wx:key="" wx:for-item="value">
+           <view class="weui-cell weui-cell_access" style='position:initial;' data-id="{{value.codeid}}" bindtap="buweitc">
+                <view class="weui-cell__bd">{{value.bybuwei}}</view>
+                <view class="Strength">强度：<text>C{{value.byqiangdu}}</text></view>
+                <text class=" weui-cell__ft_in-access"></text>
+           </view> 
+           </block>
+            <view class="weui-cell weui-cell_access" style='height:0'>
+            </view>
+        </view>
+
+ 
+
+
+        <!-- <view class="addwrap" bindtap="singleaddsj" >
+          <view class="iconwrap">
+            <image src="/pages/image/add@3x.png" ></image>
+          </view>
+            <view style='color:#0094FD'>添加部位</view>
+        </view>  -->
+<!--             <view class="botbox " style='position:initial;margin-top:80rpx'>
+             <button type='button' class="nextbtn">保存</button>
+          </view> -->
+            <view class="bottom"> </view>
+       </scroll-view>
+          </view>
+
+            <view class="prbot"> 
+                <button  bindtap="singleaddsj" class="prbtn">添加</button> 
+              </view>
+    </swiper-item> 
+   
+   
+   
+    <swiper-item> 
+    
+  <!--编辑子单位 - 1 -->
+<view class="addsing_1">
+  
+
+     <view class="weui-cells weui-cells_after-title">
+     <scroll-view scroll-y style="height:90vh">
+
+              <view class="weui-cell weui-cell_access" >
+                  <view class="weui-cell__bd">子单位图片</view>
+                  <view class="weui-cell__ft weui-cell__ft_in-access" bindtap="chooseImage" data-key="YS_obja.params.sinimg">
+                  <image  class="gcicon"  src="{{YS_objf.data.sinimg||uploadPicUrl}}"></image>
+                  </view>
+              </view>
+   
+            <view class="weui-cell weui-cell_access" >
+               <view class="weui-cell__hd">
+                    <view class="weui-label">子单位名称</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input"  placeholder-class="phcolor" placeholder="请填写" bindinput='ysinput' data-name="YS_obja.params.sname" value="{{YS_objf.data.sname}}" />
+                </view>
+            </view>
+
+           <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">结构类型</view>
+                </view>
+                <view class="weui-cell__bd">
+                     <picker bindchange="bindsglxChange" value="{{YS_obja.params.jiegou}}" range="{{sglx}}" name="jiegou">
+                        <view class="weui-select weui-select_in-select-after picker" >{{YS_objf.data.jiegou?sglx[YS_objf.data.jiegou]:sglx[sgindex]}}</view>
+                    </picker>
+                </view>
+            </view>
+
+           <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">地上层数</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <!-- <picker bindchange="bindcsChange" value="{{YS_obja.params.cengshu}}" range="{{cengshu}}" name="cengshu"> -->
+<!--                         <view class="weui-select weui-select_in-select-after picker" >{{cengshu[csindex]==1?YS_obja.data.cengshu:cengshu[csindex]}}</view> -->
+                    <input class="weui-input"  placeholder-class="phcolor" placeholder="请填写" bindinput='ysinput' data-name="YS_obja.params.cengshu" value="{{YS_objf.data.cengshu}}" />
+
+                    <!-- </picker> -->
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">地下层数</view>
+                </view>
+                <view class="weui-cell__bd"><!-- 
+                    <picker bindchange="binddxcsChange" value="{{YS_obja.params.dxcengshu}}" range="{{dxcengshu}}" name="dxcengshu" >
+                        <view class="weui-select weui-select_in-select-after picker">{{dxcengshu[dxcsindex]==1?YS_obja.data.dxcengshu:dxcengshu[dxcsindex]}}</view>
+                      
+                    </picker> -->
+                    <input class="weui-input"  placeholder-class="phcolor" placeholder="请填写" bindinput='ysinput' data-name="YS_obja.params.dxcengshu" value="{{YS_objf.data.dxcengshu}}" />                    
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">基础开工</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindjcDateChange" value="{{YS_obja.params.jcriqi}}" mode="date" start="1978-01-01" end="2028-1-1" name="jcriqi">  
+                         <view class="picker weui-select weui-select_in-select-after">{{jcdate?jcdate:YS_objf.data.jcriqi}}</view>  
+                    </picker> 
+
+                </view>
+            </view>
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">基础完工</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindbytimeChange" data-paramname="jctime" data-time="jctime" value="{{YS_obja.params.jctime}}" mode="date" start="1978-01-01" end="2028-1-1" name="jctime">  
+                         <view class="picker weui-select weui-select_in-select-after">{{jctime?jctime:YS_objf.data.jctime}}</view>  
+                    </picker> 
+
+                </view>
+            </view>
+
+
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">主体开工</view>
+                </view>
+                <view class="weui-cell__bd">
+                   <picker bindchange="bindztDateChange" value="{{YS_obja.params.ztjgriqi}}" mode="date" start="1978-01-01" end="2028-1-1" >  
+                         <view class="picker weui-select weui-select_in-select-after">{{ztdate?ztdate:YS_objf.data.ztjgriqi}}</view>  
+                    </picker> 
+                </view>
+            </view>
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">主体完工</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindbytimeChange" data-paramname="ztjgtime" data-time="zttime" value="{{YS_obja.params.ztjgtime}}" mode="date" start="1978-01-01" end="2028-1-1" name="zttime">  
+                         <view class="picker weui-select weui-select_in-select-after">{{zttime?zttime:YS_objf.data.ztjgtime}}</view>  
+                    </picker> 
+
+                </view>
+            </view>
+
+
+
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">砌体开工</view>
+                </view>
+                <view class="weui-cell__bd">
+                   <picker bindchange="bindqtDateChange" value="{{YS_obja.params.qtriqi}}" mode="date" start="1978-01-01" end="2028-1-1" >  
+                         <view class="picker weui-select weui-select_in-select-after">{{qtdate?qtdate:YS_objf.data.sqzriqi}}</view>  
+                    </picker> 
+                </view>
+            </view>
+
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">砌体完工</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindbytimeChange" data-paramname="sqztime" data-time="sqztime" value="{{YS_obja.params.sqztime}}" mode="date" start="1978-01-01" end="2028-1-1" name="sqztime">  
+                         <view class="picker weui-select weui-select_in-select-after">{{sqztime?sqztime:YS_objf.data.sqztime}}</view>  
+                    </picker> 
+
+                </view>
+            </view>
+
+
+
+
+
+
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">装修开工</view>
+                </view>
+                <view class="weui-cell__bd">
+                   <picker bindchange="bindzxDateChange" value="{{YS_obja.params.zxriqi}}" mode="date" start="1978-01-01" end="2028-1-1" >  
+                         <view class="picker weui-select weui-select_in-select-after">{{zxdate?zxdate:YS_objf.data.zxriqi}}</view>  
+                    </picker> 
+                </view>
+            </view>
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">装修完工</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindbytimeChange" data-paramname="zxtime" data-time="zxtime" value="{{YS_obja.params.zxtime}}" mode="date" start="1978-01-01" end="2028-1-1" name="zxtime">  
+                         <view class="picker weui-select weui-select_in-select-after">{{zxtime?zxtime:YS_objf.data.zxtime}}</view>  
+                    </picker> 
+
+                </view>
+            </view>
+
+
+
+
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">内墙开工</view>
+                </view>
+                <view class="weui-cell__bd">
+                   <picker bindchange="bindnqDateChange" value="{{YS_obja.params.snqriqi}}" mode="date" start="1978-01-01" end="2028-1-1" >  
+                         <view class="picker weui-select weui-select_in-select-after">{{nqdate?nqdate:YS_objf.data.snqriqi}}</view>  
+                    </picker> 
+                </view>
+            </view>
+
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">内墙完工</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindbytimeChange" data-paramname="snqtime" data-time="snqtime" value="{{YS_obja.params.snqtime}}" mode="date" start="1978-01-01" end="2028-1-1" name="snqtime">  
+                         <view class="picker weui-select weui-select_in-select-after">{{snqtime?snqtime:YS_objf.data.snqtime}}</view>  
+                    </picker> 
+
+                </view>
+            </view>
+
+
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">外墙开工</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindwqDateChange" value="{{YS_obja.params.swqriqi}}" mode="date" start="1978-01-01" end="2028-1-1" >  
+                         <view class="picker weui-select weui-select_in-select-after">{{wqdate?wqdate:YS_objf.data.swqriqi}}</view>  
+                    </picker> 
+                </view>
+            </view>
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">外墙完工</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindbytimeChange" data-paramname="swqtime" data-time="swqtime" value="{{YS_obja.params.swqtime}}" mode="date" start="1978-01-01" end="2028-1-1" name="swqtime">  
+                         <view class="picker weui-select weui-select_in-select-after">{{swqtime?swqtime:YS_objf.data.swqtime}}</view>  
+                    </picker> 
+
+                </view>
+            </view>
+
+
+
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd ">
+                    <view class="weui-label">屋面开工</view>
+                </view>
+                <view class="weui-cell__bd">
+                  <picker bindchange="bindwmDateChange" value="{{YS_obja.params.wmriqi}}" mode="date" start="1978-01-01" end="2028-1-1" >  
+                         <view class="picker weui-select weui-select_in-select-after">{{wmdate?wmdate:YS_objf.data.wmriqi}}</view>  
+                    </picker> 
+                </view>
+            </view>
+
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">屋面完工</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindbytimeChange" data-paramname="wmtime" data-time="wmtime" value="{{YS_obja.params.wmtime}}" mode="date" start="1978-01-01" end="2028-1-1" name="wmtime">  
+                         <view class="picker weui-select weui-select_in-select-after">{{wmtime?wmtime:YS_objf.data.wmtime}}</view>  
+                    </picker> 
+
+                </view>
+            </view>
+
+
+
+            <view class="weui-cell weui-cell_access" style='height:0'>
+            </view>
+             <view class="botbox " style=''>
+             <button type='button' class="nextbtn" bindtap="tapfetch" data-key="YS_obja">保存</button>
+           </view>
+          </scroll-view> 
+        </view>  
+   </view> 
+    </swiper-item> 
+    
+    
+
+  </swiper> 
+</view> 
+  <!--编辑子单位3-->  
+<!-- <view class="addsing_2">
+          <view class="gram2-bot" style='position:initial;margin-top:40rpx;'>
+              <button type='button' class="btn_2">保存</button> 
+          </view>
+</view> 
+ -->

@@ -1,0 +1,180 @@
+/* pages/my/Release/item/item.wxss */
+.deswrap{
+  padding: 30rpx 24rpx;
+}
+.meboxA{
+  display: flex;
+  flex-direction: columnl;
+
+}
+.metop{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.m_A{
+  font-size: 48rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.m_B{
+  font-size: 34rpx;
+  color: #0094FD;
+  font-weight: 600;
+}
+.melabel{
+  display: flex;
+  flex-direction: row;
+  margin-top: 15rpx;
+}
+.melabel text{
+ height: 40rpx;
+ line-height: 40rpx;
+ padding: 0 14rpx;
+ font-size: 24rpx;
+ color: #808080;
+ border: 1px solid #E5E5E5;
+ border-radius: 2px;
+ margin-right: 20rpx;
+}
+.metA{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+.meleft{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+.meleft image{
+  width:40rpx;
+  height: 40rpx;
+}
+.meleft text{
+  font-size: 30rpx;
+  color: #333333;
+  display: inline-block;
+}
+.meright{
+  display: flex;
+  flex-direction: row;
+}
+.meright image{
+  width:24rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.meright text{
+  font-size: 26rpx;
+  color: #999999;
+}
+.meuser{
+  position: relative;
+}
+.userpic{
+  width:80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.userpic image{
+  width:100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.vrz{
+  width:25rpx;
+  height:25rpx;
+  position:absolute;
+  bottom:17rpx;
+  right:0rpx;
+
+}
+.vrz image{
+  width:100%;
+  height: 100%;
+}
+.meleft .username{
+  font-size: 36rpx;
+  color: #333333;
+}
+.sajiao{
+  width:25rpx;
+  height: 20rpx;
+  display: flex;
+  align-self:flex-end;
+}
+.sajiao image{
+  width:100%;
+  height: 100%;
+}
+.linfo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+.comp{
+  font-size: 28rpx;
+  color: #333333;
+}
+.address{
+  margin: 30rpx 0 45rpx 0;
+}
+.des{
+  margin-top: 70rpx;
+}
+.dtitle{
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.conte{
+  padding:22rpx 0 40rpx 0;
+  box-sizing: border-box;
+}
+.page-section-gap{
+  box-sizing: border-box;
+}
+.delbtnA{
+  width:400rpx;
+  height: 85rpx;
+  line-height: 85rpx;
+  background: #0094FD;
+  border-radius: 8rpx;
+  color: #FFF;
+  font-size: 32rpx;
+  margin-top: 56rpx;
+  margin-bottom: 15rpx;
+  box-sizing:border-box;
+}
+.opbot{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100rpx;
+  border-top: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  background: #FFF;
+}
+.off{
+  margin-top: 10rpx;
+  width:332rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  background: #FFFFFF;
+  border: 1px solid #0094FD;
+  border-radius: 4px;
+  font-size: 32rpx;
+  color: #0094FD;
+}
+.edit{
+  margin-top: 10rpx;
+  width:332rpx;
+  height: 76rpx;
+  background: #0094FD;
+  border-radius: 4px;
+  font-size: 32rpx;
+  color: #FFF;
+}

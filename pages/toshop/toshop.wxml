@@ -1,0 +1,10 @@
+<view class="container" style="padding:102rpx 0;">
+<view class="add-avrtext fc4" >
+
+
+                <navigator url="../shop/pages/index/index" class="navigator">
+                  <view>前往商城</view>
+                </navigator>
+
+</view>
+</view>

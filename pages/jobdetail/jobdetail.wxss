@@ -1,0 +1,647 @@
+/* pages/my/Release/item/item.wxss */
+page{
+  background: #fff;
+}
+.shoucang {
+  animation: changeBiger 1s ease 1;
+  animation-delay: 0s;
+  /* transform: scale(1.2); */
+ }
+ .input_null{
+    color: #C9C9C9;
+
+}
+.release{
+    display: flex;
+    align-items: flex-end; /*底部对齐*/
+    justify-content: space-between; /*两端对齐*/
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10rpx  24rpx 14rpx 24rpx;
+    background: #FFFFFF;
+    box-shadow: 0 -1px 0 0 #E5E5E5;
+    font-size: 28rpx;
+    z-index: 999;
+}
+.addcom{
+  width:160rpx;
+  height:60rpx;
+  background: #0094fd;
+  font-size: 34rpx;
+  color: #fff;
+  line-height: 60rpx
+  
+}
+.jobadr{
+  flex:2;
+  text-align:right;
+
+}
+.lianxi{
+ padding:5rpx 10rpx;
+
+border:1px solid #0094FD;
+color:#0094FD;
+border-radius:10rpx;
+font-size:26rpx;
+text-align:center;
+
+
+}
+.release .text{
+    width: 75%;
+    min-height: 76rpx;
+    
+    border-width: 15rpx 20rpx; 
+    border-color:  #ffffff;
+    font-size: 28rpx;
+    background-color: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    z-index: 10001;
+    line-height: 70rpx;
+    color:#999
+}
+.chf{
+z-index:999;
+margin-left:75vw
+}
+.chf image{
+  width:48rpx;
+  height: 50rpx
+}
+.videobox {
+  padding: 40rpx 0 32rpx 0;
+}
+.newbox{
+  padding:33rpx 0 28rpx 0;
+}
+.shoucang {
+  animation: changeBiger 1s ease 1;
+  animation-delay: 0s;
+  /* transform: scale(1.2); */
+ }
+             
+@keyframes changeBiger {
+ 0% {
+   transform: scale(1.5);
+}
+ 100%{
+   transform: scale(1);
+ }
+ 
+}
+.plbg{
+height:1100rpx;
+width:100%;
+background:rgba(0,0,0,0.5);
+position:absolute;
+top:0;
+z-index:999999999999999;
+}
+.plbg2{
+height:904rpx;
+width:100%;
+position:absolute;
+top:0;
+z-index:999999;
+}
+
+
+.pltc{
+width:100%;
+height:300rpx;
+margin-top:904rpx;
+background: #fff;
+z-index:9999999;
+position:fixed;
+border-top:1px solid #eee
+
+
+}
+.plpc{
+  color:#ddd;
+  margin-left:20rpx;
+  font-size:30rpx;
+}
+.plinput{
+  width:100%;
+  margin-top:10rpx;
+}
+.tctop{
+  height:60rpx;
+  display: flex;
+  border-bottom:1px solid #eee;
+}
+
+.changebg{
+   background:rgb(198, 228, 250)
+ }
+@keyframes changeBiger {
+ 0% {
+   transform: scale(1.5);
+}
+ 100%{
+   transform: scale(1);
+ }
+ 
+}
+.deswrap{
+  padding: 40rpx 24rpx;
+  background: #FFF;
+  margin-bottom: 20rpx;
+}
+.mewrap{
+   border-bottom: 1px solid #F5F5F5;
+
+}
+.mewrapB{
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #F5F5F5;
+  margin: 0 24rpx;
+}
+.mewrapB:last-child{
+   border:none;
+}
+.meboxA{
+  display: flex;
+  flex-direction: columnl;
+
+}
+.metop{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+.m_A{
+  font-size: 48rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.m_B{
+  font-size: 34rpx;
+  margin-top: 10rpx;
+  color: #0094FD;
+  font-weight: 600;
+}
+.rec .dtitle{
+  padding:40rpx 0 10rpx 0;
+ 
+
+
+}
+.rec .meboxA{
+  margin-top: 30rpx;
+}
+.rec .m_A{
+    font-size: 34rpx;
+}
+.rec .m_B{
+     margin: 0;
+}
+.rec .userpic{
+  width:60rpx;
+  height: 60rpx;
+}
+.rec .vrz{
+  width:24rpx;
+  height:24rpx;
+  bottom: 18rpx;
+}
+.rec .metB{
+  padding-top:5rpx;
+  padding-bottom:15rpx;
+
+}
+.rec .meleft{
+  margin-top: 5rpx;
+}
+.melabel{
+  display: flex;
+  flex-direction: row;
+  margin-top: 14rpx;
+  margin-bottom: 40rpx;
+}
+.melabelB{
+  display: flex;
+  flex-direction: row;
+  margin: 25rpx 0 15rpx 0;
+}
+.melabelB text{
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0 14rpx;
+  font-size: 24rpx;
+  color: #808080;
+  border: 1px solid #E5E5E5;
+  border-radius: 2px;
+  margin-right: 20rpx;
+}
+.melabel text{
+ height: 40rpx;
+ line-height: 40rpx;
+ padding: 0 14rpx;
+ font-size: 24rpx;
+ color: #808080;
+ border: 1px solid #E5E5E5;
+ border-radius: 2px;
+ margin-right: 20rpx;
+}
+.metA{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+.metB{
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 20rpx;
+}
+.meleft{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+.meleft image{
+  width:40rpx;
+  height: 40rpx;
+}
+.meleft text{
+  font-size: 30rpx;
+  color: #333333;
+  display: inline-block;
+}
+.meright{
+  display: flex;
+  flex-direction: row;
+}
+.meright image{
+  width:21rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.meright text{
+  font-size: 26rpx;
+  color: #999999;
+  margin-top: 10rpx;
+}
+.meuser{
+  position: relative;
+}
+.userpic{
+  width:80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.userpic image{
+  width:100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.vrz{
+  width:29rpx;
+  height: 29rpx;
+  position: absolute;
+  bottom: 25rpx;
+  right: 0rpx;
+}
+.vrz image{
+  width:100%;
+  height: 100%;
+}
+.meleft .username{
+  display: flex;
+  align-items: center;
+  font-size: 36rpx;
+  color: #333333;
+}
+.sajiao{
+  width:25rpx;
+  height: 20rpx;
+  display: flex;
+  align-self:flex-end;
+}
+.sajiao image{
+  width:100%;
+  height: 100%;
+}
+.linfo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+.comp{
+  font-size: 28rpx;
+  color: #333333;
+}
+.address{
+  margin: 35rpx 0;
+  margin-bottom:70rpx;
+}
+
+.dtitle{
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.conte{
+  padding: 20rpx 0;
+  box-sizing: border-box;
+}
+.page-section-gap{
+  box-sizing: border-box;
+}
+
+.opbot{
+  position: fixed;
+  width:100%;
+  bottom: 0;
+  height: 100rpx;
+  border-top: 1rpx solid #E5E5E5;
+  box-sizing: border-box;
+  background: #FFF;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+}
+.edit{
+  width:352rpx;
+  height: 76rpx;
+  background: #0094FD;
+  border-radius: 4px;
+  font-size: 32rpx;
+  color: #FFF;
+}
+.rec{
+  background: #FFF;
+  box-sizing: border-box;
+  padding-bottom: 100rpx;
+}
+.dtitle{
+  padding:40rpx 0rpx 10rpx 0;
+  box-sizing: border-box;
+  margin: 0 24rpx;
+}
+
+.opbot image{
+  width:48rpx;
+  height: 48rpx;
+}
+.edicon{
+  position: relative;
+}
+.eicon{
+  width:34rpx;
+  height: 34rpx;
+  position: absolute;
+  bottom: 25rpx;
+  left:85rpx;
+}
+.eicon image{
+  width:100%;
+  height: 100%;
+}
+.iconbox{
+  display: flex;
+  flex-flow: nowrap;
+}
+.spot{
+  font-size: 30rpx;
+}
+
+/* 改后 */
+
+.comwrap{
+    padding: 40rpx 20rpx 28rpx 20rpx;
+    background: #fff;
+    margin-bottom:20rpx;
+}
+.comlist{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.userimg{
+  width:90rpx;
+  height: 90rpx;
+}
+.userimg image{
+  width:100%;
+  height:100%;
+  border-radius: 50%; 
+}
+.comuser{
+  display: flex;
+  flex-wrap:nowrap;
+}
+.userinfo{
+  display:flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+.userinfo image{
+  width:22rpx;
+  height:24rpx;
+  margin-bottom:-3rpx;
+margin-right:10rpx;
+margin-left:45rpx;
+
+}
+.uname{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #333333;
+  font-weight: 600;
+}
+.usname{
+  font-size: 24rpx;
+  color: #999999;
+}
+.ctime text{
+  font-size: 32rpx;
+  color: #999999;
+}
+.time{
+  font-size: 28rpx;
+  color:#999
+}
+.jdetail{
+  margin-top:20rpx;
+  font-size: 32rpx;
+}
+.jbimg{
+  margin-top:20rpx;
+}
+.jbimg image{
+   width:100%;
+   height:50vw;
+   border-radius: 10rpx
+}
+.plnr{
+  font-size: 30rpx;
+  color: #333333;
+  padding: 20rpx 0;
+  width: 100%;
+}
+.hfnr{
+ background: #F5F5F5;
+ padding: 20rpx;
+ box-sizing: border-box;
+  width: 92%;
+}
+.uhf , .uhfs {
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  width: 100%;
+ 
+
+}
+.listbox{
+  margin-bottom:10vh
+}
+.hfname{
+  color: #3AAEFF;
+}
+.midline{
+  width:100%;
+  height:20rpx;
+  background: #eee
+}
+.jtag{
+  font-size:26rpx;
+  color: orange;
+}
+
+/* 评论 */
+.userpl{
+  width:100vw;
+  display: flex;
+  flex-wrap:nowrap;
+  margin-top: 50rpx;
+}
+.userpic{
+  width:80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.rbox{
+  width:100%;
+  display: flex;
+  flex-wrap:wrap;
+  margin-left: 20rpx;
+  }
+.userplright{
+  width:92%;
+  display: flex;
+  justify-content:space-between;
+}
+.plicon{
+  width:36rpx;
+  height: 36rpx;
+  vertical-align:sub;
+}
+.pldz{
+  font-size: 32rpx;
+  color: #999999;
+  
+}
+.useinfo{
+  display: flex;
+  flex-direction:column;
+}
+.plright{
+  display: flex;
+  flex-direction: row;
+}
+.useinfo .name{
+  font-size: 28rpx;
+  color: #333333;
+}
+.useinfo .pltime{
+  font-size: 24rpx;
+  color: #999999;
+}
+.wh_24{
+  width:22rpx; 
+  height:22rpx; 
+  margin-right:5rpx;
+}
+
+.setwin{
+  width:100%;
+height:100vh;
+z-index:111111111100001;
+background:rgba(0,0,0,0.5);
+margin-top:0rpx;
+position:absolute;
+top:0;
+
+
+}
+.sharebox{
+width:75%;
+background:#fff;
+margin:auto auto;
+top:70%;
+position:relative;
+border-radius:10rpx;
+justify-content: center;
+text-align: center;
+padding:20px
+
+}
+.share{
+  width:40rpx;
+  height: 40rpx;
+  margin-bottom:-8rpx;
+}
+.sharenum{
+  font-size: 28rpx;
+  color:#666;
+  margin:0 40rpx 0 10rpx; 
+}
+.smidline{
+  width:1px;
+  height: 180rpx;
+  background:#ddd;
+}
+.wechat{
+  width:120rpx;
+  height: 120rpx
+}
+.haibao{
+  width:120rpx;
+  height: 120rpx
+}
+.hbmuban{
+  width:80%;
+  height:300rpx;
+}
+.photo{
+  width:140rpx;
+  height:60rpx;
+  background:#0094fd;
+  position: fixed;
+  right: 0rpx;
+  bottom: 160rpx;
+  line-height:60rpx;
+  border-radius: 50px 0 0 50px;
+}
+.gohome{
+  width:34rpx;
+  height:34rpx;
+  margin:0 10rpx 0 20rpx;
+  margin-bottom: -5rpx
+}
+.photo{
+  font-size: 26rpx;
+  color: #fff
+}

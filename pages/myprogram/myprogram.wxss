@@ -1,0 +1,66 @@
+/* pages/myprogram/myprogram.wxss */
+.progdes{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:150rpx;
+}
+.progleft{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left:24rpx
+}
+.progleft image{
+  width:200rpx;
+  height: 108rpx;
+  border-radius: 8rpx;
+}
+.progleft text{
+  margin-left: 10rpx;
+  font-size: 32rpx;
+  width:365rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.progright{
+  /* margin-right:40rpx; */
+  width:150rpx;
+  height:105rpx;
+}
+.progright image{
+  width:40rpx;
+  height: 15rpx;
+ 
+}
+.editpro{
+  margin-left:70rpx;
+  margin-top:40rpx;
+
+}
+.progright .chebox{
+  width:26rpx;
+  height: 20rpx;
+  margin-right: 32rpx;
+}
+.main{
+  /* padding-top: 30rpx; */
+  padding-left:0rpx;
+  padding-right:0px;
+}
+.select{
+  width:12px!important;
+height:10px!important;
+margin-right:-25rpx;
+}
+.changebg{
+  background:#ddd;
+}
+.probot{
+  bottom:80px;
+}
+.bottom{
+  width:100%;
+  height:20vh;
+}

@@ -1,0 +1,16 @@
+<view class="loginwrap">
+<import src="/pages/user/header/header.wxml"/>
+ <template is="header"></template>
+    <view class="userwrap">
+      <view class="loginbox">
+    
+          <button class="ruesr" bindtap="nav" data-to="/pages/register/register">注册新账号</button>
+   
+          <button class="yuser" bindtap="nav" data-to="/pages/login/login" hover-class='changebg'>绑定已有账号</button>
+ 
+      </view>
+    </view>  
+</view>
+
+
+ 

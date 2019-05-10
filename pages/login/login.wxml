@@ -1,0 +1,43 @@
+<view class="loginwrap">
+<import src="../user/header/header.wxml"/>
+ <template is="header"></template>
+    <view class="regwrap">
+    <view class="regbox">
+        <view class="rlab">
+          <label>手机号</label>
+          <input class="input" bindinput="ysinput" data-name="YS_obja.params.ysusername" placeholder="请输入手机号" />
+        </view>
+
+        <view wx:if="{{YS_obja.params.type=='code'}}" class="rlab code">
+          <label style="">验证码</label>
+          <view style="display:flex" class="input">
+          <view class="" style="flex:2">
+          <input style="height:100%" bindinput="ysinput" data-name="YS_obja.params.msgcode"  placeholder="请输入验证码" />
+          </view>
+          <!-- <text class="codecolor">获取验证码</text> -->
+          <view wx:if="{{time=='获取验证码'}}" class="getvcode" disabled='{{1}}' data-id="2" bindtap="getVef" style="flex:1">
+            {{time}}
+          </view>
+
+             <view wx:if="{{time!='获取验证码'}}" class="getvcode" disabled='{{1}}' data-id="2" style="flex:1">
+            {{time}}
+          </view>
+          </view>
+        </view>
+
+
+        <view  wx:if="{{YS_obja.params.type=='password'}}"  class="rlab">
+          <label>密　码</label>
+          <input class="input" type='password' bindinput="ysinput" data-name="YS_obja.params.password" placeholder="请输入密码" />
+        </view>
+    </view>
+    </view>
+     <button class="regbtn" bindtap="appLogin">登录</button>
+
+      <view  wx:if="{{YS_obja.params.type=='code'}}" class="yuser"><text style='font-size: 24rpx;color: #0094FD;' bindtap="setvalue" data-key='YS_obja.params.type' data-value='password' >密码登陆</text></view>
+
+     <view  wx:if="{{YS_obja.params.type=='password'}}" class="yuser"><text style='font-size: 24rpx;color: #0094FD;' bindtap="setvalue" data-key='YS_obja.params.type' data-value='code'>验证码登陆</text></view>
+
+        <view class="yuser2">没有账号？<text style='font-size: 24rpx;color: #0094FD;'bindtap="nav" data-to="../../pages/register/register">立即注册</text></view>
+</view>
+

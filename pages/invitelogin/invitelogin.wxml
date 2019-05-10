@@ -1,0 +1,30 @@
+<view class="loginwrap">
+<view class="logtop">
+        <view class="logobox">
+          <image class="hlpic" src='/pages/image/logo@3x.png'></image>
+          <view class="hltext"></view>
+        </view>
+    </view>
+    <view class="regwrap">
+    <view class="regbox">
+        <view class="ivtop">
+    <text>接受<text style="font-weight:bold;margin:0 20rpx">王小花</text>的邀请,加入工程</text>
+    <view class="">
+    <image class="proimg" src='http://p5u15xcze.bkt.clouddn.com/o_1cj8dh0moagr11sa1po31f691reaj.jpg?imageView2/1/w/1000/h/1000'></image>
+    <view class="proname"><text>百亚建筑工程</text></view>
+    </view>
+    </view>
+        <view class="rlab" style="margin-top:80rpx">
+          <label>手机号</label>
+          <input class="input" bindinput="ysinput" data-name="YS_obja.params.phone"  placeholder="请输入手机号" />
+        </view>
+        <view class="rlab">
+          <label>密　码</label>
+          <input class="input" type='password' bindinput="ysinput" data-name="YS_obja.params.regpsd"  placeholder="请输入密码" />
+        </view>
+    </view>
+    </view>
+     <button class="regbtn" bindtap="submit_reg">登录并加入</button>
+    
+</view>
+

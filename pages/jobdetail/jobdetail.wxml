@@ -1,0 +1,289 @@
+  <scroll-view scroll-y="true" scroll-into-view="{{toView}}" scroll-with-animation="true" style="height: 91vh;"   bindscrolltolower="lower">
+  <view>
+  <view class="comwrap">
+                <view class="comlist">
+                    <view class="comuser">
+                          <view class="userimg"><image src="{{YS_obja.data.photourl?YS_obja.data.photourl:'../../pages/image/pop-qiehuan@3x.png'}}"></image></view>
+                          <view class="userinfo">
+                            <text class="uname">{{YS_obja.data.realname}}</text>
+                            <text class="time">{{YS_obja.data.createtime}}</text>
+                          </view>
+                    </view>
+                     <view class="userinfo">
+                           
+                            <view>
+                            <image src="../../pages/image/zhaogong-weizhi1@3x.png"></image>
+                            <text class="" style="font-size:22rpx;color:#999">{{YS_obja.data.city}}</text>
+                            </view>
+                          </view>
+                </view >
+                <view style="margin-top:20rpx;display:flex">
+                  <view style="flex:2">
+                  <image class="wh_24" src="/pages/image/bq.png"></image>
+                 <text class="jtag" >  {{YS_obja.data.biaoqian}} </text>
+                  </view>
+
+                   <view class="jobadr" >
+                  <text class="lianxi" catchtap='tel' data-tel="{{YS_obja.data.tel}}">联系</text> 
+                  </view>
+                 </view>
+                <view class="jdetail">
+                <view>
+  <rich-text nodes="{{YS_obja.data.description}}"></rich-text></view>
+                 <view class="jbimg">
+                 <image wx:for="{{YS_obja.data.picturearr}}" wx:key="idx" wx:for-item="value" src="{{value}}" bindtap="previewImage" data-arr="{{YS_obja.data.picturearr}}"></image>
+                 </view>
+
+                </view>
+                
+              </view>
+ <view class="midline"></view>
+
+ <!-- 评论 -->
+ <view class="listbox" style='padding:20rpx'>
+   <view class="listwrap"  id="inToView">
+      <view class="btitle">用户评论({{YS_obja.data.commentnum}})</view>
+    <view wx:if="{{YS_obja.data.commentnum==0}}">
+    <image src="../../pages/image/commenttx.png" style="width:60vw;height:25vh;margin-left:15%"></image>
+    <view style="text-align:center;width:100%;font-size:32rpx;">暂无评论，快去评论吧！</view>
+    </view>
+
+    <!-- <block wx:for="{{YS_lista.data}}"  wx:for-item="value2" > -->
+      <view class="userpl" wx:for="{{YS_lista.data}}" wx:key=""  wx:for-item="value2" >
+        <view><image class="userpic" src="{{value2.headimg}}"></image></view>
+	        <view class="rbox">
+	          <view class="userplright">
+	            <view class="useinfo">
+	              <text class="name">{{value2.realname}}</text>
+	              <text class="pltime">{{value2.createtime}}</text>
+	            </view>
+	            <view class="plright">
+	              <!-- <image class="plicon" style='margin-top:3px' src="/pages/image/pinglun-pinglun@3x.png"></image> -->
+	              <view data-newsid="{{value2.id}}" data-type="comment" data-index="{{index}}" bindtap="click_thumb" class="pldz"><image class="plicon" src="/pages/image/pinglun-like@3x.png"></image> {{value2.thumbnum}}</view>
+	            </view>
+	          </view>
+	           <view class="plnr">
+	          		<text>{{value2.content}}</text>
+	          </view> 
+
+	           <view class="hfnr" wx:if="{{value2.child.length>0}}"  wx:for="{{value2.child}}" wx:key="idx3" wx:for-item="value3">
+	          	<view class="uhf" wx:if="{{!value3.torealname}}">
+              <text class="hfname">{{value3.realname}}：</text><text>{{value3.content}}</text>
+              </view>
+	          	<view class="uhfs" wx:else>
+              <text class="hfname">{{value3.realname}} </text>回复 <text class="hfname">{{value3.torealname}}：</text><text>{{value3.content}}</text></view>
+	          </view> 
+               </view>
+      </view>
+    <!-- </block> -->
+   </view>
+ </view>
+
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 招聘详情 pages/my/Release/item/item.wxml-->
+<!-- <view class="deswrap">
+   <view class="mewrap">
+        <view class="meboxA">
+          <view class="metop">
+              <text class="m_A">{{YS_obja.title}}</text>
+              <text class="m_B">{{YS_obja.salary}}</text>
+          </view>
+        </view>
+          <view class="meright" style='border-bottom: 1px solid #F5F5F5;'>
+            <view class="address">
+              <image src="/pages/image/zhaogong-weizhi1@3x.png"></image>
+              <text>{{YS_obja.province}}</text><text class="spot">·</text><text>{{YS_obja.city}}</text>
+            </view>
+            
+          
+          </view>
+          <view class="melabel" style="margin-top:-60rpx;margin-bottom:0">
+                <text wx:for="{{YS_obja.tag}}" wx:key="idx2" wx:for-item="v">{{v}}</text>
+          </view>
+          
+         
+
+        <view class="dtitle" style="margin:0;">职位描述</view>
+      <view class="conte">
+        <rich-text nodes="{{YS_obja.description}}" bindtap="tap"></rich-text>
+      </view>
+
+      
+        </view>
+   <view class="des">
+     <view class="mehr">
+              <view class="metA">
+                <view class="meleft">
+                   <view class="meuser">
+                     <view class="userpic"><image src="{{YS_obja.photourl}}"></image></view>
+                     <view class="vrz" ><image src="/pages/image/zhaogong-renzheng@3x.png"></image></view>
+                   </view>
+                   <view class="linfo">
+                      <text class="username">{{YS_obja.realname}}</text>
+                      <text class="comp">{{YS_obja.companyName}}·hr</text>
+                  </view>
+                </view>
+                <view class="meright">
+                  <view class="sajiao"><image src='/pages/image/icon-next@3x.png'></image></view>
+                </view>
+              </view>
+           </view>
+          
+   </view>     
+</view>
+
+<import src="template/list.wxml"/> 
+  <view class="rec" hidden="{{YS_obja.related.length<1?'true':''}}">
+     <view class="dtitle">推荐职位</view>
+      <block wx:for="{{YS_obja.related}}" wx:key="idx" wx:for-item="value">
+      <navigator url="jobdetail?jobcodeid={{value.codeid}}">
+         <view class="mewrapB" style='border-bottom: 1rpx solid #eee;margin-bottom:10rpx;margin-top:20rpx'>
+        <view class="meboxA">
+          <view class="metop">
+              <text class="m_A">{{value.title}}</text>
+              <text class="m_B">{{value.salary}}</text>
+          </view>
+        </view>
+          <view class="melabelB">
+                <text wx:for="{{value.tag}}" wx:key="idx3" wx:for-item="v3">{{v3}}</text>
+          </view>
+          <view class="metitle">
+              <view class="metB">
+                <view class="meleft">
+                
+                  <text>{{value.company_name}}</text>
+                </view>
+                <view class="meright" >
+                  <text class="time">{{value.createtime}}</text>
+                </view>
+              </view>
+          </view>
+           <view class="mehr">
+              <view class="metB">
+                <view class="meleft">
+                   <view class="meuser">
+                     <view class="userpic"><image src="http://www.yh31.com/UploadFiles/NSTX/201707162258094941.jpg"></image></view>
+                     <view class="vrz" ><image src="/pages/image/zhaogong-renzheng@3x.png"></image></view>
+                   </view>
+                  <text class="username" style='font-size: 26rpx;margin-left:18rpx'>{{value.realname}}·hr</text>
+                </view>
+                <view class="meright" style='margin-top: 20rpx;'>
+                   <view><image src="/pages/image/zhaogong-weizhi1@3x.png"></image></view>
+                   <view><text>{{value.province}} </text><text>{{value.city}} </text></view>
+                </view>
+              </view>
+           </view>
+        </view>
+      </navigator>
+      </block>
+
+
+  </view> -->
+</scroll-view>
+  <view class="opbot">
+
+    <view class=" release">
+   <textarea class="text"
+          placeholder-class="input_null" 
+          fixed="true" 
+          maxlength="1000" 
+          show-confirm-bar="false" 
+          cursor-spacing="15" 
+          auto-height="true" 
+          focus="{{focus}}"
+          bindfocus="getfocus" 
+          bindblur='losefocus' 
+          placeholder="说点什么吧" bindinput="ysinput"  data-name="YS_objc.params.content" data-id="{{YS_obja.id}}" data-type="notice"   value="{{YS_objc.params.content}}" ></textarea>
+           <!-- <image bindtap="add_comment" src="../../pages/image/addcom.png" style="width:70rpx;height:70rpx;margin-bottom:3rpx"></image> -->
+          </view>
+         
+          <!-- <view class="text" bindtap="showpl"><text style="">说点什么吧</text></view> -->
+          <view class="chf" wx:if="{{focus}}">
+    <!-- <image src="../../pages/image/addcom.png"  ></image> -->
+    <button class="addcom" bindtap="add_comment" data-type="notice"  data-id="{{YS_obja.data.id}}">发表</button>
+    
+</view>
+
+        <view data-nid="{{YS_obja.data.id}}" data-type="notice" bindtap="click_collect" class="icon" style='margin-left:78vw;z-index:99999'  wx:if="{{!focus}}">
+        <image wx:if="{{!YS_obja.data.iscollect}}" style="margin-top:20rpx" src="/pages/image/tabbar-shoucang-default@3x.png"></image>
+        <image wx:else class="shoucang" style="margin-top:20rpx" src="/pages/image/tabbar-shoucang-default-copy@3x.png"></image>
+        </view>
+        <view class="icon" style='z-index:999;margin-right:40rpx'  wx:if="{{!focus}}">
+             <button bindtap="ystapshow" data-value="1" style="background:rgba(255,255,255,0);">   
+                <image  src="../../pages/image/share.png" style="margin-top:35rpx;height:40rpx" />
+                <text style="font-size:28rpx;color:#666;position:absolute;top:20rpx;right:0rpx">{{YS_obja.data.repeatNum}}</text>
+            </button>
+        </view>
+       
+<!--       <view class="edicon"  bindtap='tel' data-tel="{{YS_obja.data.tel}}">
+        <button class="edit">联系他</button>
+        <view class="eicon"><image src='/pages/image/zhaogong-phone@3x.png'></image></view>
+      </view> -->
+  </view>
+
+
+
+
+<view class="setwin" wx:if="{{tapshow==1}}" bindtap="ystapshow" data-value="0">
+<view class="sharebox">
+    <view style="display:flex">
+      <view style="width:50%" bindtap="addsharenum" data-id="{{YS_obja.data.codeid}}">
+        <button id="shareBtn" open-type="share" data-url="../../pages/jobdetail/jobdetail?jobcodeid={{YS_obja.data.codeid}}" data-title="{{YS_obja.data.description}}" style="background:rgba(255,255,255,0);">
+        <image class="wechat" src="../../pages/image/wechat.png"></image></button>
+        <view style="font-size:34rpx"><text>发给好友</text></view>
+      </view>
+      <view class="smidline"></view>
+       <view style="width:50%">
+        <view>
+<image class="haibao" src="../../pages/image/haibao.png" bindtap="jdgotohb" data-id="{{YS_obja.data.codeid}}" ></image>
+        </view>
+        <view style="font-size:34rpx;margin-top:16rpx;"><text>生成海报</text></view>
+      </view>
+    </view>
+
+</view>
+
+</view>
+
+
+<view class="photo" bindtap="gohome">
+ <image class="gohome" src="../../pages/image/home.png"></image>
+  <text>首页</text>
+</view>
+

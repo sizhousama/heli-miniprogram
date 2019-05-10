@@ -1,0 +1,55 @@
+#map {
+  padding: 40rpx;
+}
+.minetop{ 
+	height:440rpx; 
+	width:100vw;
+	top:0;
+}
+.topimg{
+	height:440rpx;
+	width:100vw;
+	left:0;
+	top:0;
+	position:absolute;
+}
+.headimg{
+	text-align:center; 
+	width:100rpx; 
+	position:absolute;
+	left:0;
+	top:86rpx;
+}
+.list{ 
+	padding-left:0rpx;
+	padding-right:0px;
+	font-size:32rpx;
+	height:100rpx;
+	line-height:100rpx;
+	text-align:left; 
+	
+}
+.list .imgl{
+	width:42rpx;height:36rpx;margin-left:24rpx;margin-right:24rpx;
+}
+.list .imgr{
+	width:12rpx;height:20rpx;float:right;
+margin:40rpx;
+}
+button{
+	border-radius:0px;
+	background-color:#fff;
+
+}
+button::after {
+border:0px solid rgba(0, 0, 0, 0.2); 
+	border-radius:0px;
+}
+.phone{
+	float:right;
+	color:#B3B3B3;
+}
+.phonered{
+	float:right;
+	color:#FF5A49;
+}

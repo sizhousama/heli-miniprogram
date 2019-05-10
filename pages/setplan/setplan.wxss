@@ -1,0 +1,369 @@
+/* pages/setplan/setplan.wxss */
+/* pages/editsingle/editsingle.wxss */
+page{
+  font-size: 32rpx;
+}
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+scroll-view {
+padding-bottom:0;
+}
+
+.engtop{
+  width:100%;
+  height: 140rpx;
+  background: url('http://chuantu.biz/t6/343/1531652018x-1404817659.png');
+  background-size: 100% 100%;
+ 
+}
+.bottom{
+  width:100%;
+  height: 30vh
+}
+.nextbtn{
+  background-image: linear-gradient(90deg, #00C9FF 0%, #0098FF 100%);
+  width:100%;
+  height: 92rpx;
+  line-height: 92rpx;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius:0;
+
+}
+.botbox{
+ width:100vw;
+margin-top:80rpx;
+margin-bottom:80rpx;
+position:fixed;
+bottom:-80rpx;
+
+}
+
+.weui-cells {
+background-color:#fff;
+line-height:1.41176471;
+font-size:32rpx;
+display:initial;
+}
+.weui-cell{
+  height: 90rpx;
+  line-height: 90rpx;
+  padding:0 24rpx;
+}
+
+.weui-cell__ft_in-access {
+  padding-right:13px;
+  position:relative;
+  display:flex;
+  margin-right:12rpx;
+}
+
+.gcicon{
+  width:92rpx;
+  height: 50rpx;
+  border-radius: 8rpx;
+  margin-right: 14rpx;
+  
+}
+.weui-cell__bd{
+  margin-left: 10rpx;
+}
+.weui-label{
+  margin-left: 10rpx;
+}
+.weui-input{
+  text-align: right;
+  margin-right: 36rpx;
+  /* color:#999; */
+  font-size:32rpx;
+}
+.phcolor{
+  color:#999;
+}
+.weui-line{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #F5F5F5;
+  padding: 0 32rpx;
+  font-size: 28rpx;
+  color: #999999;
+
+}
+
+.sing_title{
+  margin-bottom: 18rpx;
+}
+.textbox{
+  width:702rpx;
+  height: 348rpx;
+  border: 2rpx solid #CCCCCC;
+  border-radius: 8rpx;
+}
+.addsing_1{
+   /* padding-bottom:50rpx;  */
+   height:100%;
+   overflow: hidden
+}
+.addsing_2{
+  color: #666;
+}
+.addsing_2 .weui-cell{
+  height: 96rpx;
+  line-height: 96rpx;
+  padding:0 24rpx;
+}
+.Strength{
+  display: flex;
+  flex-direction: row;
+  margin-right: 34rpx;
+}
+.Strength .strc{
+  color: #999;
+}
+.addwrap{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 110rpx;
+}
+.iconwrap{
+  width:120rpx;
+  height: 120rpx;
+}
+.iconwrap image{
+  width:100%;
+  height: 100%;
+}
+.gcbw{
+  float: right;
+}
+.line-2{
+  width: 100%;
+  height: 58rpx;
+  line-height: 58rpx;
+  background: #F5F5F5;
+  font-size: 16px;
+  color: #B3B3B3;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+.reason{
+  height: 200rpx;
+  /* border-bottom: 2rpx  solid  #E5E5E5; */
+    padding: 20rpx 20rpx;
+}
+
+.wd{
+  color:#0094FD;
+  
+}
+.weui-select{
+  text-align: right;
+}
+/** 弹窗 **/
+.modal-dialog {
+  background: #FFFFFF;
+  border-radius: 2px;
+  width:646rpx;
+  height: 646rpx;
+}
+.tsconten{
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top: 57rpx;
+}
+.setplan{
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.chip{
+   padding: 0 30rpx;
+   box-sizing: border-box; 
+}
+.chipsm{
+  font-size: 14px;
+  color: #FF5A49;
+  margin-bottom: 14rpx;
+}
+.chipdes{
+  background: #FFFFFF;
+  border:2rpx solid #CCCCCC;
+  border-radius: 4px;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.setbt{
+  font-size: 16px;
+  color: #333333;
+  text-align: center;
+  padding-bottom: 46rpx;
+  margin-top: 28rpx;
+}
+.option{
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+.option text{
+  width:180rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #E5E5E5;
+  display: inline-block;
+  font-size: 16px;
+  color: #666666;
+  text-align: center;
+  margin-bottom: 24rpx;
+}
+.option .ac{
+  background: #0094FD;
+  color: #fff;
+}
+.okbtn{
+  width:446rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  background-image: linear-gradient(90deg, #00C9FF 0%, #0098FF 100%);
+  border-radius: 4px;
+  color: #fff;
+  margin-top: 84rpx;
+}
+.textbox{
+  width:702rpx;
+  height: 200rpx;
+  border: 2rpx solid #CCCCCC;
+  border-radius: 8rpx;
+  margin-bottom:20rpx
+}
+/* switch样式修改 */
+.wx-switch-input{
+    width:82rpx !important;
+    height:40rpx !important;
+    background: #0094fd !important;
+    border:1px solid #0094fd !important;
+}
+/*（false的样式）*/
+.wx-switch-input::before{
+    margin-top:-2.9rpx !important;
+    margin-left:-2.5rpx !important;
+    width:80rpx !important;
+    height: 40rpx !important;
+    background:#fff !important;
+    border:1px solid #ddd !important;
+    /* color:#ddd; */
+    /* z-index:10;     */
+}
+/*（true的样式）*/
+.wx-switch-input::after{
+    margin-right:0rpx;
+    margin-top: -0.1rpx !important;
+    width: 40rpx !important;
+    height: 40rpx !important;
+    background:#fff !important;
+    /* color:#0094fd; */
+}
+/* checkbox样式修改 */
+checkbox .wx-checkbox-input{
+  margin-left:1px;
+    border-radius: 50%;
+    height: 29.5rpx;
+    width: 29.5rpx;
+    
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   margin-left:1px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+    height: 49.5rpx;
+    width: 49.5rpx;
+    background-color:#0094fd;
+    color:white;
+    /* margin-top: -1rpx; */
+}
+
+
+
+
+
+.setwin{
+width:100%;
+height:100vh;
+z-index:111111111100001;
+background:rgba(0,0,0,0.3);
+margin-top:0rpx;
+position:absolute;
+top:0;
+
+
+}
+.closebh{
+  width:28rpx;
+  height:30rpx;
+  position: absolute;
+  right:30rpx;
+  top:30rpx;
+
+}
+.authbody{
+width:80%;
+background:#fff;
+margin:auto auto;
+top:20%;
+position:relative;
+border-radius:10rpx;
+text-align: center;
+padding:20rpx 0;
+
+}
+.bhconf{
+  margin:28rpx 0
+}
+.bhconf button{
+  width:86%;
+  background:#0094fd;
+  color:#fff;
+}
+
+.bhtitle{
+  width:100%;
+  text-align: center;
+  font-size: 36rpx;
+
+}
+.bhhh{
+  width:80%;
+  text-align: left;
+  margin:20rpx 0;
+}
+.bhhh text{
+  margin-left:38rpx;
+  color:#999;
+
+}
+.bhcontent{
+  display: flex;
+  justify-content: center;
+  width:100%
+
+}
+.bhcontent textarea{
+  width:86%;
+  height:30vh;
+  border-radius: 4px;
+  border:1px solid #b9b9b9;
+  text-align: left;
+  color: #666
+  
+}
+.tcbox{
+  width:100%;
+  height:100rpx
+}
