@@ -17,7 +17,7 @@
 <img src="https://github.com/sizhousama/heli-miniprogram/raw/master/egimg/eg5.png" width="300" height="530">
 
 ### 图六 个人中心
-<img src="https://github.com/sizhousama/heli-miniprogram/raw/master/egimg/eg2.png" width="300" height="530">
+<img src="https://github.com/sizhousama/heli-miniprogram/raw/master/egimg/eg6.png" width="300" height="530">
 
 ## 想查看更多内容请扫码
 <img src="https://github.com/sizhousama/heli-miniprogram/raw/master/egimg/saoma.png" width="300" height="500">
